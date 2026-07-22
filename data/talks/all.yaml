@@ -1,0 +1,958 @@
+talks:
+- id: 2026-01-21-angelo-caregnato-neto
+  date: '2026-01-21'
+  time: 12.30-13.30
+  mode: in-person
+  location: ME-Lecture Hall E - Robert Hooke, 34.A-0-710
+  speaker: Angelo Caregnato Neto
+  affiliation: University of Campinas
+  role: Postdoc
+  title: Mixed-integer methods for multi-robot motion planning and decision making
+  abstract: 'Any individual robot can have its applicability broadened and efficiency improved if harmoniously
+    integrated with other robots. The designer of the resulting multi-robot system (MRS) faces unique
+    challenges in the form of the coordination and collaboration required to unlock the full potential
+    of these teams. Introducing such capabilities to MRS requires planning methods able to operate both
+    across the domains of discrete high-level decision-making and continuous low-level kinematic and dynamic
+    control. This scenario poses a challenge from the perspective of optimization: our most efficient
+    and reliable tools usually work on continuous decision variables constrained to convex search spaces.
+    Mixed-integer programming (MIP) is a framework used to cast engineering problems involving continuous
+    and discrete decision variables into the form of conventional optimizations and devise algorithms
+    to solve them. This talk explores the use of MIP in the design of motion planning and decision-making
+    algorithms for MRS. I’ll provide a basic introduction to the subject and present a few interesting
+    MRS problems that MIP was able to solve. Then, I’ll focus on its main limitation and discuss some
+    lines of research being followed to address it. I’ll finish by presenting my initial work as a visiting
+    postdoc at TU Delft.'
+  bio: Dr. Angelo Caregnato-Neto is a postdoctoral researcher at the University of Campinas, Brazil, and
+    is currently a visiting postdoc at TU Delft, The Netherlands, working primarily on optimization-based
+    control architectures for multi-robot systems. Dr. Caregnato-Neto obtained his Ph.D in computer and
+    electronic engineering at Aeronautics Institute of Technology, Brazil. His thesis addressed the problems
+    of motion planning and decision making for multi-robot systems under network connectivity constraints.
+  tags:
+  - Robotics
+  - Optimization
+  youtube_url: https://youtu.be/pmq7d9mcaik?si=-9B6BNGL5EhKru7G
+  youtube_id: pmq7d9mcaik
+  status: past
+  notes: null
+  links:
+    scholar: https://scholar.google.com/citations?user=tCT95pcAAAAJ&hl=en
+    homepage: https://portal.dados.unicamp.br/perfil?origem=unidades&docente=327382&sigla_unidade=FEM&nome_unidade=FACULDADE+DE+ENGENHARIA+MECANICA&nome_programa=
+    verified: false
+  slides_url: ''
+  avatar_url: ''
+- id: 2026-02-04-shengling-shi
+  date: '2026-02-04'
+  time: 12.30-13.30
+  mode: in-person
+  location: ME-Hall H, 34.D-1-100
+  speaker: Shengling Shi
+  affiliation: TUD(DCSC)
+  role: AP
+  title: 'Learning and Optimal Control of Dynamical Systems: Network Structure and Guarantees'
+  abstract: Modeling and control of complex dynamical systems face increasing challenges as systems become
+    uncertain, partially unknown, and large-scale. In this talk, I will take a data-driven perspective
+    on some of these challenges and present my research on system identification and optimal control for
+    building learning-based models and controllers. First, I will discuss the identification of large-scale
+    dynamical networks, showing how network structure can be exploited for tasks such as identifiability
+    analysis, sensor and actuator placement, and topology estimation. Applications of the above results
+    will be illustrated through brain networks and a MATLAB toolbox developed with collaborators. These
+    results provide foundational models that enable learning-based control. Next, I will present results
+    on safety and performance guarantees for certain learning-based approaches to optimal control. The
+    talk will conclude with a discussion of future research at the intersection of learning and optimal
+    control for healthcare in my group, with an emphasis on physiologically plausible human motion generation
+    and rehabilitation.
+  bio: Shengling Shi is an Assistant Professor with the Delft Center for Systems and Control (DCSC), Delft
+    University of Technology (TU Delft). He was a postdoctoral researcher at the Department of Chemical
+    Engineering, Massachusetts Institute of Technology, and at DCSC, TU Delft. He received the M.Sc. degree
+    (with distinction) in 2017 and the Ph.D. degree in 2021, both from the Control Systems Group at Eindhoven
+    University of Technology. His research interests lie at the intersection of system identification,
+    learning, and optimal control with applications in healthcare. He is a member of the IFAC Technical
+    Committee on Modelling, Identification and Signal Processing.
+  tags:
+  - Control and Learning; Modeling and System Identification
+  youtube_url: null
+  youtube_id: null
+  status: past
+  notes: null
+  links:
+    scholar: https://scholar.google.com/citations?user=pURGJUoAAAAJ&hl=en
+    homepage: https://www.tudelft.nl/en/staff/shengling.shi/
+    verified: false
+  slides_url: ''
+  avatar_url: ''
+- id: 2026-02-18-wendelin-böhmer
+  date: '2026-02-18'
+  time: 12.30-13.30
+  mode: in-person
+  location: ME-Hall J, 34.D-1-300
+  speaker: Wendelin Böhmer
+  affiliation: TU Delft -- Department of Software Technology
+  role: Postdoc
+  title: 'Two tales of generalization: towards reliable AI in out-of-distribution situations'
+  abstract: "Modern reinforcement learning (RL) methods rely on neural networks (NN) to generalize their\
+    \ values and/or policies during deployment. This reliance has shown again and again to be a crucial\
+    \ Achilles’ heel, preventing real-life application of learned controllers. I will introduce two perspectives\
+    \ on reliable out-of-distribution (OOD) generalization in RL, based on recent publications from our\
+    \ lab. \nOn the one hand, one can aim to estimate epistemic uncertainty, like disagreement of an ensemble,\
+    \ to select only reliable actions. I will show that this is equivalent to acting on a pessimistic\
+    \ bound on a Gaussian process with the neural tangent kernel (Zanger et al., 2024, 2025a,b). This\
+    \ has an important implication for OOD generalization: the kernel is exclusively determined by the\
+    \ network architecture (Engwegen et al., 2024, 2025), the learned function does not affect ensemble\
+    \ disagreement.\nOn the other hand, one can characterize OOD generalization by the equivariances in\
+    \ the target function, which we formulate this as symmetry groups over the input space. We exploit\
+    \ recent results from behavior cloning to derive an upper bound on the generalization error of an\
+    \ infinite ensemble of policies (Weltevrede et al., 2025b,a). This allows us to identify and empirically\
+    \ evaluate which factors affect out-of-distribution generalization."
+  bio: Wendelin is an assistant professor at TU Delft, who focuses on deep reinforcement learning, especially
+    the question how an learning agent can adapt to environments that differ from training.
+  tags:
+  - Control and Learning
+  youtube_url: https://youtu.be/UycYT-S9OzI?si=NVzxIk0I1_PutRJJ
+  youtube_id: UycYT-S9OzI
+  status: past
+  notes: null
+  links:
+    scholar: https://scholar.google.com/citations?user=wI5MV8IAAAAJ
+    homepage: https://wendelinboehmer.de/index.html
+    verified: false
+  slides_url: ''
+  avatar_url: ''
+- id: 2026-03-04-niccolo-ciolli
+  date: '2026-03-04'
+  time: 12.30-13.30
+  mode: in-person
+  location: ME-Lecture Hall F
+  speaker: Niccolo Ciolli
+  affiliation: Denmark Technical University / DTU Compute / Cognitive systems
+  role: PhD
+  title: 'Tensor Networks for Machine Learning: Density estimation and Polynomial regression.'
+  abstract: Tensor Networks are compact representations of elements belonging to multidimensional spaces
+    (tensors) as a network of elements belonging to smaller subspaces (smaller tensors). This representation
+    is effectively a compression of the original space. Their applications are well known and widely adopted
+    in the field of quantum matter and in recent years tensor networks have been studied in the field
+    of Machine Learning, providing a compressed representation of the parameters of the model. In this
+    talk we will speak of tensor networks as a tool for density estimation, leveraging probabilistic circuits,
+    then their application as a polynomial regression model and ultimately we will show Bayesian inference
+    with tensor networks represented parameters.
+  bio: I am Niccolo', I come from Italy, Pistoia a small town close to Florence. I did my bachelor in
+    Physics and Astrophysics at the University of Florence, my master in Physics of Complex Systems at
+    Polytechnic of Turin, my master thesis at the University of Siegen, Germany on quantum information,
+    I am currently doing a PhD in Copenhagen at DTU and at TUD until the end of March.
+  tags:
+  - Modeling and System Identification
+  - Optimization
+  youtube_url: https://youtu.be/PZSqe-x3Qw8?si=pfwbt_cVrgWC_1q_
+  youtube_id: PZSqe-x3Qw8
+  status: past
+  notes: 'Supervisors (if applicable): Morten Mørup, Michael J. Kastoryano'
+  links:
+    scholar: TBD
+    homepage: https://www.dtu.dk/english/person/niccolo-ciolli?id=212868
+    verified: false
+    note: No scholar profile found (early-career PhD student).
+  slides_url: ''
+  avatar_url: ''
+- id: 2026-03-18-anil-alan
+  date: '2026-03-18'
+  time: 12.30-13.30
+  mode: in-person
+  location: ME-Lecture Hall F
+  speaker: Anil Alan
+  affiliation: TUD (DCSC)
+  role: Postdoc
+  title: 'Safety-Critical Control with Control Barrier Functions: Backup Construction and Robustness'
+  abstract: 'Ensuring safety is a fundamental requirement in modern control systems operating in safety-critical
+    environments such as autonomous vehicles and robotics. Control barrier functions (CBFs) provide a
+    systematic framework for enforcing safety constraints by guaranteeing forward invariance of a safe
+    set while minimally modifying a desired performance-oriented controller through a safety filter.
+
+
+    This talk presents developments in CBF-based safety-critical control focusing on two key challenges:
+    constructing suitable barrier functions and ensuring robustness to model uncertainty and disturbances.
+    After introducing the safety filter framework, I focus on the backup CBF approach for constructing
+    a verified CBF. In this method, a backup controller propagates trajectories into a safe terminal set,
+    implicitly defining a controlled invariant set and yielding a CBF under certain conditions.
+
+
+    I then discuss robustness through the concept of input-to-state safety, which extends ideas from input-to-state
+    stability to quantify how disturbances affect safety guarantees and enables the design of robust safety
+    filters. The methods are illustrated through the design of a longitudinal controller for an autonomous
+    vehicle.'
+  bio: Anil Alan is a Postdoctoral Researcher at the DCSC, TU Delft. He completed his PhD in Mechanical
+    Engineering at the University of Michigan, USA, where he was awarded the Rackham Predoctoral Fellowship;
+    and holds an MSc from Bilkent University, Turkey. At TU Delft, he works on an ERC Advanced Grant project
+    with a focus on constraint-satisfaction methods for optimization-based control. He is the recipient
+    of the Professor Pierre T. Kabamba Award and ASME’s Best Student Paper Award at the American Control
+    Conference.
+  tags:
+  - control and learning
+  - and optimization
+  youtube_url: https://youtu.be/qALKwRwbLhM?si=MlF1Bd5YtbT9OF4m
+  youtube_id: qALKwRwbLhM
+  status: past
+  notes: null
+  links:
+    scholar: https://scholar.google.com/citations?user=J8pUBXwAAAAJ
+    homepage: https://www.tudelft.nl/en/staff/a.alan/
+    verified: false
+  slides_url: ''
+  avatar_url: ''
+- id: 2026-04-22-diego-van-overberghe
+  date: '2026-04-22'
+  time: 12.30-13.30
+  mode: in-person
+  location: ME-Lecture Hall B
+  speaker: Diego Van Overberghe
+  affiliation: ETH
+  role: MSc
+  title: Learning to Predict Traffic Signals
+  abstract: Microscopic traffic simulations are vital to allow informed changes when improving or modifying
+    traffic infrastructure. These insights are particularly important for urban areas, where traffic is
+    significantly impacted by traffic signals and their programming. Simulations should therefore aim
+    to simulate signals and their operation accurately; however, current research has focussed on either
+    learning schedules where signal timings are fixed or slowly evolving; or on regressive techniques
+    to estimate effects of future signal changes. We propose using a decision-tree based approach which
+    aims to learn the underlying logic of the signal controller. Our method is shown to correctly recover
+    traffic signal controller logic for a synthetic scenario we create. Using data from an intersection
+    in Zürich, we also show that our method captures key behaviours including public transport prioritisation,
+    despite not having any knowledge about the operation of the controller.
+  bio: I am currently a Research Assistant at the Automatic Control Institute (IfA) at ETH Zürich, developing
+    a platform to facilitate research using SUMO (Microscopic Traffic Simulator), drawing on experience
+    I gained during my Master project work.
+  tags:
+  - Modelling and System Identification
+  youtube_url: https://youtu.be/JAX3XxszhyY?si=K5HT7owIJGSNLhMX
+  youtube_id: JAX3XxszhyY
+  status: past
+  notes: 'Supervisor: Carlo Cenedese, Alberto Padoan, Alessio Rimoldi'
+  links:
+    scholar: TBD
+    homepage: https://github.com/Diegovano
+    verified: false
+  slides_url: ''
+  avatar_url: ''
+- id: 2026-04-29-nitin-myers
+  date: '2026-04-29'
+  time: 12.30-13.30
+  mode: in-person
+  location: ME-Hall H
+  speaker: Nitin Myers
+  affiliation: TUD (DCSC)
+  role: AP
+  title: Pushing the limits of automotive perception using context-awareness
+  abstract: "Automotive sensors such as radar and LiDAR serve as the “eyes” of self-driving vehicles.\
+    \ Before we move drivers to the back seat and fully rely on these sensors, it is important to understand\
+    \ how human vision adapts attention to the context. This talk explores how to embed such context-awareness\
+    \ into the eyes of self-driving cars. \n\nI will present an overview of our research activities on\
+    \ context-aware hardware reconfiguration, adaptive scene illumination, and receiver processing. Using\
+    \ a live demonstration of our context-aware LiDAR and radar-based simulations, I will show how our\
+    \ methods extend perception in critical directions and achieve a higher dynamic range than conventional\
+    \ systems."
+  bio: TBD
+  tags:
+  - Systems and Signal Analysis
+  youtube_url: null
+  youtube_id: null
+  status: past
+  notes: null
+  links:
+    scholar: https://scholar.google.com/citations?user=kzVG8YIAAAAJ
+    homepage: https://sites.google.com/site/nitinmyers/home
+    verified: false
+  slides_url: ''
+  avatar_url: ''
+- id: 2026-05-08-dominic-liao-mcpherson
+  date: '2026-05-08'
+  time: 15:00-16:00
+  mode: in-person
+  location: ME-Lecture Hall F
+  speaker: Dominic Liao-McPherson
+  affiliation: UBC
+  role: AP
+  title: A Systems-theoretic Viewpoint on Edge Computing for Predictive Control
+  abstract: Intelligent systems are becoming increasingly prevalent in our society, e.g., self-driving
+    cars are being developed on an industrial scale and smart grids are at the forefront of efforts to
+    combat climate change. Model predictive control (MPC), a powerful optimization-based constrained control
+    technique, is a key enabling technology for the next generation of intelligent systems. Often the
+    most significant challenge when deploying model predictive controllers is solving complex trajectory
+    optimization problems in real-time. It is often not possible to solve these problems to full optimality
+    in practice due to computational limits, instead we resort to computationally cheaper suboptimal predictive
+    control strategies. However, this potentially sacrifices some of MPC's stability and robustness guarantees.
+    In this talk, I present Time-distributed Optimization (TDO), a unifying framework for studying the
+    system theoretic consequences of computational limits in the context of Model Predictive Control (MPC).
+    By framing suboptimal MPC as a feedback interconnection between the physical plant and an optimization
+    algorithm, I derive sufficient conditions for stability and robustness of model predictive controllers
+    under computing power and/or communication limits. Further, I illustrate the applicability of these
+    methods in the real-world through diesel engine, and autonomous driving examples.
+  bio: Dominic Liao-McPherson received his BASc in Engineering Science from the University of Toronto
+    in 2015 and a PhD in Aerospace Engineering and Scientific Computing from the University of Michigan
+    (Ann Arbor) in 2020. He was then a postdoc at the ETH Zürich Automatic Control Lab before joining
+    the Mechanical Engineering department at UBC in 2023 as an Assistant Professor. His research interests
+    lie at the intersection of optimization, control, and computing with applications in robotics, energy,
+    and aerospace.
+  tags:
+  - optimization
+  - control and learning
+  youtube_url: https://youtu.be/ai3KHpyeP2o?si=5NPBfHRNCq4VIWeK
+  youtube_id: ai3KHpyeP2o
+  status: past
+  notes: null
+  links:
+    scholar: https://scholar.google.ca/citations?user=llSJCuUAAAAJ
+    homepage: https://aocl.mech.ubc.ca/people/
+    verified: false
+  slides_url: ''
+  avatar_url: ''
+- id: 2026-05-13-donatello-materassi
+  date: '2026-05-13'
+  time: 12.30-13.30
+  mode: in-person
+  location: ME-Hall G
+  speaker: Donatello Materassi
+  affiliation: Electrical & Computer Eng. at University of Minnesota
+  role: AP
+  title: Inferring Causal Structure in Networks of Dynamical Systems
+  abstract: 'Networks of dynamical systems provide a powerful language to model complex phenomena across
+    science and engineering. While significant progress has been made in analyzing the behavior of such
+    interconnected systems, the problem of reconstructing their underlying structure from data remains
+    fundamentally challenging, especially when direct intervention or manipulation is limited or not feasible.
+    In this seminar, we revisit network identification from a more "causal perspective". Rather than focusing
+    solely on recovering interaction topologies that explain observed correlations, we ask a sharper question:
+    which connections represent genuine causal influences, and under what assumptions can they be identified
+    from observational data alone? Addressing this question requires disentangling dynamics, feedback,
+    and latent effects, while providing a framework where correlation can be distinguished from causation
+    in interconnected systems. The talk explores how ideas from system identification, graphical models,
+    and causal inference can be combined to provide principled tools for inferring causal structure in
+    dynamical networks. Emphasis is placed on non-invasive settings, where experimental interventions
+    are infeasible, and on the role of modeling assumptions in determining what causal conclusions can
+    (and cannot) be drawn. Through selected examples and theoretical insights, the seminar aims to clarify
+    the opportunities and limitations of causal network reconstruction and to outline directions for developing
+    interpretable, causally meaningful models of complex dynamical systems.'
+  bio: Donatello Materassi is a researcher in control and dynamical systems, with expertise in nonlinear
+    system identification, graphical and causal models, and interpretable machine learning. He received
+    his Ph.D. from the University of Florence in 2007 and subsequently held postdoctoral research positions
+    at the University of Minnesota and MIT. He has served as a lecturer at Harvard University and as an
+    Assistant Professor at the University of Tennessee. He is the recipient of an NSF CAREER Award (2015)
+    and is currently an Associate Professor at the University of Minnesota. His research lies at the intersection
+    of system identification, causality, and explainable AI (XAI), with applications ranging from molecular
+    force spectroscopy and bioinformatics to broader data-driven modeling problems.
+  tags:
+  - Modeling and System Identification
+  youtube_url: https://youtu.be/sLCy5w1A96A?si=r3YDHYEen2XKNiwk
+  youtube_id: sLCy5w1A96A
+  status: past
+  notes: null
+  links:
+    scholar: https://scholar.google.com/citations?user=_bjIGdIAAAAJ
+    homepage: https://cse.umn.edu/ece/donatello-materassi
+    verified: false
+  slides_url: ''
+  avatar_url: ''
+- id: 2026-05-21-giuseppe-belgioioso
+  date: '2026-05-21'
+  time: 10:45 – 12:45
+  mode: in-person
+  location: ME-Lecture Hall D
+  speaker: Giuseppe Belgioioso
+  affiliation: KTH
+  role: AP
+  title: Toward Online Feedback Optimization of Complex Multi-Agent Systems
+  abstract: 'Online Feedback Optimization (OFO) refers to the design of feedback controllers that steer
+    a physical system toward the solution of an optimization problem while enforcing operational constraints.
+    The core idea is to repurpose iterative optimization algorithms as dynamic feedback controllers by
+    integrating real-time measurements from the physical plant. Unlike traditional optimization-based
+    control approaches, such as Model Predictive Control, these methods require limited model knowledge,
+    avoid pre-computed set-points, and can be implemented with relatively low computational effort while
+    fully leveraging real-time data.
+
+
+    In this talk, we present several recent advances that lift the theory of Online Feedback Optimization
+    from simplified academic settings to complex multi-agent systems. We address key challenges including
+    systematic controller design, closed-loop stability guarantees, robustness, sampled-data implementations,
+    distributed architectures, game-theoretic interactions, and other practical deployment aspects. We
+    also present numerical and experimental validations on swarm robotics and multi-area power systems
+    that illustrate the flexibility and broad applicability of the proposed framework.'
+  bio: Giuseppe Belgioioso is an Assistant Professor at the Department of Decision and Control Systems,
+    KTH Royal Institute of Technology, Sweden. He received the bachelor’s degree in information engineering
+    in 2012 and the master's degree in Control Systems Engineering in 2015, both at the University of
+    Padova, Italy. In 2020, he obtained the Ph.D. degree in Automatic Control at Eindhoven University
+    of Technology (TU/e), The Netherlands. From 2021 to 2024, he was first a Postdoctoral researcher and
+    then Senior Scientist at the Automatic Control Laboratory at ETH Zurich, Switzerland. His research
+    lies at the intersection of optimization, game theory, and automatic control with applications to
+    complex systems, especially electrical power grids.
+  tags:
+  - Control and Learning
+  - Optimization
+  youtube_url: https://youtu.be/2wLXwxfLJ2A?si=P89ECaJ8Ru7QAz6_
+  youtube_id: 2wLXwxfLJ2A
+  status: past
+  notes: 'University/Department: Department of Decision and Control Systems, KTH Royal Institute of Technology'
+  links:
+    scholar: https://scholar.google.com/citations?user=ck0wft8AAAAJ
+    homepage: https://belgioio.github.io/
+    verified: false
+  slides_url: ''
+  avatar_url: ''
+- id: 2026-05-27-koen-scheres
+  date: '2026-05-27'
+  time: 12.30-13.30
+  mode: in-person
+  location: ME-Hall G
+  speaker: Koen Scheres
+  affiliation: KU Leuven
+  role: AP
+  title: Neuromorphic Control and Decision Making
+  abstract: 'Even though computers have long since surpassed the computational capabilities of the brain,
+    relatively “simple tasks” for animals and humans, such as robust locomotion in uncertain environments,
+    still pose many challenges for roboticists and control theorists despite the available computing power
+    in modern machines. A key challenge is the separation of fast (real-time) tracking and slow decision-making:
+    tracking a reference at high bandwidth leaves little computation time between samples for decision-making,
+    which necessitates a hierarchical control structure. Neuromorphic controllers, that is, controllers
+    designed on the same physical principles as the central nervous system, aim to tackle this gap. However,
+    the mathematical frameworks used to analyze these problems are distinct in character: tracking is
+    handled via differential (difference) equations, whereas decision-making is often tackled via discrete
+    event systems. In this talk, we will explore what the discrete event description of a neuromorphic
+    circuit (controller) is and why it is useful to consider such circuits as discrete event systems for
+    controller verification and design.'
+  bio: Koen Scheres received the M.Sc. degree in mechanical engineering and the Ph.D. degree in control
+    theory from the Eindhoven University of Technology (TU/e), the Netherlands, in 2020 and 2024, respectively.
+    He is currently working as a postdoctoral researcher at KU Leuven, Belgium. His research interests
+    include data-driven control, hybrid dynamical systems, event-triggered control and neuromorphic control.
+  tags:
+  - Control and Learning
+  - Modeling and System Identification
+  - Systems and Signal Analysis
+  youtube_url: null
+  youtube_id: null
+  status: past
+  notes: null
+  links:
+    scholar: https://scholar.google.com/citations?user=xpA3HQYAAAAJ
+    homepage: https://research.tue.nl/en/persons/koen-ja-scheres/
+    verified: false
+    note: Currently postdoc at KU Leuven (ESAT-STADIUS); no dedicated KU Leuven page found, homepage is
+      his TU/e research-portal profile.
+  slides_url: ''
+  avatar_url: ''
+- id: 2026-06-02-giannis-delimpaltadakis
+  date: '2026-06-02'
+  time: 13:45-14:45
+  mode: in-person
+  location: ME-Lecture Hall F
+  speaker: Giannis Delimpaltadakis
+  affiliation: AI4I
+  role: TBD
+  title: 'An information Theory of Finite Abstractions: fundamental scalability limits and what to do
+    next'
+  abstract: 'Finite abstractions are discrete approximations of dynamical systems, such that the set of
+    abstraction trajectories contains all system trajectories. They have been very popular for verification
+    and control of complex systems. There is a consensus that abstractions suffer from the curse of dimensionality:
+    for the same ``accuracy" (how closely the abstraction represents the system), the abstraction size
+    scales poorly with system dimensions. And yet, after decades of research on abstractions, there have
+    been no formal results on their size-accuracy tradeoff. In this talk, based on a recent work of mine
+    and Gabriel Gleizer, I will present a statistical, quantitative theory of abstractions'' size-accuracy
+    tradeoff and uncover fundamental limits on their scalability, by striking a formal connection with
+    rate-distortion theory -- the information theory of lossy compression. Abstractions are viewed as
+    information-theoretic encoders of dynamical systems. Rate measures abstraction size, while distortion
+    describes accuracy, defined as the spatial average deviation between abstract trajectories and system
+    ones. We obtain a fundamental lower bound on the minimum achievable abstraction distortion, given
+    the system dynamics and the abstraction size; and vice-versa a lower bound on the minimum size, for
+    given distortion. The bound depends on the complexity of the dynamics, through a notion of trajectory
+    entropy. We demonstrate its tightness on some dynamical systems. Finally, we showcase how this new
+    theory enables constructing minimal abstractions, optimizing the size-accuracy tradeoff, through an
+    example on a chaotic system.'
+  bio: I am a Senior Research Scientist at the RIAS Lab, AI4I Institute, Turin, Italy. I obtained my diploma
+    in Electrical and Computer Engineering, from NTUA, Athens, Greece, in 2018; and my PhD from DCSC,
+    TU Delft, in 2022. I have previously held postdoctoral positions at TU Delft and TU Eindhoven. My
+    current research interests are on control theory and its intersections with formal methods, optimization
+    and information theory.
+  tags:
+  - Control and Learning
+  - Dynamical Systems
+  - Information Theory
+  youtube_url: null
+  youtube_id: null
+  status: past
+  notes: Robust and Intelligent Systems (RIAS) Lab, AI4I Institute, Turin, Italy
+  links:
+    scholar: https://scholar.google.com/citations?user=DHdgzYwAAAAJ&hl=el
+    homepage: https://research.tue.nl/en/persons/giannis-delimpaltadakis
+    verified: false
+    note: No AI4I staff page found; homepage is his TU/e research-portal profile.
+  slides_url: ''
+  avatar_url: ''
+- id: 2026-06-03-meng-jianwen
+  date: '2026-06-03'
+  time: 11:00-12:00
+  mode: in-person
+  location: ME-Hall G
+  speaker: Meng Jianwen
+  affiliation: ESTACA (École Supérieure des Techniques Aéronautiques et de Construction Automobile)
+  role: AP
+  title: 'Control Theory Applications in Energy Systems: A Focus on Lithium-Ion Batteries and Proton Exchange
+    Membrane Fuel Cells'
+  abstract: The energy crisis and environmental issues present the greatest challenges for the automobile
+    industry, highlighting the need to develop alternative fuel-driven vehicles. As a result, electric
+    vehicles have experienced rapid development in recent years. Lithium-ion batteries and proton exchange
+    membrane fuel cells are currently the state-of-the-art power sources for electrified powertrain systems.
+    From a control perspective, model-based design plays an important role in ensuring the reliable, efficient,
+    and safe operation of these energy systems. This presentation aims to discuss the applications of
+    control theory in lithium-ion batteries and proton exchange membrane fuel cells, with particular focus
+    on state estimation, model predictive control, input-output feedback linearization, and adaptive control
+    with fault-tolerant objectives. Current and future research directions will also be discussed from
+    a control-oriented perspective.
+  bio: 'Meng Jianwen is an Assistant Professor at ESTACA (École Supérieure des Techniques Aéronautiques
+    et de Construction Automobile), a French engineering school specializing in transportation engineering.
+    He received his PhD in Electrical Engineering from Paris-Saclay University in 2020 and has been working
+    at ESTACA since then. Since 2024, he has also served as the Head of the Master’s program “Drone and
+    Control.”
+
+    His research focuses on health-aware control of hybrid energy systems, particularly lithium-ion batteries
+    and proton exchange membrane fuel cells for electric vehicle applications. He has co-supervised four
+    PhD students working on related topics in energy systems and control engineering.'
+  tags: []
+  youtube_url: null
+  youtube_id: null
+  status: past
+  notes: null
+  links:
+    scholar: https://scholar.google.com/citations?user=HIfAbFcAAAAJ
+    homepage: https://www.estaca.fr/en/recherche-innovation/annuaire/profil/jianwen-meng/
+    verified: false
+  slides_url: ''
+  avatar_url: ''
+- id: 2026-06-08-nicolas-lanzetti
+  date: '2026-06-08'
+  time: 15:00-16:00
+  mode: in-person
+  location: ME-Lecture Hall E
+  speaker: Nicolas Lanzetti
+  affiliation: Caltech
+  role: Postdoc
+  title: 'Strategically robust decision-making: from game-theoretic equilibria to multi-agent learning'
+  abstract: 'In many strategic settings, agents must act against the uncertain behavior of others—behavior
+    that emerges from many intertwined sources, such as incomplete information, limited computation, and
+    bounded rationality, which are hard to model one by one. In this talk, I propose that each agent seeks
+    protection directly against deviations around the emergent behavior itself, making decisions in the
+    face of the worst-case behavior within an ambiguity set of tunable size, centered at the emergent
+    behavior implicitly defined. This gives rise to a novel equilibrium notion, referred to as the strategically
+    robust equilibrium. Strategically robust equilibria (i) interpolate between Nash and security strategies;
+    (ii) come at no additional computational cost compared to Nash equilibria; (iii) often lead to better
+    decisions and higher payoffs—yielding a surprising "coordination via robustification" effect. I then
+    show how strategic robustness can be used for multi-agent reinforcement learning: each agent is trained
+    against a fictitious adversary regularized around its counterpart. Both in standard games such as
+    congestion games and Cournot competition and in complex AI environments, including a multi-LLM debate,
+    strategic robustness yields agents that are more robust, more cooperative, and more generalizable.'
+  bio: Nicolas Lanzetti is a postdoctoral scholar in the Department of Computing and Mathematical Sciences
+    at the California Institute of Technology, hosted by Profs. Adam Wierman, Eric Mazumdar, and Steven
+    Low. He completed his PhD at the Automatic Control Laboratory at ETH Zurich, under the supervision
+    of Prof. Florian Dörfler (main advisor) and Prof. Alessio Figalli (second advisor). Previously, he
+    received his B.Sc. and M.Sc. in Mechanical Engineering, with a focus on Robotics, Systems, and Control
+    from ETH Zurich in 2016 and 2019, respectively. He was a visiting researcher at the Massachusetts
+    Institute of Technology, Stanford University, and EPFL. His research enables AI-driven decision-making
+    in critical engineering, business, and societal infrastructure by developing the theoretical and algorithmic
+    foundations for strategic dynamic decision-making under uncertainty.
+  tags:
+  - control and learning
+  - optimization
+  youtube_url: null
+  youtube_id: null
+  status: past
+  notes: Adam Wierman, Eric Mazumdar
+  links:
+    scholar: https://scholar.google.com/citations?user=gWJV1rQAAAAJ
+    homepage: https://www.cms.caltech.edu/people/nicolas-lanzetti
+    verified: false
+  slides_url: ''
+  avatar_url: ''
+- id: 2026-06-17-salim-msaad
+  date: '2026-06-17'
+  time: 12.30-13.30
+  mode: in-person
+  location: ME-Lecture Hall C
+  speaker: Salim Msaad
+  affiliation: TUD (DCSC)
+  role: PhD
+  title: TBD
+  abstract: TBD
+  bio: TBD
+  tags: []
+  youtube_url: null
+  youtube_id: null
+  status: past
+  notes: null
+  links:
+    scholar: TBD
+    homepage: ''
+    verified: false
+  slides_url: ''
+  avatar_url: ''
+- id: 2026-07-08-gleb-polevoy
+  date: '2026-07-08'
+  time: 12.30-13.30
+  mode: in-person
+  location: ME-Lecture Hall F
+  speaker: Gleb Polevoy
+  affiliation: University of Opole
+  role: PhD
+  title: Attaining Equilibria Using Control Sets
+  abstract: "Many interactions stabilise in a socially suboptimal equilibrium, or move through non-equilibrium\
+    \ states,\nfrom which arriving at the desired equilibrium through practical dynamics is either too\
+    \ lengthy or impossible.\nThus, we formulate a new theoretically and practically interesting direct\
+    \ control set problem for\nthe planner: Given a game, any profile s and any desired equilibrium d,\
+    \ find a minimum\nsubset A of the players, then d becomes a best response for everyone outside A.\n\
+    \nWe first show that if the desired equilibrium has certain direct control sets, then this equilibrium\
+    \ must be strong.\nWe prove that the direct control set optimisation problem is NP-hard and inapproximable\
+    \ within\nfactor~$n^{1 - \\epsilon}$, for any $\\epsilon > 0$. We then solve the problem for the particular\
+    \ case of the game\ngraph being a tree, and approximate the solution within the number of players\
+    \ influencing another player's utility,\nusing local ratio. We then study hardness and approximation\
+    \ systematically,\n considering potential and then harmonic games, which span the finite games. For\
+    \ potential games, finding\na direct control set, even with a constant-factor approximation, is still\
+    \ \\NP-hard, but we solve this problem\nfor singleton congestion games and closely treat specific\
+    \ potential games, such as coordination games on graphs\nand symmetric games. As for harmonic games,\
+    \ we solve the two-player games, and prove that for more players,\nthe problem is almost as hard as\
+    \ for general games. Finally, we consider natural variations on\nthe direct control set problem, paving\
+    \ the way to multiple future studies."
+  bio: 'I have worked in Israel, the Netherlands, Germany and Poland. My interests include
+
+    approximation algorithms, game theory, and algorithmic game theory.'
+  tags: []
+  youtube_url: null
+  youtube_id: null
+  status: past
+  notes: null
+  links:
+    scholar: https://scholar.google.com/citations?user=yfs2GHwAAAAJ
+    homepage: https://ii.wmfi.uni.opole.pl/en/employees/
+    verified: false
+    note: Homepage is institute staff directory, not an individual page.
+  slides_url: ''
+  avatar_url: ''
+- id: 2026-07-08-gleb-polevoy-2
+  date: '2026-07-08'
+  time: 12.30-13.30
+  mode: in-person
+  location: ME-Lecture Hall F
+  speaker: Gleb Polevoy
+  affiliation: University of Opole
+  role: PhD
+  title: Fair, Individually Rational and Cheap Adjustment
+  abstract: 'Consider the practical goal of making a desired action profile played, when the planner can
+
+    only change the payoffs, bound by stringent constraints. Applications include motivating people
+
+    to choose the closest school, the closest subway station, or to coordinate on a communication
+
+    protocol or an investment strategy. Employing subsidies and tolls, we adjust the game so that
+
+    choosing this predefined action profile becomes strictly dominant. Inspired mainly by the work
+
+    of Monderer and Tennenholtz, where the promised subsidies do not materialise in the not played
+
+    profiles, we provide a fair and individually rational game adjustment, such that the total outside
+
+    investments sum up to zero at any profile, thereby facilitating easy and frequent usage of our
+
+    adjustment without bearing costs, even if some players behave unexpectedly. The resultant action
+
+    profile itself needs no adjustment. Importantly, we also prove that our adjustment minimises
+
+    the general transfer among all such adjustments, counting the total subsidising and taxation.
+
+    Research clusters: the closest is optimization, but it''s actually AGT (algorithmic game theory)'
+  bio: 'I have worked in Israel, the Netherlands, Germany and Poland. My interests include
+
+    approximation algorithms, game theory, and algorithmic game theory.'
+  tags: []
+  youtube_url: null
+  youtube_id: null
+  status: past
+  notes: null
+  links:
+    scholar: https://scholar.google.com/citations?user=yfs2GHwAAAAJ
+    homepage: https://ii.wmfi.uni.opole.pl/en/employees/
+    verified: false
+    note: Homepage is institute staff directory, not an individual page.
+  slides_url: ''
+  avatar_url: ''
+- id: 2026-03-11-leilei-cui
+  date: '2026-03-11'
+  time: 15:00 -- 16:00
+  mode: online
+  location: Online
+  speaker: Leilei Cui
+  affiliation: University of New Mexico (USA)
+  role: Assistant Professor
+  title: 'Interplay Between Learning and Control: Robustness of Learning Algorithms and Data-Driven Controller
+    Design'
+  abstract: 'Learning and control are deeply intertwined disciplines. On one hand, control theory provides
+    a rigorous mathematical framework for understanding, analyzing, and certifying learning algorithms.
+    On the other hand, learning enables data-driven, model-free controller design for dynamical systems.
+
+    At the core of most learning methods lie gradient-based optimization algorithms, whose performance
+    in practice is inevitably affected by disturbances such as data noise and computational inaccuracies.
+    These perturbations raise a fundamental question: Can optimization algorithms maintain convergence
+    to near-optimal solutions in the presence of disturbances? To address this question, we leverage tools
+    from control theory—particularly input-to-state stability (ISS)—to rigorously analyze the robustness
+    of gradient-based optimization algorithms under disturbances. We show that, under mild assumptions,
+    these algorithms converge to a small neighborhood of the optimal solution, provided that the perturbations
+    remain bounded and sufficiently small.
+
+    In addition, we highlight the power of learning in controller design, especially for time-delay systems,
+    where computing optimal controllers is challenging even when accurate models are available. In such
+    settings, we develop a direct data-driven approach that learns optimal controllers directly from data.
+    Finally, we demonstrate the effectiveness of learning-based control through applications in robotics.'
+  bio: 'Leilei Cui is an Assistant Professor in the Department of Mechanical Engineering at the University
+    of New Mexico. He was a Postdoctoral Associate at the Massachusetts Institute of Technology (MIT)
+    from June 2024 to July 2025. He received his M.Sc. degree in Control Science and Engineering from
+    Shanghai Jiao Tong University, China, in 2019, and his Ph.D. degree in Electrical Engineering from
+    New York University in 2024.
+
+    Dr. Cui’s research lies at the intersection of control theory, optimization, and reinforcement learning,
+    with a particular focus on applications to robotic systems. He is the recipient of the Outstanding
+    Paper Award from the journal Control Theory and Technology, the Dante Youla Award for graduate research
+    excellence, and the Alexander Hessel Award for the best Ph.D. dissertation in Electrical Engineering
+    at NYU.'
+  tags:
+  - control and learning
+  - optimization
+  youtube_url: https://youtu.be/fGvbeDjKNkA?si=XtA9nvmpWdVMEguz
+  youtube_id: fGvbeDjKNkA
+  status: past
+  notes: null
+  links:
+    scholar: https://scholar.google.com/citations?user=RbczS_gAAAAJ
+    homepage: https://me.unm.edu/about/directory/faculty/leilei-cui.html
+    verified: false
+  slides_url: ''
+  avatar_url: ''
+- id: 2026-04-08-sungho-shin
+  date: '2026-04-08'
+  time: 15:00 -- 16:00
+  mode: online
+  location: Online
+  speaker: Sungho Shin
+  affiliation: Massachusetts Institute of Technology (USA)
+  role: Assistant Professor
+  title: Solving large-scale, sparse, constrained nonlinear optimization problems on GPUs
+  abstract: 'In this talk, we delve into recent advancements in solving large-scale sparse nonlinear optimization
+    problems on GPUs. This new approach combines three key elements: (1) the SIMD abstraction of nonlinear
+    optimization problems, (2) the condensed-space interior point method approach, and (3) NVIDIA''s recently
+    released sparse linear solver, CUDSS. By combining these components, we provide a comprehensive nonlinear
+    optimization solution capabilities. We present numerical experiment results showcasing over 10x speed-ups
+    when applying this method to large-scale AC optimal power flow problems. We will conclude the discussion
+    by examining the potential implications of these findings for the future of power system optimization
+    and decision-making.'
+  bio: 'Sungho Shin is a Texaco-Mangelsdorf Career Development Chair Assistant Professor of the Chemical
+    Engineering Department at Massachusetts Institute of Technology. Prior to joining MIT, he was a postdoctoral
+    researcher at the Mathematics and Computer Science Division at Argonne National Laboratory (supervisor:
+    Mihai Anitescu). He received his Ph.D. from the University of Wisconsin-Madison (advisor: Victor M.
+    Zavala). He was a summer intern at Los Alamos National Laboratory (2020; worked with Carleton Coffrin
+    and Kaarthik Sundar) and Argonne National Laboratory (2018; worked with Mihai Anitescu). He was an
+    undergraduate researcher at Jong Min Lee''s group at Seoul National University. His research interests
+    include model predictive control, optimization algorithms, and their applications to large-scale energy
+    infrastructures (such as natural gas and power networks). He is the main developer of the nonlinear
+    optimization solver MadNLP.jl and the automatic differentiation/algebraic modeling tool ExaModels.jl.
+    He was the winner of the W. David Smith, Jr. Graduate Publication Award, AIChE Annual Meeting CAST
+    Directors’ Student Presentation Award, IFAC ADCHEM Young Author Award, IFAC NMPC Young Author Award.
+    He was a recipient of the Korea Presidential Science Fellowship, Kwanjeong Fellowship, and Grainger
+    Wisconsin Distinguished Graduate Fellowship.'
+  tags:
+  - Optimization
+  youtube_url: https://youtu.be/tKRBvDjmT8M?si=Qn8d4Dot6VMHD_L6
+  youtube_id: tKRBvDjmT8M
+  status: past
+  notes: null
+  links:
+    scholar: https://scholar.google.com/citations?user=_KaTyEwAAAAJ
+    homepage: https://cheme.mit.edu/profile/sungho-shin/
+    verified: false
+  slides_url: ''
+  avatar_url: ''
+- id: 2026-05-06-dinesh-krishnamoorthy
+  date: '2026-05-06'
+  time: 15:00 -- 16:00
+  mode: online
+  location: Online
+  speaker: Dinesh Krishnamoorthy
+  affiliation: Norwegian University of Science and Technology (NOR)
+  role: Associate Professor
+  title: 'Complexity reduction in Model Predictive Control: Learning from experts with guarantees.'
+  abstract: "Model Predictive Control (MPC) is among the most powerful tools in modern control engineering,\
+    \ yet its computational demands can make it impractical for resource-constrained, embedded platforms\
+    \ where decisions must happen fast. So how do we keep the performance without paying the price? \n\
+    In this talk, we explore a learning-based framework for distilling the intelligence of a high-complexity\
+    \ \"expert\" MPC into a lightweight controller that hoefully retains some level of performance and\
+    \ theoretical guarantees. We begin by asking: what exactly are we learning when we learn from an expert\
+    \ policy, and what can we actually guarantee about the result?We argue that learning the value function\
+    \ rather than the policy directly is a more principled route, enabling a myopic one-step lookahead\
+    \ MPC that sidesteps the computational burden of long prediction horizons. Along the way, we discuss\
+    \ what closed-loop properties such an approach can provably preserve. Perhaps most provocatively,\
+    \ we examine these methods through the lens of pedagogy: just as there are different levels of cognitive\
+    \ learning in human education (from rote memorization to creating something new), different learning-based\
+    \ control methods implicitly target different levels of \"intelligence.\" The talk will briefly discuss\
+    \ what cognitive level of intelligence are we actually teaching our controllers?\nResearch theme:\
+    \ Control and Learning"
+  bio: Dinesh Krishnamoorthy is an Associate professor at the Department of Engineering Cybernetics at
+    NTNU. From 2022 - 2025, he was an Assistant Professor at the Department of Mechanical Engineering
+    at TU Eindhoven, and between 2021-2022, he was a post-doctoral researcher at Harvard John A. Paulson
+    School of Engineering and Applied Sciences. Dinesh received his PhD in Process Systems Engineering
+    from the Norwegian University of Science and Technology (NTNU), MSc in Control Systems from Imperial
+    College London, and B.Eng in Mechatronics from the University of Nottingham. Dinesh was a recipient
+    of the Dimitirs. N. Chorafas Foundation Award, EuroTech Future Award, as well as a IFAC Young author
+    award. His research interests include distributed optimization, learning-based optimal control, real-time
+    optimization, and Bayesian optimization.
+  tags:
+  - Control and Learning
+  youtube_url: https://youtu.be/8e3IfivcMQw?si=1VcTlY6ar7JwPhlV
+  youtube_id: 8e3IfivcMQw
+  status: past
+  notes: null
+  links:
+    scholar: https://scholar.google.com/citations?user=AHUrS0EAAAAJ
+    homepage: https://dinesh-krishnamoorthy.github.io/
+    verified: false
+  slides_url: ''
+  avatar_url: ''
+- id: 2026-06-03-lars-lindemann
+  date: '2026-06-03'
+  time: 15:00 -- 16:00
+  mode: online
+  location: Online
+  speaker: Lars Lindemann
+  affiliation: ETH Zurich (CH)
+  role: Assistant Professor
+  title: 'When Control Changes the Data: Safety under Interaction-Driven Distribution Shifts'
+  abstract: Accelerated by rapid advances in machine learning and AI, there has been tremendous success
+    in the design of learning-enabled autonomous systems in areas such as autonomous driving and robotics.
+    These exciting developments are accompanied by new fundamental challenges that arise regarding the
+    safety and reliability of these increasingly complex systems due to imperfect learning, system unknowns,
+    and uncertain environments. Statistical tools for uncertainty quantification have gained popularity
+    due to their ability to deal with these challenges. However, their guarantees rely on i.i.d. data,
+    an assumption that is violated when control actions change the underlying data distribution.                            In
+    this talk, I will provide new insight to design safe controllers under distribution shifts using robust
+    conformal prediction (CP). I will begin by advocating for the use of CP due to its simplicity, generality,
+    and efficiency as opposed to existing optimization-based verification techniques. I will then provide
+    an introduction to CP and summarize existing work that uses CP to design probabilistically safe controllers
+    in dynamic environments. Subsequently, we will look into interactive settings where the system’s behavior
+    may change the environment's behavior, and vice versa. This circular dependency creates an interaction-driven
+    distribution shift that invalidates existing CP guarantees. To deal with this problem, we propose
+    an iterative framework that episodically updates the controller while robustly maintaining safety
+    guarantees by quantifying the potential impact of a controller update on the environment's behavior.
+    We realize this via adversarially robust CP where we perform a regular CP step in each episode using
+    observed data under the current controller, but then transfer safety guarantees across controller
+    updates by analytically adjusting the CP result to account for distribution shifts. Lastly, I will
+    show how these ideas extend to handling policy-induced distribution shifts that arise when using barrier/Lyapunov
+    functions to control uncertain systems.
+  bio: 'Lars Lindemann is currently an Assistant Professor for Algorithmic Systems Theory in the Automatic
+    Control Laboratory at ETH Zürich. From 2023 to 2025 he was an Assistant Professor in the Thomas Lord
+    Department of Computer Science at the University of Southern California. From 2020 to 2022 he was
+    a Postdoctoral Fellow in the Department of Electrical and Systems Engineering at the University of
+    Pennsylvania. He received his Ph.D. degree in Electrical Engineering from KTH Royal Institute of Technology
+    in 2020. His research interests include systems and control theory, formal methods, machine learning,
+    and autonomous systems. Professor Lindemann received the Outstanding Student Paper Award at the 58th
+    IEEE Conference on Decision and Control and the Student Best Paper Award (as an advisor) at the 60th
+    IEEE Conference on Decision and Control. He was finalist for the Best Paper Award (as an advisor)
+    at the 2024 International Conference on Cyber-Physical Systems, the Best Paper Award at the 2022 Conference
+    on Hybrid Systems: Computation and Control, and the Best Student Paper Award at the 2018 American
+    Control Conference.'
+  tags:
+  - Control and Learning
+  youtube_url: https://youtu.be/UsorlCLsMHw?si=m7PPo6GBLMXZAWz-
+  youtube_id: UsorlCLsMHw
+  status: past
+  notes: null
+  links:
+    scholar: https://scholar.google.com/citations?user=AkVKyzkAAAAJ
+    homepage: https://control.ee.ethz.ch/people/profile.lars-lindemann.html
+    verified: false
+  slides_url: ''
+  avatar_url: ''
+- id: 2026-09-09-michael-muehlebach
+  date: '2026-09-09'
+  time: 15:00 -- 16:00
+  mode: online
+  location: Online
+  speaker: Michael Muehlebach
+  affiliation: Max Planck Institute for Intelligent Systems (Germany)
+  role: Research Group Leader
+  title: TBD
+  abstract: TBD
+  bio: TBD
+  tags: []
+  youtube_url: null
+  youtube_id: null
+  status: upcoming
+  notes: null
+  links:
+    scholar: TBD
+    homepage: ''
+    verified: false
+  slides_url: ''
+  avatar_url: ''
+- id: 2026-10-07-necmiye-ozay
+  date: '2026-10-07'
+  time: 15:00 -- 16:00
+  mode: online
+  location: Online
+  speaker: Necmiye Ozay
+  affiliation: University of Michigan (USA)
+  role: Professor
+  title: TBD
+  abstract: TBD
+  bio: TBD
+  tags: []
+  youtube_url: null
+  youtube_id: null
+  status: upcoming
+  notes: null
+  links:
+    scholar: TBD
+    homepage: ''
+    verified: false
+  slides_url: ''
+  avatar_url: ''
+- id: 2026-10-21-marco-campi
+  date: '2026-10-21'
+  time: 15:00 -- 16:00
+  mode: online
+  location: Online
+  speaker: Marco Campi
+  affiliation: University of Brescia (Italy)
+  role: Professor
+  title: TBD
+  abstract: TBD
+  bio: TBD
+  tags: []
+  youtube_url: null
+  youtube_id: null
+  status: upcoming
+  notes: null
+  links:
+    scholar: TBD
+    homepage: ''
+    verified: false
+  slides_url: ''
+  avatar_url: ''
+- id: 2026-11-18-anastasia-bizyaeva
+  date: '2026-11-18'
+  time: 15:00 -- 16:00
+  mode: online
+  location: Online
+  speaker: Anastasia Bizyaeva
+  affiliation: Cornell University (USA)
+  role: Assistant Professor
+  title: TBD
+  abstract: TBD
+  bio: TBD
+  tags: []
+  youtube_url: null
+  youtube_id: null
+  status: upcoming
+  notes: null
+  links:
+    scholar: TBD
+    homepage: ''
+    verified: false
+  slides_url: ''
+  avatar_url: ''

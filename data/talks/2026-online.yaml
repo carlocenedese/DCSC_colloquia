@@ -1,0 +1,282 @@
+talks:
+- id: 2026-03-11-leilei-cui
+  date: '2026-03-11'
+  time: 15:00 -- 16:00
+  mode: online
+  location: Online
+  speaker: Leilei Cui
+  affiliation: University of New Mexico (USA)
+  role: Assistant Professor
+  title: 'Interplay Between Learning and Control: Robustness of Learning Algorithms and Data-Driven Controller
+    Design'
+  abstract: 'Learning and control are deeply intertwined disciplines. On one hand, control theory provides
+    a rigorous mathematical framework for understanding, analyzing, and certifying learning algorithms.
+    On the other hand, learning enables data-driven, model-free controller design for dynamical systems.
+
+    At the core of most learning methods lie gradient-based optimization algorithms, whose performance
+    in practice is inevitably affected by disturbances such as data noise and computational inaccuracies.
+    These perturbations raise a fundamental question: Can optimization algorithms maintain convergence
+    to near-optimal solutions in the presence of disturbances? To address this question, we leverage tools
+    from control theory—particularly input-to-state stability (ISS)—to rigorously analyze the robustness
+    of gradient-based optimization algorithms under disturbances. We show that, under mild assumptions,
+    these algorithms converge to a small neighborhood of the optimal solution, provided that the perturbations
+    remain bounded and sufficiently small.
+
+    In addition, we highlight the power of learning in controller design, especially for time-delay systems,
+    where computing optimal controllers is challenging even when accurate models are available. In such
+    settings, we develop a direct data-driven approach that learns optimal controllers directly from data.
+    Finally, we demonstrate the effectiveness of learning-based control through applications in robotics.'
+  bio: 'Leilei Cui is an Assistant Professor in the Department of Mechanical Engineering at the University
+    of New Mexico. He was a Postdoctoral Associate at the Massachusetts Institute of Technology (MIT)
+    from June 2024 to July 2025. He received his M.Sc. degree in Control Science and Engineering from
+    Shanghai Jiao Tong University, China, in 2019, and his Ph.D. degree in Electrical Engineering from
+    New York University in 2024.
+
+    Dr. Cui’s research lies at the intersection of control theory, optimization, and reinforcement learning,
+    with a particular focus on applications to robotic systems. He is the recipient of the Outstanding
+    Paper Award from the journal Control Theory and Technology, the Dante Youla Award for graduate research
+    excellence, and the Alexander Hessel Award for the best Ph.D. dissertation in Electrical Engineering
+    at NYU.'
+  tags:
+  - control and learning
+  - optimization
+  youtube_url: https://youtu.be/fGvbeDjKNkA?si=XtA9nvmpWdVMEguz
+  youtube_id: fGvbeDjKNkA
+  status: past
+  notes: null
+  links:
+    scholar: https://scholar.google.com/citations?user=RbczS_gAAAAJ
+    homepage: https://me.unm.edu/about/directory/faculty/leilei-cui.html
+    verified: false
+  slides_url: ''
+  avatar_url: ''
+- id: 2026-04-08-sungho-shin
+  date: '2026-04-08'
+  time: 15:00 -- 16:00
+  mode: online
+  location: Online
+  speaker: Sungho Shin
+  affiliation: Massachusetts Institute of Technology (USA)
+  role: Assistant Professor
+  title: Solving large-scale, sparse, constrained nonlinear optimization problems on GPUs
+  abstract: 'In this talk, we delve into recent advancements in solving large-scale sparse nonlinear optimization
+    problems on GPUs. This new approach combines three key elements: (1) the SIMD abstraction of nonlinear
+    optimization problems, (2) the condensed-space interior point method approach, and (3) NVIDIA''s recently
+    released sparse linear solver, CUDSS. By combining these components, we provide a comprehensive nonlinear
+    optimization solution capabilities. We present numerical experiment results showcasing over 10x speed-ups
+    when applying this method to large-scale AC optimal power flow problems. We will conclude the discussion
+    by examining the potential implications of these findings for the future of power system optimization
+    and decision-making.'
+  bio: 'Sungho Shin is a Texaco-Mangelsdorf Career Development Chair Assistant Professor of the Chemical
+    Engineering Department at Massachusetts Institute of Technology. Prior to joining MIT, he was a postdoctoral
+    researcher at the Mathematics and Computer Science Division at Argonne National Laboratory (supervisor:
+    Mihai Anitescu). He received his Ph.D. from the University of Wisconsin-Madison (advisor: Victor M.
+    Zavala). He was a summer intern at Los Alamos National Laboratory (2020; worked with Carleton Coffrin
+    and Kaarthik Sundar) and Argonne National Laboratory (2018; worked with Mihai Anitescu). He was an
+    undergraduate researcher at Jong Min Lee''s group at Seoul National University. His research interests
+    include model predictive control, optimization algorithms, and their applications to large-scale energy
+    infrastructures (such as natural gas and power networks). He is the main developer of the nonlinear
+    optimization solver MadNLP.jl and the automatic differentiation/algebraic modeling tool ExaModels.jl.
+    He was the winner of the W. David Smith, Jr. Graduate Publication Award, AIChE Annual Meeting CAST
+    Directors’ Student Presentation Award, IFAC ADCHEM Young Author Award, IFAC NMPC Young Author Award.
+    He was a recipient of the Korea Presidential Science Fellowship, Kwanjeong Fellowship, and Grainger
+    Wisconsin Distinguished Graduate Fellowship.'
+  tags:
+  - Optimization
+  youtube_url: https://youtu.be/tKRBvDjmT8M?si=Qn8d4Dot6VMHD_L6
+  youtube_id: tKRBvDjmT8M
+  status: past
+  notes: null
+  links:
+    scholar: https://scholar.google.com/citations?user=_KaTyEwAAAAJ
+    homepage: https://cheme.mit.edu/profile/sungho-shin/
+    verified: false
+  slides_url: ''
+  avatar_url: ''
+- id: 2026-05-06-dinesh-krishnamoorthy
+  date: '2026-05-06'
+  time: 15:00 -- 16:00
+  mode: online
+  location: Online
+  speaker: Dinesh Krishnamoorthy
+  affiliation: Norwegian University of Science and Technology (NOR)
+  role: Associate Professor
+  title: 'Complexity reduction in Model Predictive Control: Learning from experts with guarantees.'
+  abstract: "Model Predictive Control (MPC) is among the most powerful tools in modern control engineering,\
+    \ yet its computational demands can make it impractical for resource-constrained, embedded platforms\
+    \ where decisions must happen fast. So how do we keep the performance without paying the price? \n\
+    In this talk, we explore a learning-based framework for distilling the intelligence of a high-complexity\
+    \ \"expert\" MPC into a lightweight controller that hoefully retains some level of performance and\
+    \ theoretical guarantees. We begin by asking: what exactly are we learning when we learn from an expert\
+    \ policy, and what can we actually guarantee about the result?We argue that learning the value function\
+    \ rather than the policy directly is a more principled route, enabling a myopic one-step lookahead\
+    \ MPC that sidesteps the computational burden of long prediction horizons. Along the way, we discuss\
+    \ what closed-loop properties such an approach can provably preserve. Perhaps most provocatively,\
+    \ we examine these methods through the lens of pedagogy: just as there are different levels of cognitive\
+    \ learning in human education (from rote memorization to creating something new), different learning-based\
+    \ control methods implicitly target different levels of \"intelligence.\" The talk will briefly discuss\
+    \ what cognitive level of intelligence are we actually teaching our controllers?\nResearch theme:\
+    \ Control and Learning"
+  bio: Dinesh Krishnamoorthy is an Associate professor at the Department of Engineering Cybernetics at
+    NTNU. From 2022 - 2025, he was an Assistant Professor at the Department of Mechanical Engineering
+    at TU Eindhoven, and between 2021-2022, he was a post-doctoral researcher at Harvard John A. Paulson
+    School of Engineering and Applied Sciences. Dinesh received his PhD in Process Systems Engineering
+    from the Norwegian University of Science and Technology (NTNU), MSc in Control Systems from Imperial
+    College London, and B.Eng in Mechatronics from the University of Nottingham. Dinesh was a recipient
+    of the Dimitirs. N. Chorafas Foundation Award, EuroTech Future Award, as well as a IFAC Young author
+    award. His research interests include distributed optimization, learning-based optimal control, real-time
+    optimization, and Bayesian optimization.
+  tags:
+  - Control and Learning
+  youtube_url: https://youtu.be/8e3IfivcMQw?si=1VcTlY6ar7JwPhlV
+  youtube_id: 8e3IfivcMQw
+  status: past
+  notes: null
+  links:
+    scholar: https://scholar.google.com/citations?user=AHUrS0EAAAAJ
+    homepage: https://dinesh-krishnamoorthy.github.io/
+    verified: false
+  slides_url: ''
+  avatar_url: ''
+- id: 2026-06-03-lars-lindemann
+  date: '2026-06-03'
+  time: 15:00 -- 16:00
+  mode: online
+  location: Online
+  speaker: Lars Lindemann
+  affiliation: ETH Zurich (CH)
+  role: Assistant Professor
+  title: 'When Control Changes the Data: Safety under Interaction-Driven Distribution Shifts'
+  abstract: Accelerated by rapid advances in machine learning and AI, there has been tremendous success
+    in the design of learning-enabled autonomous systems in areas such as autonomous driving and robotics.
+    These exciting developments are accompanied by new fundamental challenges that arise regarding the
+    safety and reliability of these increasingly complex systems due to imperfect learning, system unknowns,
+    and uncertain environments. Statistical tools for uncertainty quantification have gained popularity
+    due to their ability to deal with these challenges. However, their guarantees rely on i.i.d. data,
+    an assumption that is violated when control actions change the underlying data distribution.                            In
+    this talk, I will provide new insight to design safe controllers under distribution shifts using robust
+    conformal prediction (CP). I will begin by advocating for the use of CP due to its simplicity, generality,
+    and efficiency as opposed to existing optimization-based verification techniques. I will then provide
+    an introduction to CP and summarize existing work that uses CP to design probabilistically safe controllers
+    in dynamic environments. Subsequently, we will look into interactive settings where the system’s behavior
+    may change the environment's behavior, and vice versa. This circular dependency creates an interaction-driven
+    distribution shift that invalidates existing CP guarantees. To deal with this problem, we propose
+    an iterative framework that episodically updates the controller while robustly maintaining safety
+    guarantees by quantifying the potential impact of a controller update on the environment's behavior.
+    We realize this via adversarially robust CP where we perform a regular CP step in each episode using
+    observed data under the current controller, but then transfer safety guarantees across controller
+    updates by analytically adjusting the CP result to account for distribution shifts. Lastly, I will
+    show how these ideas extend to handling policy-induced distribution shifts that arise when using barrier/Lyapunov
+    functions to control uncertain systems.
+  bio: 'Lars Lindemann is currently an Assistant Professor for Algorithmic Systems Theory in the Automatic
+    Control Laboratory at ETH Zürich. From 2023 to 2025 he was an Assistant Professor in the Thomas Lord
+    Department of Computer Science at the University of Southern California. From 2020 to 2022 he was
+    a Postdoctoral Fellow in the Department of Electrical and Systems Engineering at the University of
+    Pennsylvania. He received his Ph.D. degree in Electrical Engineering from KTH Royal Institute of Technology
+    in 2020. His research interests include systems and control theory, formal methods, machine learning,
+    and autonomous systems. Professor Lindemann received the Outstanding Student Paper Award at the 58th
+    IEEE Conference on Decision and Control and the Student Best Paper Award (as an advisor) at the 60th
+    IEEE Conference on Decision and Control. He was finalist for the Best Paper Award (as an advisor)
+    at the 2024 International Conference on Cyber-Physical Systems, the Best Paper Award at the 2022 Conference
+    on Hybrid Systems: Computation and Control, and the Best Student Paper Award at the 2018 American
+    Control Conference.'
+  tags:
+  - Control and Learning
+  youtube_url: https://youtu.be/UsorlCLsMHw?si=m7PPo6GBLMXZAWz-
+  youtube_id: UsorlCLsMHw
+  status: past
+  notes: null
+  links:
+    scholar: https://scholar.google.com/citations?user=AkVKyzkAAAAJ
+    homepage: https://control.ee.ethz.ch/people/profile.lars-lindemann.html
+    verified: false
+  slides_url: ''
+  avatar_url: ''
+- id: 2026-09-09-michael-muehlebach
+  date: '2026-09-09'
+  time: 15:00 -- 16:00
+  mode: online
+  location: Online
+  speaker: Michael Muehlebach
+  affiliation: Max Planck Institute for Intelligent Systems (Germany)
+  role: Research Group Leader
+  title: TBD
+  abstract: TBD
+  bio: TBD
+  tags: []
+  youtube_url: null
+  youtube_id: null
+  status: upcoming
+  notes: null
+  links:
+    scholar: TBD
+    homepage: ''
+    verified: false
+  slides_url: ''
+  avatar_url: ''
+- id: 2026-10-07-necmiye-ozay
+  date: '2026-10-07'
+  time: 15:00 -- 16:00
+  mode: online
+  location: Online
+  speaker: Necmiye Ozay
+  affiliation: University of Michigan (USA)
+  role: Professor
+  title: TBD
+  abstract: TBD
+  bio: TBD
+  tags: []
+  youtube_url: null
+  youtube_id: null
+  status: upcoming
+  notes: null
+  links:
+    scholar: TBD
+    homepage: ''
+    verified: false
+  slides_url: ''
+  avatar_url: ''
+- id: 2026-10-21-marco-campi
+  date: '2026-10-21'
+  time: 15:00 -- 16:00
+  mode: online
+  location: Online
+  speaker: Marco Campi
+  affiliation: University of Brescia (Italy)
+  role: Professor
+  title: TBD
+  abstract: TBD
+  bio: TBD
+  tags: []
+  youtube_url: null
+  youtube_id: null
+  status: upcoming
+  notes: null
+  links:
+    scholar: TBD
+    homepage: ''
+    verified: false
+  slides_url: ''
+  avatar_url: ''
+- id: 2026-11-18-anastasia-bizyaeva
+  date: '2026-11-18'
+  time: 15:00 -- 16:00
+  mode: online
+  location: Online
+  speaker: Anastasia Bizyaeva
+  affiliation: Cornell University (USA)
+  role: Assistant Professor
+  title: TBD
+  abstract: TBD
+  bio: TBD
+  tags: []
+  youtube_url: null
+  youtube_id: null
+  status: upcoming
+  notes: null
+  links:
+    scholar: TBD
+    homepage: ''
+    verified: false
+  slides_url: ''
+  avatar_url: ''

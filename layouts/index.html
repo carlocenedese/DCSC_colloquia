@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ .Site.Title }}</title>
+<meta name="description" content="Past and upcoming DCSC lunch colloquia and online seminars — TU Delft Center for Systems and Control.">
+<link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <h1>DCSC Colloquia</h1>
+    <p class="hero-sub">Lunch talks and online seminars from the Delft Center for Systems and Control — past recordings and upcoming sessions.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="{{ .Site.Params.youtubeChannel }}" target="_blank" rel="noopener">Watch on YouTube</a>
+      <a class="btn btn-secondary" href="#propose">Propose a talk</a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="filters" aria-label="Filter talks">
+    <input id="search" type="search" placeholder="Search speaker or title…" aria-label="Search">
+    <select id="filter-mode" aria-label="Filter by mode">
+      <option value="all">All formats</option>
+      <option value="in-person">In-person</option>
+      <option value="online">Online</option>
+    </select>
+    <select id="filter-status" aria-label="Filter by status">
+      <option value="all">All talks</option>
+      <option value="upcoming">Upcoming</option>
+      <option value="past">Past</option>
+    </select>
+    <select id="filter-tag" aria-label="Filter by research cluster">
+      <option value="all">All research clusters</option>
+    </select>
+  </section>
+
+  <section class="table-wrap">
+    <table id="talks-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Speaker</th>
+          <th>Affiliation</th>
+          <th>Title</th>
+        </tr>
+      </thead>
+      <tbody id="talks-tbody"></tbody>
+    </table>
+    <p id="empty-state" class="empty-state" hidden>No talks match these filters.</p>
+  </section>
+
+</main>
+
+<section id="propose" class="propose">
+  <div class="propose-inner">
+    <h2>Give a talk</h2>
+    <p>We welcome proposals for both in-person lunch colloquia and online seminars — from PhD students to faculty, on any topic in systems and control.</p>
+    <a class="btn btn-primary" href="mailto:c.cenedese@tudelft.nl,Shengling.Shi@tudelft.nl?subject=DCSC%20Colloquium%20talk%20proposal">Get in touch</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <p>Delft Center for Systems and Control (DCSC), TU Delft</p>
+</footer>
+
+<div id="modal-overlay" class="modal-overlay" hidden>
+  <div id="modal-card" class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button id="modal-close" class="modal-close" aria-label="Close">&times;</button>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<script id="talks-data" type="application/json">
+{{ (index .Site.Data.talks "all").talks | jsonify | safeJS }}
+</script>
+<script src="{{ "js/app.js" | relURL }}"></script>
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+baseURL = 'https://dcsc-colloquia.tudelft.nl/'
+languageCode = 'en-us'
+title = 'DCSC Colloquia'
+
+[params]
+  contactEmails = ["c.cenedese@tudelft.nl", "shengling.shi@tudelft.nl"]
+  youtubeChannel = "https://www.youtube.com/@DCSCTUDelft/videos"
