@@ -1,0 +1,449 @@
+talks:
+- id: 2025-02-19-gerwald-lichtenberg
+  date: '2025-02-19'
+  time: 12.30-13.30
+  mode: in-person
+  location: ME, Hall G
+  speaker: Gerwald Lichtenberg
+  affiliation_short: HAW Hamburg
+  affiliation_full: HAW Hamburg — Department of Biomedical Engineering
+  role: Professor
+  title: Decomposition of parameter tensors as key to large scale multilinear modeling
+  abstract: The exponentially emerging complexity with the number of relevant signals leads to a curse
+    of dimensionality in most nonlinear modeling approaches. Whereas for some applications, universal
+    approximation properties are in the focus of the modeling approach, for large scale systems, scalability
+    has first priority. One possible key to cope with this challenge is the restriction to special classes
+    of nonlinearities, which allow reasonable factorizations. Not only the availability of tensor decomposition
+    methods but also the intrinsic dynamic properties in applications like power networks and HVAC systems
+    can motivate, why multilinear time-invariant (MTI) models are of special interest. Basic concepts
+    will be presented as well as application examples together with the MTI-Toolbox developed at HAW Hamburg.
+  bio: Gerwald Lichtenberg studied Physics at the Universities of Heidelberg and Hamburg, received his
+    PhD in control engineering 1998 from the Hamburg University of Technology (TUHH) - supervised by Jan
+    Lunze and his habilitation in systems theory from TUHH in 2012. Since 2013, he is Professor of Physics
+    and Control Engineering at the Faculty of Life Sciences of the University of Applied Sciences (HAW)
+    and scientific director of the Fraunhofer application center for Integration of Local Energy Systems
+    ILES, both in Hamburg. His research areas are in the fields of model-based and learning control as
+    well as fault diagnosis and supervisory control of complex systems such as local energy networks,
+    building systems, or particle accelerators. Multilinear modeling methods and applications of tensor
+    decomposition methods for control engineering problems are main foci of his work.
+  tags: []
+  youtube_url: null
+  youtube_id: null
+  status: past
+  notes: null
+  links:
+    scholar: TBD
+    homepage: ''
+    verified: false
+  slides_url: ''
+  avatar_url: ''
+- id: 2025-03-19-artur-schweidtmann
+  date: '2025-03-19'
+  time: 12.30-13.30
+  mode: in-person
+  location: ME, Hall J
+  speaker: Artur Schweidtmann
+  affiliation_short: TU Delft
+  affiliation_full: TU Delft — Department of Chemical Engineering
+  role: Asst. Prof.
+  title: Generative artificial intelligence for process engineering
+  abstract: 'Generative Artificial Intelligence (GenAI) has achieved groundbreaking success in domains
+    like computer vision and strategy games, often surpassing human performance. However, its adoption
+    in the process industries remains limited despite immense potential. This presentation focuses on
+    developing GenAI for process engineering. It begins by introducing an AI software tool for digitizing
+    legacy flowsheets, including Process Flow Diagrams (PFDs) and Piping and Instrumentation Diagrams
+    (P&IDs) (https://www.digitization-companion.com). Then, I will highlight innovative AI-driven solutions
+    tailored to process engineering and operations, such as P&ID autocompletion, automated PFD-to-P&ID
+    translation, P&ID error correction, and AI-assisted HAZOPs. The presentation concludes with real-world
+    examples drawn from collaborative research projects with industry partners, showcasing the practical
+    impact of these advancements.
+
+    References:
+
+    Schweidtmann, A. M. (2024). Generative artificial intelligence in chemical engineering. Nature Chemical
+    Engineering, 1(3), 193-193.'
+  bio: TBD
+  tags: []
+  youtube_url: null
+  youtube_id: null
+  status: past
+  notes: null
+  links:
+    scholar: TBD
+    homepage: ''
+    verified: false
+  slides_url: ''
+  avatar_url: ''
+- id: 2025-04-02-marta-zagorowska
+  date: '2025-04-02'
+  time: 12.30-13.30
+  mode: in-person
+  location: Lecture Hall J (ME)
+  speaker: Marta Zagorowska
+  affiliation_short: TU Delft
+  affiliation_full: TU Delft — Delft Center for Systems and Control (DCSC)
+  role: Asst. Prof.
+  title: 'From control to optimization: there and back again'
+  abstract: 'Designing optimal operation of energy-intensive systems is challenging because they are usually
+    very complex. Even if mathematical models are available, they typically fall on either of the two
+    ends of a spectrum: either too incomplete or too complicated to be useful. Instead of focusing on
+    improving the model, we will focus on how we can use the design of the optimal operation to compensate
+    for the complexity of the system. We will look at using optimization algorithms as controllers, because
+    they have already been shown to be promising in controlling energy systems, especially when combined
+    with online learning and adaptation. But are such methods actually easier to use than modelling?'
+  bio: TBD
+  tags:
+  - Optimization
+  youtube_url: null
+  youtube_id: null
+  status: past
+  notes: null
+  links:
+    scholar: TBD
+    homepage: ''
+    verified: false
+  slides_url: ''
+  avatar_url: ''
+- id: 2025-04-16-paul-louis-delacour
+  date: '2025-04-16'
+  time: 12.30-13.30
+  mode: in-person
+  location: IDE-Hall T - Joost van der Grinten, 32.A-1-020
+  speaker: Paul-Louis Delacour
+  affiliation_short: TU Delft
+  affiliation_full: TU Delft — Delft Center for Systems and Control (DCSC)
+  role: PhD
+  title: Phase transition in a high-dimensional Spiked Mixture Model
+  abstract: 'We will introduce our new spiked mixture model (SMM) to address the problem of estimating
+    a set of signals from many randomly scaled and noisy observations.
+
+    Numerical experiments show that in low signal-to-noise ratio (SNR) regimes, and for data types where
+    the SMM is relevant, SMM surpasses the more traditional Gaussian mixture model (GMM) in terms of signal
+    recovery performance.
+
+    Finally, we will demonstrate that in big data regimes—where both the number of observations and their
+    dimensionality grow without bound—a phase transition occurs, marking a critical SNR threshold beyond
+    which signal recovery becomes impossible.'
+  bio: TBD
+  tags:
+  - Optimization
+  youtube_url: null
+  youtube_id: null
+  status: past
+  notes: 'Link to the paper:
+
+    https://arxiv.org/abs/2501.01840'
+  links:
+    scholar: TBD
+    homepage: ''
+    verified: false
+  slides_url: ''
+  avatar_url: ''
+- id: 2025-05-07-gabriel-de-albuquerque-gleizer
+  date: '2025-05-07'
+  time: 12.30-13.30
+  mode: in-person
+  location: Pulse, hall 7, 33.A2.200
+  speaker: Gabriel de Albuquerque Gleizer
+  affiliation_short: TU Delft
+  affiliation_full: TU Delft — Delft Center for Systems and Control (DCSC)
+  role: Asst. Prof.
+  title: 'Fault estimation with input design: model-based and data-driven approaches'
+  abstract: "Fault estimation, in a broad sense, is the problem of modeling an undesired change in the\
+    \ behavior of a system. Faults can appear as changes in dynamics due to wear and tear, unexpected\
+    \ external disturbances, or losses of components such as sensors and actuators.\n\nIn this talk I\
+    \ will present solutions to two classes of fault estimation problems. \n\nIn the first, I consider\
+    \ the case of small multiplicative faults in a model-based approach. These can represent the degradation\
+    \ of certain system components, and in applications such as the high-tech industry, need to be detected\
+    \ early due to their stringent performance requirements. In this presentation, the faults are represented\
+    \ as changes in parameters of a linear time-invariant system and must be estimated from its input\
+    \ and output variables. The proposed real-time fault estimator is based on a residual generator used\
+    \ for fault detection and a multiple-output regressor generator, which feed a moving-horizon linear\
+    \ regression that estimates the parameter changes. The performance of this estimator is severely dependent\
+    \ on the richness of the regressors, motivating an optimal input design problem. I present an offline\
+    \ input design method that requires solving a non-convex optimization problem, for which efficient\
+    \ algorithms and optimality bounds are provided. The performance of the fault estimation in an academic\
+    \ model and a industrial use case will be presented, showcasing the importance of input design.\n\n\
+    In the second, I go to the other extreme, a data-driven situation where the goal is to identify an\
+    \ LTI system subject to controlled inputs and unobserved faults. This is motivated by situations where\
+    \ a fault has never been seen, while it can impact the system dynamics and act as an external disturbance.\
+    \ In this case, faults are modeled as bounded additive external disturbances. I provide a behavioral\
+    \ approach to the problem formulation, and present preliminary results in computational methods that\
+    \ allow the complete identification of the input-output system and of a subspace of fault-output components\
+    \ and associated reconstructed signals"
+  bio: TBD
+  tags:
+  - Modeling and System Identification
+  youtube_url: null
+  youtube_id: null
+  status: past
+  notes: null
+  links:
+    scholar: TBD
+    homepage: ''
+    verified: false
+  slides_url: ''
+  avatar_url: ''
+- id: 2025-05-21-sreeshma-markkassery
+  date: '2025-05-21'
+  time: 12.30-13.30
+  mode: in-person
+  location: ME, Hall I
+  speaker: Sreeshma Markkassery
+  affiliation_short: TU Delft
+  affiliation_full: TU Delft — Delft Center for Systems and Control (DCSC)
+  role: PhD
+  title: Max-min-plus-scaling (MMPS) systems on a discrete-event framework
+  abstract: "Event-driven systems, such as large traffic networks, small latches in a digital circuit,\
+    \ and production units form a major class of dynamic systems. The dynamics of these systems evolve\
+    \ with respect to some events and hence are called discrete event systems (DES). Descriptions in max-plus\
+    \ algebra has been extensively used to model DESs in the literature. These models are often linear\
+    \ in max-plus algebra (max-plus linear models) and hence their modelling capability is limited. A\
+    \ max-min-plus-scaling (MMPS) system is a nonlinear modeling approach that uses operations from three\
+    \ algebras: max-plus, min-plus and the conventional plus-times algebra. \n\nThis talk will focus on\
+    \ the dynamics of discrete-event systems described as MMPS models. We will present a matrix canonical\
+    \ form of MMPS systems that are implicit and discuss various characteristics of these systems. Based\
+    \ on this model, we analyze the asymptotic growth rate and fixed points that characterizes the global\
+    \ behavior. Further we also discuss the local stability of MMPS systems around a fixed point and some\
+    \ future works."
+  bio: TBD
+  tags:
+  - Modeling and System Identification
+  youtube_url: null
+  youtube_id: null
+  status: past
+  notes: null
+  links:
+    scholar: TBD
+    homepage: ''
+    verified: false
+  slides_url: ''
+  avatar_url: ''
+- id: 2025-06-04-max-mendel
+  date: '2025-06-04'
+  time: 12.30-13.30
+  mode: in-person
+  location: ME, Hall H
+  speaker: Max Mendel
+  affiliation_short: TU Delft
+  affiliation_full: TU Delft — Delft Center for Systems and Control (DCSC)
+  role: Associate Prof.
+  title: Securities Pricing with Dynamical Systems
+  abstract: How could we use dynamical systems theory to price complex financial securities? The securities
+    industry uses partial differential equations, such as Black-Scholes, for dynamic pricing. Dynamical
+    systems models, however, are more generally applicable, more familiar, and powerful tools exist for
+    analyzing and simulating them. The key insight is that the Hamilton-Jacobi theory connects the two
+    methods; in particular, I argue that Black-Scholes can be seen as the Hamilton-Jacobi description
+    of a first-order system with Langevin dynamics. I illustrate the effectiveness of dynamical systems
+    theory with a Spice simulation of a high-order system for an entire economy wherein risky securities
+    are traded in addition to goods and services.
+  bio: TBD
+  tags:
+  - Modeling and System Identification
+  youtube_url: null
+  youtube_id: null
+  status: past
+  notes: null
+  links:
+    scholar: TBD
+    homepage: ''
+    verified: false
+  slides_url: ''
+  avatar_url: ''
+- id: 2025-09-17-carlo-cenedese
+  date: '2025-09-17'
+  time: 12.30-13.30
+  mode: in-person
+  location: ME, Hall H
+  speaker: Carlo Cenedese
+  affiliation_short: TU Delft
+  affiliation_full: TU Delft — Delft Center for Systems and Control (DCSC)
+  role: Asst. Prof.
+  title: Interventions in urban traffic mobility
+  abstract: "This talk explores intervention strategies for improving urban traffic mobility, focusing\
+    \ on two complementary approaches.\n \nFirst, we present a coordinated, data-driven method for controlling\
+    \ urban traffic lights at a city-wide scale. Our approach introduces a closed-loop control scheme\
+    \ that leverages a nonparametric model of urban traffic dynamics—used for the first time in this context—to\
+    \ reduce congestion across the city. We demonstrate the effectiveness of this method in achieving\
+    \ efficient traffic light coordination. We will then discuss how it can be possible to obtain a scalable\
+    \ version of the proposed data-driven method.\n \nSecond, we address a class of large-scale Stackelberg\
+    \ games that arise in hierarchical decision-making problems with resource constraints, specifically\
+    \ in vehicle routing. In this setting, a central planner (leader) designs personalized incentives\
+    \ to influence the routing choices of individual drivers (agents), who independently optimize their\
+    \ own cost functions under coupling and feasibility constraints. This framework leads to a bilevel\
+    \ game formulation, which we solve using the BIG Hype algorithm."
+  bio: TBD
+  tags:
+  - Optimization
+  - Control and Learning
+  youtube_url: null
+  youtube_id: null
+  status: past
+  notes: null
+  links:
+    scholar: TBD
+    homepage: ''
+    verified: false
+  slides_url: ''
+  avatar_url: ''
+- id: 2025-10-01-gustaf-hendeby
+  date: '2025-10-01'
+  time: 12.30-13.30
+  mode: in-person
+  location: ME, Hall H
+  speaker: Gustaf Hendeby
+  affiliation_short: LiU
+  affiliation_full: Linköping University
+  role: Associate Prof.
+  title: Considerations in Distributed Tracking and Estimation
+  abstract: In a world with more and more automation, it is increasingly important to be able to estimate
+    (determine) different environmental properties, even if they are not directly visible in the available
+    measurements. A significant special case of this is object tracking, where the existence, position,
+    and movement of objects in the environment are estimated to create situational awareness. Tracking
+    using a centralized architecture, where a single node processes measurements from different sensor
+    nodes, is optimal in most senses. However, distributed tracking is often preferred due to its scalability
+    across numerous sensor nodes, greater robustness, and adaptability to changes in the available sensor
+    nodes. In some cases, it may even be the only viable option, especially when raw sensor data cannot
+    be accessed. One challenge in distributed tracking is the unintentional reuse of data, commonly referred
+    to as data incest. This talk will explain why data incest occurs, its negative consequences, and present
+    solutions that mitigate these issues while ensuring conservative estimates. The widely used scalar
+    normalized estimation error squared (NEES) measures, used to detect these problems, will be introduced.  However,
+    it turns out that the often-used NEES does not give the full picture, which leads to the introduction
+    of the NEES matrix, which generalizes the scalar NEES.  The NEES matrix provides more insights into
+    distributed tracking challenges, revealing problematic scenarios that may appear safe under scalar
+    NEES, and also which parts of the estimate exhibit this issues.
+  bio: Gustaf Hendeby is an Associate Professor and Docent at the Division of Automatic Control, Linköping
+    University, Sweden. His research focuses on sensor fusion and stochastic signal processing, with applications
+    in nonlinear estimation, target tracking, and simultaneous localization and mapping (SLAM). He has
+    held positions at the German Research Center of for Artificial Intelligence (DFKI) and the Swedish
+    Defence Research Agency (FOI), and currently serves as Associate Editor-in-Chief of the Journal of
+    Advances in Information Fusion and Senior Editor for IEEE Transactions on Aerospace and Electronic
+    Systems. He also leads the WASP Localization and Navigation Area Cluster and has held key roles in
+    organizing the IEEE FUSION conferences.
+  tags:
+  - Systems and Signal Analysis
+  youtube_url: null
+  youtube_id: null
+  status: past
+  notes: null
+  links:
+    scholar: TBD
+    homepage: ''
+    verified: false
+  slides_url: ''
+  avatar_url: ''
+- id: 2025-10-15-mattia-bianchi
+  date: '2025-10-15'
+  time: 12:30-13:30
+  mode: in-person
+  location: ME-Hall H
+  speaker: Mattia Bianchi
+  affiliation_short: ETH Zurich
+  affiliation_full: ETH Zurich
+  role: Postdoc
+  title: Timescale separation and market schemes in Online Feedback Optimization
+  abstract: "Online Feedback Optimization (OFO) is a control approach to drive a dynamical plant to an\
+    \ optimal steady state. By interconnecting iterative optimization algorithms with real-time plant\
+    \ measurements, OFO provides all the benefits of feedback control, yet without requiring exact knowledge\
+    \ of plant dynamics for computing a setpoint. This approach has attracted remarkable research effort\
+    \ in recent years, especially encouraged by promising experiments in power networks. \n\nIn this talk,\
+    \ I will present some recent advances in OFO. First, I will discuss the \"timescale separation\" problem.\
+    \ The common understanding was that ensuring stability of OFO would require the optimization algorithm\
+    \ to be sufficiently slower than the plant to control; it turns out that this timescale separation\
+    \ can be avoided in many cases, improving transient performance and adaptability. Second, I will introduce\
+    \ a distributed OFO scheme, that admits a market-compatible implementation, and demonstrate its potential\
+    \ on an optimal power flow problem for energy markets."
+  bio: Mattia Bianchi is a postdoctoral researcher in the Automatic Control Laboratory at ETH, Zürich,
+    since March 2023. He received a PhD in Game Theory and Control from the Delft Center for Systems and
+    Control, TU Delft, in 2023. He received the bachelor’s degree in information and communication engineering
+    in 2016, and the master’s degree in systems engineering in 2018, both from University of L’Aquila,
+    Italy. From February to June 2018 he visited the Mechanical Engineering department, TU Eindhoven.
+    From September 2021 to March 2022 he visited the Mechanical and Aerospace Engineering Department,
+    University of California San Diego. His current research focuses on exploiting optimization and game
+    theoretic algorithms to develop efficient and robust methods for decision and control in complex network
+    systems, for applications in power grids, energy markets, and communication networks.
+  tags:
+  - Control and Learning
+  youtube_url: null
+  youtube_id: null
+  status: past
+  notes: null
+  links:
+    scholar: TBD
+    homepage: ''
+    verified: false
+  slides_url: ''
+  avatar_url: ''
+- id: 2025-11-05-anna-lukina
+  date: '2025-11-05'
+  time: 12.30-13.30
+  mode: in-person
+  location: Cancelled
+  speaker: Anna Lukina
+  affiliation_short: TU Delft
+  affiliation_full: TU Delft — Faculty of Electrical Engineering, Mathematics and Computer Science
+  role: Asst. Prof.
+  title: 'Advancing Safe Autonomy: Neural Certificates, Reusable Guarantees, and Interpretable Policies'
+  abstract: 'Recent advances in neural certification and reinforcement learning are enabling safer and
+    more adaptable autonomous systems. This talk unites four key contributions: First, I will discuss
+    neural continuous-time supermartingale certificates, which provide probabilistic safety guarantees
+    for continuous-time stochastic systems. Second, I will introduce VeRecycle, a theoretical framework
+    for efficiently reusing probabilistic certificates after system changes, drastically reducing the
+    need for costly re-certification. I will also present a modular approach to reinforcement learning,
+    where formally verified sub-policies are safely composed for end-to-end guarantees. Finally, I will
+    demonstrate how interpretable policies can be synthesized directly from black-box simulations using
+    search and optimization. Together, these works push the boundaries of safe, scalable, and adaptive
+    autonomy in uncertain environments.'
+  bio: TBD
+  tags: []
+  youtube_url: null
+  youtube_id: null
+  status: past
+  notes: null
+  links:
+    scholar: TBD
+    homepage: ''
+    verified: false
+  slides_url: ''
+  avatar_url: ''
+- id: 2025-11-19-emily-yu
+  date: '2025-11-19'
+  time: 12.30-13.30
+  mode: in-person
+  location: ME, Hall E, Robert Hooke
+  speaker: Emily Yu
+  affiliation_short: Leiden
+  affiliation_full: Leiden University
+  role: Asst. Prof.
+  title: 'Symbolic Verification and Neural Control via Certification
+
+    Research cluster: Control and learning'
+  abstract: "As intelligent systems increasingly rely on learning-enabled components in safety-critical\
+    \ domains, the central challenge becomes obtaining a sufficient level of trust in their correctness\
+    \ for real-world deployment. Our approach is through certification.\n \nCertificates are independently\
+    \ machine-checkable evidences, that provide a verifiable layer of correctness on top of both symbolic\
+    \ and learned components.\n \nIn this talk, I will present certification as a unifying lens across\
+    \ hardware circuits and neural control systems. First, I will show how certification has reshaped\
+    \ hardware verification, allowing us to decouple trust from complex automated reasoning engines such\
+    \ that verification results can be independently validated. Then I will extend the same principles\
+    \ to learning-based control, where certificates provide mathematically grounded guarantees and can\
+    \ be used for real-time safety assurance. I will conclude by outlining a vision of certified autonomy\
+    \ with a unified certificate-based architecture that connects symbolic reasoning and neural learning."
+  bio: Emily Yu is an assistant professor in the Leiden Institute of Advanced Computer Science at Leiden
+    University. Her research focuses on system verification and trustworthy AI, with a focus on advancing
+    formal methods as first-order design principles for correctness and security. A central theme of her
+    work is leveraging formal methods techniques to design and verify hardware systems as well as AI-based
+    systems. Emily’s research has been recognized with an Esprit fellowship from the Austrian Science
+    Fund.
+  tags:
+  - Control and Learning
+  youtube_url: null
+  youtube_id: null
+  status: past
+  notes: null
+  links:
+    scholar: TBD
+    homepage: ''
+    verified: false
+  slides_url: ''
+  avatar_url: ''

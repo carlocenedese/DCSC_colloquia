@@ -1,0 +1,332 @@
+talks:
+- id: 2024-01-24-alessio-la-bella
+  date: '2024-01-24'
+  time: null
+  mode: in-person
+  location: TBD
+  speaker: Alessio La Bella
+  affiliation_short: PoliMi
+  affiliation_full: Politecnico di Milano
+  role: Asst. Prof.
+  title: TBD
+  abstract: TBD
+  bio: TBD
+  tags: []
+  youtube_url: null
+  youtube_id: null
+  status: past
+  notes: null
+  links:
+    scholar: TBD
+    homepage: ''
+    verified: false
+  slides_url: ''
+  avatar_url: ''
+- id: 2024-01-24-marzia-cescon
+  date: '2024-01-24'
+  time: null
+  mode: in-person
+  location: TBD
+  speaker: Marzia Cescon
+  affiliation_short: TBD
+  affiliation_full: TBD
+  role: Professor
+  title: TBD
+  abstract: TBD
+  bio: TBD
+  tags: []
+  youtube_url: null
+  youtube_id: null
+  status: past
+  notes: null
+  links:
+    scholar: TBD
+    homepage: ''
+    verified: false
+  slides_url: ''
+  avatar_url: ''
+- id: 2024-03-06-mohammad-khosravi
+  date: '2024-03-06'
+  time: null
+  mode: in-person
+  location: TBD
+  speaker: Mohammad Khosravi
+  affiliation_short: TU Delft
+  affiliation_full: TU Delft — Delft Center for Systems and Control (DCSC)
+  role: TBD
+  title: TBD
+  abstract: TBD
+  bio: TBD
+  tags: []
+  youtube_url: null
+  youtube_id: null
+  status: past
+  notes: null
+  links:
+    scholar: TBD
+    homepage: ''
+    verified: false
+  slides_url: ''
+  avatar_url: ''
+- id: 2024-03-20-wolfram-martens
+  date: '2024-03-20'
+  time: null
+  mode: in-person
+  location: TBD
+  speaker: Wolfram Martens
+  affiliation_short: TU Delft
+  affiliation_full: TU Delft — Delft Center for Systems and Control (DCSC)
+  role: TBD
+  title: TBD
+  abstract: TBD
+  bio: TBD
+  tags: []
+  youtube_url: null
+  youtube_id: null
+  status: past
+  notes: 'Link to the paper:
+
+    https://arxiv.org/abs/2501.01840'
+  links:
+    scholar: TBD
+    homepage: ''
+    verified: false
+  slides_url: ''
+  avatar_url: ''
+- id: 2024-04-03-rudi-coppola
+  date: '2024-04-03'
+  time: null
+  mode: in-person
+  location: TBD
+  speaker: Rudi Coppola
+  affiliation_short: TU Delft
+  affiliation_full: TU Delft — Delft Center for Systems and Control (DCSC)
+  role: PhD
+  title: Data-driven Abstractions of Deterministic and Stochastic Systems
+  abstract: TBD
+  bio: TBD
+  tags:
+  - Modeling and System Identification
+  youtube_url: null
+  youtube_id: null
+  status: past
+  notes: null
+  links:
+    scholar: TBD
+    homepage: ''
+    verified: false
+  slides_url: ''
+  avatar_url: ''
+- id: 2024-05-01-hubald-verzijl
+  date: '2024-05-01'
+  time: null
+  mode: in-person
+  location: TBD
+  speaker: Hubald Verzijl
+  affiliation_short: LUMC
+  affiliation_full: Leiden University Medical Center
+  role: TBD
+  title: 'Applying Control Engineering in Healthcare: From Theory to Practice'
+  abstract: In (academic) hospitals, there are many innovative ideas/problems that could be solved by
+    a 'systems and control approach'. This lecture delves into the application of control engineering
+    in healthcare, showcasing some novel closed-loop strategies, such as those in pain management and
+    mechanical ventilation. We will evaluate the impact of automated processes on clinical workflows,
+    highlight some overlooked drawbacks, and examine how clinicians can work safely with closed-loop technology.
+    We end the lecture with some current work/unsolved challenges.
+  bio: 'Hubald has a master''s degree in Systems & Control (TU Delft) and Technical Medicine (TU Delft,
+    track ‘Sensing & Stimulation’). During his thesis, he worked on closed-loop mitigation of neuropathic
+    pain, where he worked closely with Dr. Sérgio Pequito. After graduating, he started a position as
+    a clinical technologist at the Medical Technology Department of Leiden University Medical Centre (LUMC).
+    Here, he works with clinicians and researchers: they mainly develop custom medical instruments that
+    cannot be purchased. As a hobby, Hubald has always been enthusiastic about designing custom printed
+    circuit boards (PCBs)  featuring implemented closed-loop algorithms.'
+  tags: []
+  youtube_url: null
+  youtube_id: null
+  status: past
+  notes: null
+  links:
+    scholar: TBD
+    homepage: ''
+    verified: false
+  slides_url: ''
+  avatar_url: ''
+- id: 2024-05-15-dimitris-boskos
+  date: '2024-05-15'
+  time: null
+  mode: in-person
+  location: TBD
+  speaker: Dimitris Boskos
+  affiliation_short: TU Delft
+  affiliation_full: TU Delft — Delft Center for Systems and Control (DCSC)
+  role: TBD
+  title: Data-driven distributionally robust coverage optimization
+  abstract: In this talk, we present a data-driven coverage control algorithm, which optimally deploys
+    a team of robots across a spatial region where a random event of interest may occur. The probability
+    density of this event is unknown and can only be inferred to some extent from data. To hedge against
+    this distributional uncertainty, we present a data-driven ambiguity set construction, which contains
+    plausible models of the unknown density and enjoys rigorous probabilistic guarantees. Using this set,
+    we design a distributionally robust algorithm that optimizes the locations of the robots against the
+    worst-case probability density from it. This leads to a non-smooth, non-convex optimization problem,
+    which we solve by an appropriate variant the Gradient Sampling algorithm. We finally discuss conditions
+    under which the algorithm is guaranteed to converge and why these are met in our problem setting.
+  bio: TBD
+  tags:
+  - Optimization
+  youtube_url: null
+  youtube_id: null
+  status: past
+  notes: null
+  links:
+    scholar: TBD
+    homepage: ''
+    verified: false
+  slides_url: ''
+  avatar_url: ''
+- id: 2024-06-19-maarten-schoukens
+  date: '2024-06-19'
+  time: null
+  mode: in-person
+  location: TBD
+  speaker: Maarten Schoukens
+  affiliation_short: TU/e
+  affiliation_full: Eindhoven University of Technology
+  role: Associate Prof.
+  title: Deep Subspace Encoders for Nonlinear System Identification and Model Augmentation
+  abstract: 'Learning a state-space model for a nonlinear dynamical system starting from noisy data remains
+    a challenging problem. The model can become unstable during the learning process or the optimization
+    problem can get stuck in a local minimum. Using recent insights obtained from auto-encoder deep learning
+    architectures and the multiple shooting literature, this presentation introduces the deep subspace
+    encoder architecture (SUBNET) to estimate nonlinear state-space models. Furthermore, we illustrate
+    how the proposed approach can also include knowledge from a priori available system models through
+    model augmentation.
+
+
+    A multi-step ahead prediction error cost function is used to trade off good free-run simulation performance
+    and computational complexity. The initial state of each of these multi-step runs is obtained using
+    the subspace encoder, which is estimated simultaneously with the state transition and output function
+    of the model. This approach smoothens the cost function, which in turns reduces the risk of running
+    into local minima, while at the same time allowing for an efficient numerical implementation through
+    batch optimization methods. The use of the multi-step ahead prediction error also mitigates the problem
+    of running into unstable models during learning. The nonlinear encoder, state-transition and output
+    functions of the model are represented using neural networks which allows one to efficiently represent
+    nonlinear systems with high-dimensional inputs and outputs (e.g. spatiotemporal systems), but allow
+    to flexibly embed a priori obtained models at the same time.
+
+
+    The application of the proposed ideas, using a broad range of model structures, on multiple benchmark
+    examples illustrates that excellent models of the system under test can be obtained starting from
+    a random parameter initialization.'
+  bio: Maarten Schoukens is an Associate Professor in the Control Systems (CS) Group at the Department
+    of Electrical Engineering, Eindhoven University of Technology. His main research interests include
+    the measurement and data-driven modeling of nonlinear dynamical and linear parameter-varying systems
+    using system identification and machine learning techniques, experimental design, and frequency domain
+    methods in identification. Maarten was awarded an FWO Ph.D. Fellowship in 2011, an EU - Marie Skłodowska-Curie
+    Individual Fellowship in 2018, and an ERC Starting Grant in 2022. Maarten is active as an associate
+    editor for the IEEE CSS (CDC, ACC) and the ECC Conference Editorial Board, and has been active as
+    an associate editor for multiple IFAC conferences. Finally, Maarten is a co-organizer of the nonlinearbenchmark.org
+    initiative promoting the use of common datasets in data-driven nonlinear dynamical modeling research.
+  tags: []
+  youtube_url: null
+  youtube_id: null
+  status: past
+  notes: null
+  links:
+    scholar: TBD
+    homepage: ''
+    verified: false
+  slides_url: ''
+  avatar_url: ''
+- id: 2024-09-02-meichen-guo
+  date: '2024-09-02'
+  time: null
+  mode: in-person
+  location: TBD
+  speaker: Meichen Guo
+  affiliation_short: TU Delft
+  affiliation_full: TU Delft — Delft Center for Systems and Control (DCSC)
+  role: Associate Prof.
+  title: Learning controllers from data with stability guarantee
+  abstract: This talk discusses a direct data-driven control approach for linear and nonlinear dynamical
+    systems without explicitly identifying a model. The core of the approach is the data-based closed-loop
+    system representation under a feedback control law. Using the data-based closed-loop representation,
+    stabilizing controllers can be designed by solving data-dependent linear matrix inequalities (LMIs)
+    or sum of squares (SOS) conditions. In many cases, such as when the system is subject to disturbances
+    and/or the data is corrupted by noise, only an uncertain closed-loop representation can be obtained,
+    and thus a robust control technique is used for the data-driven control design. For nonlinear systems,
+    under mild assumptions, an inner estimation of the region of attraction can be computed from data
+    under the designed data-driven control law.
+  bio: TBD
+  tags:
+  - Control and Learning
+  youtube_url: null
+  youtube_id: null
+  status: past
+  notes: null
+  links:
+    scholar: TBD
+    homepage: ''
+    verified: false
+  slides_url: ''
+  avatar_url: ''
+- id: 2024-10-16-edoardo-focante
+  date: '2024-10-16'
+  time: null
+  mode: in-person
+  location: TBD
+  speaker: Edoardo Focante
+  affiliation_short: TU Delft
+  affiliation_full: TU Delft — Delft Center for Systems and Control (DCSC)
+  role: PhD
+  title: Situation-Aware Beamforming for Automotive Radar Under Localization Uncertainty
+  abstract: TBD
+  bio: TBD
+  tags:
+  - Systems and Signal Analysis
+  youtube_url: null
+  youtube_id: null
+  status: past
+  notes: null
+  links:
+    scholar: TBD
+    homepage: ''
+    verified: false
+  slides_url: ''
+  avatar_url: ''
+- id: 2024-11-20-max-sibeijn
+  date: '2024-11-20'
+  time: null
+  mode: in-person
+  location: TBD
+  speaker: Max Sibeijn
+  affiliation_short: TU Delft
+  affiliation_full: TU Delft — Delft Center for Systems and Control (DCSC)
+  role: PhD
+  title: 'Modeling and Predictive Control for Large-Scale District Heating Networks: Towards Scalable
+    and Efficient Strategies'
+  abstract: 'District heating networks (DHNs) provide a sustainable approach to urban energy supply by
+    integrating renewable and reusable energy resources. These networks, governed by complex nonlinear
+    dynamics, have traditionally relied on decentralized, rule-based control strategies with limited communication
+    among network components. However, as DHNs evolve to meet modern energy demands, more advanced control
+    strategies are necessary to optimize their efficiency and resilience.
+
+
+    In this talk, we introduce a graph-theoretic model for DHNs that incorporates key 4th generation district
+    heating elements—including prosumer and multiple producer configurations—in a form suitable for optimization-based
+    control. Building on this foundation, we develop a computationally efficient two-level economic MPC
+    scheme for DHNs based on dual dynamic programming. This approach consists of two parts: a short-horizon
+    nonlinear MPC with an approximate terminal cost, and a long-horizon linear MPC that iteratively improves
+    this approximation by generating lower bounds on the value function.'
+  bio: TBD
+  tags:
+  - Optimization
+  youtube_url: null
+  youtube_id: null
+  status: past
+  notes: null
+  links:
+    scholar: TBD
+    homepage: ''
+    verified: false
+  slides_url: ''
+  avatar_url: ''

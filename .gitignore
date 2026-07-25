@@ -3,4 +3,7 @@
 .hugo_build.lock
 .DS_Store
 /01.Colloquia organization/
+# Raw design/source assets (unlicensed placeholders, originals) — never built or committed.
+# Lives OUTSIDE static/ so Hugo can't copy it into the published site.
+/website_asset/
 /static/website_asset/

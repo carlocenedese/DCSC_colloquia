@@ -6,6 +6,11 @@ repeatable step: rerun after every xlsx edit, then commit the regenerated yaml.
 
 Usage:
     python3 scripts/extract_talks.py [--source PATH] [--sheets 2026,2026-online]
+
+By default every sheet named like a year ("2027") or year-online ("2027-online")
+is processed automatically — adding a new year tab in the xlsx needs no script
+change. data/talks/all.yaml is always rebuilt from ALL per-sheet yaml files on
+disk, so partial --sheets runs never drop other years' talks from the site.
 """
 import argparse
 import re
@@ -21,7 +26,8 @@ DEFAULT_SOURCE = (
     "TU Delft/00.Doc/05.DCSC/03.lunch colloquium & poster/06.Website/DCSC_colloquia/"
     "01.Colloquia organization/Lunch colloquia version_v1.xlsx"
 )
-DEFAULT_SHEETS = ["2026", "2026-online"]
+# Sheets are auto-discovered by this pattern; pass --sheets to override.
+SHEET_NAME_RE = re.compile(r"^\d{4}(-online)?$")
 OUTPUT_DIR = Path(__file__).resolve().parent.parent / "data" / "talks"
 SLIDES_DIR = Path(__file__).resolve().parent.parent / "static" / "slides"
 SLIDES_EXTENSIONS = [".pdf", ".pptx", ".ppt"]
@@ -72,6 +78,15 @@ AFFILIATION_MAP = {
     "University of Michigan (USA)": ("U-M", "University of Michigan — Electrical Engineering and Computer Science Department"),
     "University of Brescia (Italy)": ("UniBS", "University of Brescia — Dept. of Information Engineering"),
     "Cornell University (USA)": ("Cornell", "Cornell University — Sibley School of Mechanical and Aerospace Engineering"),
+    "TUD (Chemical engineering)": ("TU Delft", "TU Delft — Department of Chemical Engineering"),
+    "TU Delft Computer Science": ("TU Delft", "TU Delft — Faculty of Electrical Engineering, Mathematics and Computer Science"),
+    "TU Eindhoven": ("TU/e", "Eindhoven University of Technology"),
+    "Politecnico di Milano": ("PoliMi", "Politecnico di Milano"),
+    "Linköping University": ("LiU", "Linköping University"),
+    "Leiden University": ("Leiden", "Leiden University"),
+    "LUMC": ("LUMC", "Leiden University Medical Center"),
+    "ETH Zürich": ("ETH Zurich", "ETH Zurich"),
+    "Dep. of Biomedical Engineering, HAW Hamburg": ("HAW Hamburg", "HAW Hamburg — Department of Biomedical Engineering"),
 }
 
 # The only 4 research clusters the site is allowed to show. Everything from
@@ -114,6 +129,8 @@ def canonicalize_tags(raw_tags):
 ROLE_CANON = {
     "ap": "Asst. Prof.",
     "assistant professor": "Asst. Prof.",
+    "assistant prof": "Asst. Prof.",
+    "associate prof": "Associate Prof.",
     "associate professor": "Associate Prof.",
     "professor": "Professor",
     "postdoc": "Postdoc",
@@ -233,7 +250,8 @@ def parse_sheet(ws, mode):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--source", default=DEFAULT_SOURCE)
-    parser.add_argument("--sheets", default=",".join(DEFAULT_SHEETS))
+    parser.add_argument("--sheets", default="",
+                        help="comma-separated sheet names; default: every sheet matching YYYY or YYYY-online")
     args = parser.parse_args()
 
     source = Path(args.source)
@@ -243,8 +261,14 @@ def main():
     wb = openpyxl.load_workbook(source, data_only=True)
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    all_talks = []
-    for sheet_name in args.sheets.split(","):
+    if args.sheets:
+        sheet_names = [s.strip() for s in args.sheets.split(",") if s.strip()]
+    else:
+        sheet_names = [s for s in wb.sheetnames if SHEET_NAME_RE.match(s)]
+        if not sheet_names:
+            sys.exit("no sheets matching YYYY or YYYY-online found; pass --sheets explicitly")
+
+    for sheet_name in sheet_names:
         if sheet_name not in wb.sheetnames:
             print(f"skip: sheet '{sheet_name}' not found", file=sys.stderr)
             continue
@@ -266,7 +290,15 @@ def main():
             {"talks": talks}, sort_keys=False, allow_unicode=True, width=100,
         ))
         print(f"wrote {out_path} ({len(talks)} talks)")
-        all_talks.extend(talks)
+
+    # Rebuild all.yaml from EVERY per-sheet file on disk (not just this run's
+    # sheets) so a partial --sheets run can never drop other years from the site.
+    all_talks = []
+    for path in sorted(OUTPUT_DIR.glob("*.yaml")):
+        if path.name == "all.yaml":
+            continue
+        data = yaml.safe_load(path.read_text()) or {}
+        all_talks.extend(data.get("talks", []))
 
     all_path = OUTPUT_DIR / "all.yaml"
     all_path.write_text(yaml.safe_dump(

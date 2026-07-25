@@ -1,7 +1,21 @@
 (function () {
+  // Site base path ("/" locally, "/<repo>/" on GitHub Pages project sites) —
+  // injected by the template so hardcoded asset paths keep working under a subpath.
+  const SITE_BASE = (window.SITE_BASE || "/").replace(/\/$/, "");
+  const asset = (path) => SITE_BASE + (path.startsWith("/") ? path : "/" + path);
+
+  const todayIso = (() => {
+    const d = new Date();
+    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+  })();
+
   const talks = JSON.parse(document.getElementById("talks-data").textContent)
     .slice()
     .sort((a, b) => b.date.localeCompare(a.date));
+
+  // The yaml "status" field is frozen at extraction time and goes stale between
+  // pipeline runs — derive it from the date at page load instead.
+  for (const t of talks) t.status = t.date <= todayIso ? "past" : "upcoming";
 
   const grid = document.getElementById("talks-grid");
   const emptyState = document.getElementById("empty-state");
@@ -62,7 +76,7 @@
   function topicChipHtml(canonical, variant) {
     const meta = TOPIC_META[canonical];
     if (!meta) return "";
-    const iconSrc = `/images/topics/${meta.icon}.png`;
+    const iconSrc = asset(`/images/topics/${meta.icon}.png`);
     const pressed = selectedTags.has(canonical);
     if (variant === "compact") {
       return `<button type="button" class="topic-chip topic-chip-compact" data-topic="${escapeHtml(canonical)}"
@@ -106,12 +120,6 @@
     renderTopicsLegend();
   });
 
-  function formatDate(iso) {
-    return new Date(iso + "T00:00:00").toLocaleDateString("en-GB", {
-      year: "numeric", month: "short", day: "numeric",
-    });
-  }
-
   function escapeHtml(str) {
     const div = document.createElement("div");
     div.textContent = str == null ? "" : String(str);
@@ -146,9 +154,9 @@
   }
 
   function avatarSrc(talk) {
-    if (talk.avatar_url) return talk.avatar_url;
+    if (talk.avatar_url) return asset(talk.avatar_url);
     const idx = (hashString(talk.speaker || "") % GENERIC_AVATAR_COUNT) + 1;
-    return `/images/avatars-generic/${idx}.png`;
+    return asset(`/images/avatars-generic/${idx}.png`);
   }
 
   function avatarHtml(talk, size) {
@@ -279,8 +287,8 @@
     const downloadHtml = talk.slides_url
       ? `<div class="sidebar-label">Download</div>
          <div class="sidebar-chips">
-           <a class="link-chip" href="${talk.slides_url}" download>
-             <img src="/images/topics/slides.png" alt="">
+           <a class="link-chip" href="${asset(talk.slides_url)}" download>
+             <img src="${asset("/images/topics/slides.png")}" alt="">
              <span>Slides</span>
            </a>
          </div>`
