@@ -13,15 +13,38 @@
 <body>
 
 <header class="hero">
+  <div id="hero-shader-root" class="hero-shader-root" aria-hidden="true"></div>
   <div class="hero-inner">
     <div class="hero-title-row">
       <img class="hero-logo" src="{{ "images/dcsc-logo.svg" | relURL }}" alt="DCSC">
-      <h1>DCSC Colloquia</h1>
+      <h1><span>DCSC</span><span>Colloquia</span></h1>
     </div>
     <p class="hero-sub">Where DCSC talks live after the room empties — and where the next one gets announced.</p>
     <div class="hero-cta">
-      <a class="link-pill link-pill-hero" href="{{ .Site.Params.youtubeChannel }}" target="_blank" rel="noopener">&gt; YouTube</a>
-      <a class="link-pill link-pill-hero" href="#propose">&gt; Reach out</a>
+      <a class="link-pill link-pill-hero" href="{{ .Site.Params.youtubeChannel }}" target="_blank" rel="noopener">
+        <svg class="hero-cta-icon icon-clapperboard" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+          <g class="clap-top">
+            <path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            <path d="m6.2 5.3 3.1 5.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="m12.4 3.4 3.1 5.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </g>
+          <path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+        </svg>
+        YouTube
+      </a>
+      <a class="link-pill link-pill-hero" href="mailto:C.Cenedese@tudelft.nl,Shengling.Shi@tudelft.nl">
+        <svg class="hero-cta-icon icon-send" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+          <path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+          <path d="m21.854 2.147-10.94 10.939" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+        Reach out
+      </a>
+      <a class="link-pill link-pill-hero" href="#about">
+        <svg class="hero-cta-icon icon-heart" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+          <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+        </svg>
+        About
+      </a>
     </div>
   </div>
 </header>
@@ -30,7 +53,15 @@
 
   <section class="topics-section">
     <h2>Topics</h2>
-    <p>The talks cover the 4 theoretical topics that represent the backbone of the DCSC research.</p>
+    <p>The talks cover the 4 theoretical topics that represent the backbone of the DCSC research.
+      <a class="topics-more-link" href="https://www.tudelft.nl/me/over/afdelingen/delft-center-for-systems-and-control/research" target="_blank" rel="noopener" aria-label="More about DCSC research (opens in a new tab)">
+        <svg class="icon-external-link" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M15 3h6v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M10 14 21 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </p>
     <div class="topics-legend" id="topics-legend"></div>
   </section>
 
@@ -53,20 +84,64 @@
   </section>
 
   <section class="talks-grid" id="talks-grid" aria-label="Talks"></section>
-  <p id="empty-state" class="empty-state" hidden>No talks match these filters.</p>
+  <p id="empty-state" class="empty-state" hidden aria-live="polite">No talks match these filters.</p>
+
+  <button type="button" id="show-more-btn" class="show-more-btn" hidden>
+    <span>Show more</span>
+    <svg class="icon-chevron-down" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+      <path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
 
 </main>
 
-<section id="propose" class="propose">
-  <div class="propose-inner">
-    <h2>Give a talk</h2>
-    <p>We welcome proposals for both in-person lunch colloquia and online seminars — from PhD students to faculty, on any topic in systems and control.</p>
-    <a class="btn btn-primary" href="mailto:c.cenedese@tudelft.nl,Shengling.Shi@tudelft.nl?subject=DCSC%20Colloquium%20talk%20proposal">Get in touch</a>
+<hr class="section-divider">
+
+<section id="about" class="about">
+  <div class="about-inner">
+    <h2>About</h2>
+    <p class="about-credit">
+      Brought to you with <img class="about-heart" src="{{ "images/icons/heart.png" | relURL }}" alt="love"> by<br>
+      <a href="https://www.tudelft.nl/staff/c.cenedese/" target="_blank" rel="noopener">
+        <img class="about-avatar" src="{{ "images/team/carlo-cenedese.webp" | relURL }}" alt="Prof. Carlo Cenedese">
+        Prof. Carlo Cenedese
+      </a>
+      <span class="about-sep">/</span>
+      <a href="https://www.tudelft.nl/en/staff/shengling.shi/" target="_blank" rel="noopener">
+        <img class="about-avatar" src="{{ "images/team/shengling-shi.webp" | relURL }}" alt="Prof. Shengling Shi">
+        Prof. Shengling Shi
+      </a>
+    </p>
+    <p>DCSC Colloquia is the lunch-time talk series of the Delft Center for Systems and Control (DCSC) at TU Delft, alongside a companion strand of online seminars. Speakers range from PhD students to faculty, covering the group's research in systems and control broadly. This site archives past talks with their recordings and lists upcoming ones.</p>
+    <p>We welcome proposals for both formats, on any topic in systems and control.</p>
+    <a class="link-pill link-pill-hero" href="mailto:C.Cenedese@tudelft.nl,Shengling.Shi@tudelft.nl?subject=DCSC%20Colloquium%20talk%20proposal">
+      <svg class="hero-cta-icon icon-send" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+        <path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+        <path d="m21.854 2.147-10.94 10.939" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+      Propose speaker or get in touch
+    </a>
   </div>
 </section>
 
+<hr class="section-divider">
+
 <footer class="site-footer">
-  <p>Delft Center for Systems and Control (DCSC), TU Delft</p>
+  <div class="site-footer-inner">
+    <div class="site-footer-col">
+      <p class="site-footer-title">Delft Center for Systems and Control (DCSC)</p>
+      <p>Department of the Faculty of Mechanical Engineering, TU Delft</p>
+      <address>
+        Building 34, Mekelweg 2<br>
+        2628 CD Delft, The Netherlands
+      </address>
+    </div>
+    <div class="site-footer-col">
+      <p><a href="tel:+31152781578">+31 (0)15 27 81578</a></p>
+      <p><a href="mailto:Support-DCSC-ME@tudelft.nl">Support-DCSC-ME@tudelft.nl</a></p>
+      <p><a href="https://www.tudelft.nl/me/over/afdelingen/delft-center-for-systems-and-control" target="_blank" rel="noopener">Department page &rarr;</a></p>
+    </div>
+  </div>
 </footer>
 
 <div id="modal-overlay" class="modal-overlay" hidden>
@@ -80,6 +155,7 @@
 {{ (index .Site.Data.talks "all").talks | jsonify | safeJS }}
 </script>
 <script src="{{ "js/app.js" | relURL }}"></script>
+<script type="module" src="{{ "js/hero-shader.js" | relURL }}"></script>
 
 </body>
 </html>

@@ -36,6 +36,11 @@
   // secondary single-pick control synced to this set (see syncTagSelect).
   const selectedTags = new Set();
   const MULTI_OPTION_VALUE = "__multi__";
+  let lastFocusedTrigger = null;
+
+  const CARD_LIMIT = 20;
+  let expanded = false;
+  const showMoreBtn = document.getElementById("show-more-btn");
 
   function syncTagSelect() {
     let multiOpt = tagFilter.querySelector(`option[value="${MULTI_OPTION_VALUE}"]`);
@@ -80,6 +85,7 @@
     if (selectedTags.has(topic)) selectedTags.delete(topic);
     else selectedTags.add(topic);
     syncTagSelect();
+    expanded = false;
     render();
     renderTopicsLegend();
   }
@@ -112,7 +118,7 @@
     return div.innerHTML;
   }
 
-  const NEW_WINDOW_DAYS = 21;
+  const NEW_WINDOW_DAYS = 30;
   const todayMidnight = new Date();
   todayMidnight.setHours(0, 0, 0, 0);
 
@@ -157,17 +163,37 @@
     return { day: d.getDate(), month: MONTHS[d.getMonth()], year: d.getFullYear() };
   }
 
+  // Red alarm-clock overlay for recently-published talks — sits on top of the
+  // date chip without resizing it, rings on hover. Hand-built SVG (no React/
+  // shadcn runtime in this vanilla-JS site, so the animate-ui component isn't
+  // usable as-is; this reproduces the same icon/motion in plain CSS/SVG).
+  const NEW_BELL_SVG = `
+    <svg class="new-bell-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+      <circle cx="12" cy="13" r="8" stroke="currentColor" stroke-width="2"/>
+      <path d="M7 8 4 5M17 8l3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path d="M12 13V9M12 13l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>`;
+
   function dateChipHtml(talk, variant) {
     const { day, month, year } = dateParts(talk.date);
+    const bellHtml = isNew(talk)
+      ? `<span class="new-bell" title="Recently published">${NEW_BELL_SVG}</span>`
+      : "";
     if (variant === "long") {
-      return `<div class="date-chip date-chip-long">
-                <span class="date-day">${day}</span>
-                <span class="date-my"><span class="date-month">${month}</span><span class="date-year">${year}</span></span>
+      return `<div class="date-chip-wrap">
+                <div class="date-chip date-chip-long">
+                  <span class="date-day">${day}</span>
+                  <span class="date-my"><span class="date-month">${month}</span><span class="date-year">${year}</span></span>
+                </div>
+                ${bellHtml}
               </div>`;
     }
-    return `<div class="date-chip date-chip-default">
-              <span class="date-day">${day}</span>
-              <span class="date-month">${month}</span>
+    return `<div class="date-chip-wrap">
+              <div class="date-chip date-chip-default">
+                <span class="date-day">${day}</span>
+                <span class="date-month">${month}</span>
+              </div>
+              ${bellHtml}
             </div>`;
   }
 
@@ -197,40 +223,42 @@
             </div>`;
   }
 
+  function displayTitle(talk) {
+    return talk.title === "TBD" ? "Details coming soon" : talk.title;
+  }
+
   function render() {
     const visible = talks.filter(matchesFilters);
+    const cardsToShow = expanded ? visible : visible.slice(0, CARD_LIMIT);
     grid.innerHTML = "";
-    for (const talk of visible) {
+    cardsToShow.forEach((talk, i) => {
       const card = document.createElement("div");
       card.className = "talk-card" + (talk.status === "upcoming" ? " card-upcoming" : "");
+      // Cards revealed by "Show more" fade/slide in; the first CARD_LIMIT
+      // (already visible before the click) render as usual, no animation.
+      if (expanded && i >= CARD_LIMIT) card.classList.add("card-enter");
       card.dataset.id = talk.id;
-      card.tabIndex = 0;
-      card.setAttribute("role", "button");
-      card.setAttribute("aria-label", `${talk.title} — ${talk.speaker}`);
-      const newBadge = isNew(talk) ? `<span class="badge badge-new">New</span>` : "";
       const footerIcons = (talk.tags || []).map((t) => topicChipHtml(t, "compact")).join("");
+      const statusHint = talk.status === "upcoming" ? " (upcoming)" : "";
+      // The clickable "open" trigger is a real <button> wrapping only header+title —
+      // footer topic-chip buttons stay as a sibling, never nested inside another
+      // interactive control (WCAG 4.1.2: no focusable descendants of role=button).
       card.innerHTML = `
-        <div class="talk-card-header">
-          ${avatarHtml(talk, "default")}
-          ${nameRoleHtml(talk, "default")}
-          ${dateChipHtml(talk, "default")}
-        </div>
-        <div class="talk-card-title">${escapeHtml(talk.title)}${newBadge}</div>
+        <button type="button" class="talk-card-open" aria-label="${escapeHtml(displayTitle(talk))} — ${escapeHtml(talk.speaker)}${statusHint}">
+          <div class="talk-card-header">
+            ${avatarHtml(talk, "default")}
+            ${nameRoleHtml(talk, "default")}
+            ${dateChipHtml(talk, "default")}
+          </div>
+          <div class="talk-card-title">${escapeHtml(displayTitle(talk))}</div>
+        </button>
         <div class="talk-card-footer">${footerIcons}</div>
       `;
-      card.addEventListener("click", (e) => {
-        if (e.target.closest(".topic-chip")) return;
-        openModal(talk);
-      });
-      card.addEventListener("keydown", (e) => {
-        if ((e.key === "Enter" || e.key === " ") && !e.target.closest(".topic-chip")) {
-          e.preventDefault();
-          openModal(talk);
-        }
-      });
+      card.querySelector(".talk-card-open").addEventListener("click", () => openModal(talk));
       grid.appendChild(card);
-    }
+    });
     emptyState.hidden = visible.length !== 0;
+    showMoreBtn.hidden = expanded || visible.length <= CARD_LIMIT;
   }
 
   function openModal(talk) {
@@ -266,15 +294,15 @@
             ${nameRoleHtml(talk, "long")}
           </div>
           <div>
-            <h2 id="modal-title" class="expanded-title">${escapeHtml(talk.title)}</h2>
+            <h2 id="modal-title" class="expanded-title">${escapeHtml(displayTitle(talk))}</h2>
             ${videoHtml}
             <div class="expanded-section">
               <h3>Abstract</h3>
-              <p>${escapeHtml(talk.abstract)}</p>
+              <p>${talk.abstract === "TBD" ? "Abstract will be posted closer to the talk." : escapeHtml(talk.abstract)}</p>
             </div>
             <div class="expanded-section">
               <h3>Bio</h3>
-              <p>${escapeHtml(talk.bio)}</p>
+              <p>${talk.bio === "TBD" ? "Speaker bio will be added soon." : escapeHtml(talk.bio)}</p>
             </div>
             ${links.length ? `<div class="expanded-links">${links.join("")}</div>` : ""}
           </div>
@@ -286,14 +314,18 @@
         </div>
       </div>
     `;
+    lastFocusedTrigger = document.activeElement;
     overlay.hidden = false;
     document.body.style.overflow = "hidden";
+    modalClose.focus();
   }
 
   function closeModal() {
     overlay.hidden = true;
     document.body.style.overflow = "";
     modalBody.innerHTML = "";
+    if (lastFocusedTrigger && document.contains(lastFocusedTrigger)) lastFocusedTrigger.focus();
+    lastFocusedTrigger = null;
   }
 
   modalClose.addEventListener("click", closeModal);
@@ -305,8 +337,17 @@
   });
 
   [searchInput, modeFilter, statusFilter, tagFilter].forEach((el) =>
-    el.addEventListener("input", render)
+    el.addEventListener("input", () => {
+      expanded = false;
+      render();
+    })
   );
+
+  showMoreBtn.addEventListener("click", () => {
+    expanded = true;
+    render();
+    showMoreBtn.blur();
+  });
 
   render();
   renderTopicsLegend();
