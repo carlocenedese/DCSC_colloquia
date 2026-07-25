@@ -5,23 +5,36 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{{ .Site.Title }}</title>
 <meta name="description" content="Past and upcoming DCSC lunch colloquia and online seminars — TU Delft Center for Systems and Control.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
 </head>
 <body>
 
 <header class="hero">
   <div class="hero-inner">
-    <h1>DCSC Colloquia</h1>
-    <p class="hero-sub">Lunch talks and online seminars from the Delft Center for Systems and Control — past recordings and upcoming sessions.</p>
+    <div class="hero-title-row">
+      <img class="hero-logo" src="{{ "images/dcsc-logo.svg" | relURL }}" alt="DCSC">
+      <h1>DCSC Colloquia</h1>
+    </div>
+    <p class="hero-sub">Where DCSC talks live after the room empties — and where the next one gets announced.</p>
     <div class="hero-cta">
-      <a class="btn btn-primary" href="{{ .Site.Params.youtubeChannel }}" target="_blank" rel="noopener">Watch on YouTube</a>
-      <a class="btn btn-secondary" href="#propose">Propose a talk</a>
+      <a class="link-pill link-pill-hero" href="{{ .Site.Params.youtubeChannel }}" target="_blank" rel="noopener">&gt; YouTube</a>
+      <a class="link-pill link-pill-hero" href="#propose">&gt; Reach out</a>
     </div>
   </div>
 </header>
 
 <main class="container">
 
+  <section class="topics-section">
+    <h2>Topics</h2>
+    <p>The talks cover the 4 theoretical topics that represent the backbone of the DCSC research.</p>
+    <div class="topics-legend" id="topics-legend"></div>
+  </section>
+
+  <h2>Talks</h2>
   <section class="filters" aria-label="Filter talks">
     <input id="search" type="search" placeholder="Search speaker or title…" aria-label="Search">
     <select id="filter-mode" aria-label="Filter by mode">
@@ -39,20 +52,8 @@
     </select>
   </section>
 
-  <section class="table-wrap">
-    <table id="talks-table">
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th>Speaker</th>
-          <th>Affiliation</th>
-          <th>Title</th>
-        </tr>
-      </thead>
-      <tbody id="talks-tbody"></tbody>
-    </table>
-    <p id="empty-state" class="empty-state" hidden>No talks match these filters.</p>
-  </section>
+  <section class="talks-grid" id="talks-grid" aria-label="Talks"></section>
+  <p id="empty-state" class="empty-state" hidden>No talks match these filters.</p>
 
 </main>
 

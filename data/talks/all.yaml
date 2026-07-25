@@ -5,7 +5,8 @@ talks:
   mode: in-person
   location: ME-Lecture Hall E - Robert Hooke, 34.A-0-710
   speaker: Angelo Caregnato Neto
-  affiliation: University of Campinas
+  affiliation_short: UNICAMP
+  affiliation_full: University of Campinas
   role: Postdoc
   title: Mixed-integer methods for multi-robot motion planning and decision making
   abstract: 'Any individual robot can have its applicability broadened and efficiency improved if harmoniously
@@ -28,7 +29,6 @@ talks:
     electronic engineering at Aeronautics Institute of Technology, Brazil. His thesis addressed the problems
     of motion planning and decision making for multi-robot systems under network connectivity constraints.
   tags:
-  - Robotics
   - Optimization
   youtube_url: https://youtu.be/pmq7d9mcaik?si=-9B6BNGL5EhKru7G
   youtube_id: pmq7d9mcaik
@@ -39,15 +39,16 @@ talks:
     homepage: https://portal.dados.unicamp.br/perfil?origem=unidades&docente=327382&sigla_unidade=FEM&nome_unidade=FACULDADE+DE+ENGENHARIA+MECANICA&nome_programa=
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/angelo-caregnato-neto.png
 - id: 2026-02-04-shengling-shi
   date: '2026-02-04'
   time: 12.30-13.30
   mode: in-person
   location: ME-Hall H, 34.D-1-100
   speaker: Shengling Shi
-  affiliation: TUD(DCSC)
-  role: AP
+  affiliation_short: TU Delft
+  affiliation_full: TU Delft — Delft Center for Systems and Control (DCSC)
+  role: Asst. Prof.
   title: 'Learning and Optimal Control of Dynamical Systems: Network Structure and Guarantees'
   abstract: Modeling and control of complex dynamical systems face increasing challenges as systems become
     uncertain, partially unknown, and large-scale. In this talk, I will take a data-driven perspective
@@ -69,7 +70,8 @@ talks:
     learning, and optimal control with applications in healthcare. He is a member of the IFAC Technical
     Committee on Modelling, Identification and Signal Processing.
   tags:
-  - Control and Learning; Modeling and System Identification
+  - Control and Learning
+  - Modeling and System Identification
   youtube_url: null
   youtube_id: null
   status: past
@@ -86,7 +88,8 @@ talks:
   mode: in-person
   location: ME-Hall J, 34.D-1-300
   speaker: Wendelin Böhmer
-  affiliation: TU Delft -- Department of Software Technology
+  affiliation_short: TU Delft
+  affiliation_full: TU Delft — Department of Software Technology
   role: Postdoc
   title: 'Two tales of generalization: towards reliable AI in out-of-distribution situations'
   abstract: "Modern reinforcement learning (RL) methods rely on neural networks (NN) to generalize their\
@@ -116,14 +119,15 @@ talks:
     homepage: https://wendelinboehmer.de/index.html
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/wendelin-böhmer.jpg
 - id: 2026-03-04-niccolo-ciolli
   date: '2026-03-04'
   time: 12.30-13.30
   mode: in-person
   location: ME-Lecture Hall F
   speaker: Niccolo Ciolli
-  affiliation: Denmark Technical University / DTU Compute / Cognitive systems
+  affiliation_short: DTU
+  affiliation_full: Technical University of Denmark — DTU Compute, Cognitive Systems
   role: PhD
   title: 'Tensor Networks for Machine Learning: Density estimation and Polynomial regression.'
   abstract: Tensor Networks are compact representations of elements belonging to multidimensional spaces
@@ -151,14 +155,15 @@ talks:
     verified: false
     note: No scholar profile found (early-career PhD student).
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/niccolo-ciolli.jpeg
 - id: 2026-03-18-anil-alan
   date: '2026-03-18'
   time: 12.30-13.30
   mode: in-person
   location: ME-Lecture Hall F
   speaker: Anil Alan
-  affiliation: TUD (DCSC)
+  affiliation_short: TU Delft
+  affiliation_full: TU Delft — Delft Center for Systems and Control (DCSC)
   role: Postdoc
   title: 'Safety-Critical Control with Control Barrier Functions: Backup Construction and Robustness'
   abstract: 'Ensuring safety is a fundamental requirement in modern control systems operating in safety-critical
@@ -185,8 +190,8 @@ talks:
     of the Professor Pierre T. Kabamba Award and ASME’s Best Student Paper Award at the American Control
     Conference.
   tags:
-  - control and learning
-  - and optimization
+  - Control and Learning
+  - Optimization
   youtube_url: https://youtu.be/qALKwRwbLhM?si=MlF1Bd5YtbT9OF4m
   youtube_id: qALKwRwbLhM
   status: past
@@ -196,14 +201,15 @@ talks:
     homepage: https://www.tudelft.nl/en/staff/a.alan/
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/anil-alan.jpg
 - id: 2026-04-22-diego-van-overberghe
   date: '2026-04-22'
   time: 12.30-13.30
   mode: in-person
   location: ME-Lecture Hall B
   speaker: Diego Van Overberghe
-  affiliation: ETH
+  affiliation_short: ETH Zurich
+  affiliation_full: ETH Zurich — Automatic Control Laboratory (IfA)
   role: MSc
   title: Learning to Predict Traffic Signals
   abstract: Microscopic traffic simulations are vital to allow informed changes when improving or modifying
@@ -220,7 +226,7 @@ talks:
     a platform to facilitate research using SUMO (Microscopic Traffic Simulator), drawing on experience
     I gained during my Master project work.
   tags:
-  - Modelling and System Identification
+  - Modeling and System Identification
   youtube_url: https://youtu.be/JAX3XxszhyY?si=K5HT7owIJGSNLhMX
   youtube_id: JAX3XxszhyY
   status: past
@@ -230,15 +236,16 @@ talks:
     homepage: https://github.com/Diegovano
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/diego-van-overberghe.jpg
 - id: 2026-04-29-nitin-myers
   date: '2026-04-29'
   time: 12.30-13.30
   mode: in-person
   location: ME-Hall H
   speaker: Nitin Myers
-  affiliation: TUD (DCSC)
-  role: AP
+  affiliation_short: TU Delft
+  affiliation_full: TU Delft — Delft Center for Systems and Control (DCSC)
+  role: Asst. Prof.
   title: Pushing the limits of automotive perception using context-awareness
   abstract: "Automotive sensors such as radar and LiDAR serve as the “eyes” of self-driving vehicles.\
     \ Before we move drivers to the back seat and fully rely on these sensors, it is important to understand\
@@ -267,8 +274,9 @@ talks:
   mode: in-person
   location: ME-Lecture Hall F
   speaker: Dominic Liao-McPherson
-  affiliation: UBC
-  role: AP
+  affiliation_short: UBC
+  affiliation_full: University of British Columbia — Department of Mechanical Engineering
+  role: Asst. Prof.
   title: A Systems-theoretic Viewpoint on Edge Computing for Predictive Control
   abstract: Intelligent systems are becoming increasingly prevalent in our society, e.g., self-driving
     cars are being developed on an industrial scale and smart grids are at the forefront of efforts to
@@ -291,8 +299,8 @@ talks:
     lie at the intersection of optimization, control, and computing with applications in robotics, energy,
     and aerospace.
   tags:
-  - optimization
-  - control and learning
+  - Optimization
+  - Control and Learning
   youtube_url: https://youtu.be/ai3KHpyeP2o?si=5NPBfHRNCq4VIWeK
   youtube_id: ai3KHpyeP2o
   status: past
@@ -302,15 +310,16 @@ talks:
     homepage: https://aocl.mech.ubc.ca/people/
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/dominic-liao-mcpherson.jpeg
 - id: 2026-05-13-donatello-materassi
   date: '2026-05-13'
   time: 12.30-13.30
   mode: in-person
   location: ME-Hall G
   speaker: Donatello Materassi
-  affiliation: Electrical & Computer Eng. at University of Minnesota
-  role: AP
+  affiliation_short: UMN
+  affiliation_full: University of Minnesota — Department of Electrical and Computer Engineering
+  role: Asst. Prof.
   title: Inferring Causal Structure in Networks of Dynamical Systems
   abstract: 'Networks of dynamical systems provide a powerful language to model complex phenomena across
     science and engineering. While significant progress has been made in analyzing the behavior of such
@@ -347,15 +356,16 @@ talks:
     homepage: https://cse.umn.edu/ece/donatello-materassi
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/donatello-materassi.jpg
 - id: 2026-05-21-giuseppe-belgioioso
   date: '2026-05-21'
   time: 10:45 – 12:45
   mode: in-person
   location: ME-Lecture Hall D
   speaker: Giuseppe Belgioioso
-  affiliation: KTH
-  role: AP
+  affiliation_short: KTH
+  affiliation_full: KTH Royal Institute of Technology — Department of Decision and Control Systems
+  role: Asst. Prof.
   title: Toward Online Feedback Optimization of Complex Multi-Agent Systems
   abstract: 'Online Feedback Optimization (OFO) refers to the design of feedback controllers that steer
     a physical system toward the solution of an optimization problem while enforcing operational constraints.
@@ -391,16 +401,17 @@ talks:
     scholar: https://scholar.google.com/citations?user=ck0wft8AAAAJ
     homepage: https://belgioio.github.io/
     verified: false
-  slides_url: ''
-  avatar_url: ''
+  slides_url: /slides/2026-05-21-giuseppe-belgioioso.pdf
+  avatar_url: /avatars/giuseppe-belgioioso.jpg
 - id: 2026-05-27-koen-scheres
   date: '2026-05-27'
   time: 12.30-13.30
   mode: in-person
   location: ME-Hall G
   speaker: Koen Scheres
-  affiliation: KU Leuven
-  role: AP
+  affiliation_short: KU Leuven
+  affiliation_full: KU Leuven — Department of Electrical Engineering (ESAT-STADIUS)
+  role: Asst. Prof.
   title: Neuromorphic Control and Decision Making
   abstract: 'Even though computers have long since surpassed the computational capabilities of the brain,
     relatively “simple tasks” for animals and humans, such as robust locomotion in uncertain environments,
@@ -433,14 +444,15 @@ talks:
     note: Currently postdoc at KU Leuven (ESAT-STADIUS); no dedicated KU Leuven page found, homepage is
       his TU/e research-portal profile.
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/koen-scheres.jpg
 - id: 2026-06-02-giannis-delimpaltadakis
   date: '2026-06-02'
   time: 13:45-14:45
   mode: in-person
   location: ME-Lecture Hall F
   speaker: Giannis Delimpaltadakis
-  affiliation: AI4I
+  affiliation_short: AI4I Institute
+  affiliation_full: AI4I Institute — RIAS Lab, Turin, Italy
   role: TBD
   title: 'An information Theory of Finite Abstractions: fundamental scalability limits and what to do
     next'
@@ -468,8 +480,6 @@ talks:
     and information theory.
   tags:
   - Control and Learning
-  - Dynamical Systems
-  - Information Theory
   youtube_url: null
   youtube_id: null
   status: past
@@ -480,15 +490,17 @@ talks:
     verified: false
     note: No AI4I staff page found; homepage is his TU/e research-portal profile.
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/giannis-delimpaltadakis.jpeg
 - id: 2026-06-03-meng-jianwen
   date: '2026-06-03'
   time: 11:00-12:00
   mode: in-person
   location: ME-Hall G
   speaker: Meng Jianwen
-  affiliation: ESTACA (École Supérieure des Techniques Aéronautiques et de Construction Automobile)
-  role: AP
+  affiliation_short: ESTACA
+  affiliation_full: ESTACA — École Supérieure des Techniques Aéronautiques et de Construction Automobile,
+    France
+  role: Asst. Prof.
   title: 'Control Theory Applications in Energy Systems: A Focus on Lithium-Ion Batteries and Proton Exchange
     Membrane Fuel Cells'
   abstract: The energy crisis and environmental issues present the greatest challenges for the automobile
@@ -527,7 +539,8 @@ talks:
   mode: in-person
   location: ME-Lecture Hall E
   speaker: Nicolas Lanzetti
-  affiliation: Caltech
+  affiliation_short: Caltech
+  affiliation_full: California Institute of Technology — Department of Computing and Mathematical Sciences
   role: Postdoc
   title: 'Strategically robust decision-making: from game-theoretic equilibria to multi-agent learning'
   abstract: 'In many strategic settings, agents must act against the uncertain behavior of others—behavior
@@ -553,8 +566,8 @@ talks:
     in critical engineering, business, and societal infrastructure by developing the theoretical and algorithmic
     foundations for strategic dynamic decision-making under uncertainty.
   tags:
-  - control and learning
-  - optimization
+  - Control and Learning
+  - Optimization
   youtube_url: null
   youtube_id: null
   status: past
@@ -571,7 +584,8 @@ talks:
   mode: in-person
   location: ME-Lecture Hall C
   speaker: Salim Msaad
-  affiliation: TUD (DCSC)
+  affiliation_short: TU Delft
+  affiliation_full: TU Delft — Delft Center for Systems and Control (DCSC)
   role: PhD
   title: TBD
   abstract: TBD
@@ -593,7 +607,8 @@ talks:
   mode: in-person
   location: ME-Lecture Hall F
   speaker: Gleb Polevoy
-  affiliation: University of Opole
+  affiliation_short: UO
+  affiliation_full: University of Opole — Institute of Computer Science
   role: PhD
   title: Attaining Equilibria Using Control Sets
   abstract: "Many interactions stabilise in a socially suboptimal equilibrium, or move through non-equilibrium\
@@ -627,14 +642,15 @@ talks:
     verified: false
     note: Homepage is institute staff directory, not an individual page.
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/gleb-polevoy.png
 - id: 2026-07-08-gleb-polevoy-2
   date: '2026-07-08'
   time: 12.30-13.30
   mode: in-person
   location: ME-Lecture Hall F
   speaker: Gleb Polevoy
-  affiliation: University of Opole
+  affiliation_short: UO
+  affiliation_full: University of Opole — Institute of Computer Science
   role: PhD
   title: Fair, Individually Rational and Cheap Adjustment
   abstract: 'Consider the practical goal of making a desired action profile played, when the planner can
@@ -674,15 +690,16 @@ talks:
     verified: false
     note: Homepage is institute staff directory, not an individual page.
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/gleb-polevoy.png
 - id: 2026-03-11-leilei-cui
   date: '2026-03-11'
   time: 15:00 -- 16:00
   mode: online
   location: Online
   speaker: Leilei Cui
-  affiliation: University of New Mexico (USA)
-  role: Assistant Professor
+  affiliation_short: UNM
+  affiliation_full: University of New Mexico — Department of Mechanical Engineering
+  role: Asst. Prof.
   title: 'Interplay Between Learning and Control: Robustness of Learning Algorithms and Data-Driven Controller
     Design'
   abstract: 'Learning and control are deeply intertwined disciplines. On one hand, control theory provides
@@ -714,8 +731,8 @@ talks:
     excellence, and the Alexander Hessel Award for the best Ph.D. dissertation in Electrical Engineering
     at NYU.'
   tags:
-  - control and learning
-  - optimization
+  - Control and Learning
+  - Optimization
   youtube_url: https://youtu.be/fGvbeDjKNkA?si=XtA9nvmpWdVMEguz
   youtube_id: fGvbeDjKNkA
   status: past
@@ -732,8 +749,9 @@ talks:
   mode: online
   location: Online
   speaker: Sungho Shin
-  affiliation: Massachusetts Institute of Technology (USA)
-  role: Assistant Professor
+  affiliation_short: MIT
+  affiliation_full: Massachusetts Institute of Technology — Department of Chemical Engineering
+  role: Asst. Prof.
   title: Solving large-scale, sparse, constrained nonlinear optimization problems on GPUs
   abstract: 'In this talk, we delve into recent advancements in solving large-scale sparse nonlinear optimization
     problems on GPUs. This new approach combines three key elements: (1) the SIMD abstraction of nonlinear
@@ -768,15 +786,16 @@ talks:
     homepage: https://cheme.mit.edu/profile/sungho-shin/
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/sungho-shin.png
 - id: 2026-05-06-dinesh-krishnamoorthy
   date: '2026-05-06'
   time: 15:00 -- 16:00
   mode: online
   location: Online
   speaker: Dinesh Krishnamoorthy
-  affiliation: Norwegian University of Science and Technology (NOR)
-  role: Associate Professor
+  affiliation_short: NTNU
+  affiliation_full: Norwegian University of Science and Technology — Department of Engineering Cybernetics
+  role: Associate Prof.
   title: 'Complexity reduction in Model Predictive Control: Learning from experts with guarantees.'
   abstract: "Model Predictive Control (MPC) is among the most powerful tools in modern control engineering,\
     \ yet its computational demands can make it impractical for resource-constrained, embedded platforms\
@@ -813,15 +832,16 @@ talks:
     homepage: https://dinesh-krishnamoorthy.github.io/
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/dinesh-krishnamoorthy.jpg
 - id: 2026-06-03-lars-lindemann
   date: '2026-06-03'
   time: 15:00 -- 16:00
   mode: online
   location: Online
   speaker: Lars Lindemann
-  affiliation: ETH Zurich (CH)
-  role: Assistant Professor
+  affiliation_short: ETH Zurich
+  affiliation_full: ETH Zurich — Automatic Control Laboratory
+  role: Asst. Prof.
   title: 'When Control Changes the Data: Safety under Interaction-Driven Distribution Shifts'
   abstract: Accelerated by rapid advances in machine learning and AI, there has been tremendous success
     in the design of learning-enabled autonomous systems in areas such as autonomous driving and robotics.
@@ -867,14 +887,15 @@ talks:
     homepage: https://control.ee.ethz.ch/people/profile.lars-lindemann.html
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/lars-lindemann.png
 - id: 2026-09-09-michael-muehlebach
   date: '2026-09-09'
   time: 15:00 -- 16:00
   mode: online
   location: Online
   speaker: Michael Muehlebach
-  affiliation: Max Planck Institute for Intelligent Systems (Germany)
+  affiliation_short: MPI-IS
+  affiliation_full: Max Planck Institute for Intelligent Systems — Learning and Dynamical Systems Group
   role: Research Group Leader
   title: TBD
   abstract: TBD
@@ -896,7 +917,8 @@ talks:
   mode: online
   location: Online
   speaker: Necmiye Ozay
-  affiliation: University of Michigan (USA)
+  affiliation_short: U-M
+  affiliation_full: University of Michigan — Electrical Engineering and Computer Science Department
   role: Professor
   title: TBD
   abstract: TBD
@@ -918,7 +940,8 @@ talks:
   mode: online
   location: Online
   speaker: Marco Campi
-  affiliation: University of Brescia (Italy)
+  affiliation_short: UniBS
+  affiliation_full: University of Brescia — Dept. of Information Engineering
   role: Professor
   title: TBD
   abstract: TBD
@@ -940,8 +963,9 @@ talks:
   mode: online
   location: Online
   speaker: Anastasia Bizyaeva
-  affiliation: Cornell University (USA)
-  role: Assistant Professor
+  affiliation_short: Cornell
+  affiliation_full: Cornell University — Sibley School of Mechanical and Aerospace Engineering
+  role: Asst. Prof.
   title: TBD
   abstract: TBD
   bio: TBD

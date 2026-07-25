@@ -5,8 +5,9 @@ talks:
   mode: online
   location: Online
   speaker: Leilei Cui
-  affiliation: University of New Mexico (USA)
-  role: Assistant Professor
+  affiliation_short: UNM
+  affiliation_full: University of New Mexico — Department of Mechanical Engineering
+  role: Asst. Prof.
   title: 'Interplay Between Learning and Control: Robustness of Learning Algorithms and Data-Driven Controller
     Design'
   abstract: 'Learning and control are deeply intertwined disciplines. On one hand, control theory provides
@@ -38,8 +39,8 @@ talks:
     excellence, and the Alexander Hessel Award for the best Ph.D. dissertation in Electrical Engineering
     at NYU.'
   tags:
-  - control and learning
-  - optimization
+  - Control and Learning
+  - Optimization
   youtube_url: https://youtu.be/fGvbeDjKNkA?si=XtA9nvmpWdVMEguz
   youtube_id: fGvbeDjKNkA
   status: past
@@ -56,8 +57,9 @@ talks:
   mode: online
   location: Online
   speaker: Sungho Shin
-  affiliation: Massachusetts Institute of Technology (USA)
-  role: Assistant Professor
+  affiliation_short: MIT
+  affiliation_full: Massachusetts Institute of Technology — Department of Chemical Engineering
+  role: Asst. Prof.
   title: Solving large-scale, sparse, constrained nonlinear optimization problems on GPUs
   abstract: 'In this talk, we delve into recent advancements in solving large-scale sparse nonlinear optimization
     problems on GPUs. This new approach combines three key elements: (1) the SIMD abstraction of nonlinear
@@ -92,15 +94,16 @@ talks:
     homepage: https://cheme.mit.edu/profile/sungho-shin/
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/sungho-shin.png
 - id: 2026-05-06-dinesh-krishnamoorthy
   date: '2026-05-06'
   time: 15:00 -- 16:00
   mode: online
   location: Online
   speaker: Dinesh Krishnamoorthy
-  affiliation: Norwegian University of Science and Technology (NOR)
-  role: Associate Professor
+  affiliation_short: NTNU
+  affiliation_full: Norwegian University of Science and Technology — Department of Engineering Cybernetics
+  role: Associate Prof.
   title: 'Complexity reduction in Model Predictive Control: Learning from experts with guarantees.'
   abstract: "Model Predictive Control (MPC) is among the most powerful tools in modern control engineering,\
     \ yet its computational demands can make it impractical for resource-constrained, embedded platforms\
@@ -137,15 +140,16 @@ talks:
     homepage: https://dinesh-krishnamoorthy.github.io/
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/dinesh-krishnamoorthy.jpg
 - id: 2026-06-03-lars-lindemann
   date: '2026-06-03'
   time: 15:00 -- 16:00
   mode: online
   location: Online
   speaker: Lars Lindemann
-  affiliation: ETH Zurich (CH)
-  role: Assistant Professor
+  affiliation_short: ETH Zurich
+  affiliation_full: ETH Zurich — Automatic Control Laboratory
+  role: Asst. Prof.
   title: 'When Control Changes the Data: Safety under Interaction-Driven Distribution Shifts'
   abstract: Accelerated by rapid advances in machine learning and AI, there has been tremendous success
     in the design of learning-enabled autonomous systems in areas such as autonomous driving and robotics.
@@ -191,14 +195,15 @@ talks:
     homepage: https://control.ee.ethz.ch/people/profile.lars-lindemann.html
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/lars-lindemann.png
 - id: 2026-09-09-michael-muehlebach
   date: '2026-09-09'
   time: 15:00 -- 16:00
   mode: online
   location: Online
   speaker: Michael Muehlebach
-  affiliation: Max Planck Institute for Intelligent Systems (Germany)
+  affiliation_short: MPI-IS
+  affiliation_full: Max Planck Institute for Intelligent Systems — Learning and Dynamical Systems Group
   role: Research Group Leader
   title: TBD
   abstract: TBD
@@ -220,7 +225,8 @@ talks:
   mode: online
   location: Online
   speaker: Necmiye Ozay
-  affiliation: University of Michigan (USA)
+  affiliation_short: U-M
+  affiliation_full: University of Michigan — Electrical Engineering and Computer Science Department
   role: Professor
   title: TBD
   abstract: TBD
@@ -242,7 +248,8 @@ talks:
   mode: online
   location: Online
   speaker: Marco Campi
-  affiliation: University of Brescia (Italy)
+  affiliation_short: UniBS
+  affiliation_full: University of Brescia — Dept. of Information Engineering
   role: Professor
   title: TBD
   abstract: TBD
@@ -264,8 +271,9 @@ talks:
   mode: online
   location: Online
   speaker: Anastasia Bizyaeva
-  affiliation: Cornell University (USA)
-  role: Assistant Professor
+  affiliation_short: Cornell
+  affiliation_full: Cornell University — Sibley School of Mechanical and Aerospace Engineering
+  role: Asst. Prof.
   title: TBD
   abstract: TBD
   bio: TBD

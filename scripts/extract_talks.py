@@ -36,6 +36,103 @@ HEADER = [
 
 YT_ID_RE = re.compile(r"(?:youtu\.be/|v=)([A-Za-z0-9_-]{6,})")
 
+# Raw xlsx affiliation string -> (short, full-with-department).
+# Curated by hand since the xlsx spelling is inconsistent and department info
+# isn't always present in the same column (sometimes folded into the string).
+AFFILIATION_MAP = {
+    "University of Campinas": ("UNICAMP", "University of Campinas"),
+    "TUD(DCSC)": ("TU Delft", "TU Delft — Delft Center for Systems and Control (DCSC)"),
+    "TUD (DCSC)": ("TU Delft", "TU Delft — Delft Center for Systems and Control (DCSC)"),
+    "TU Delft -- Department of Software Technology": ("TU Delft", "TU Delft — Department of Software Technology"),
+    "Denmark Technical University / DTU Compute / Cognitive systems": (
+        "DTU", "Technical University of Denmark — DTU Compute, Cognitive Systems",
+    ),
+    "ETH": ("ETH Zurich", "ETH Zurich — Automatic Control Laboratory (IfA)"),
+    "UBC": ("UBC", "University of British Columbia — Department of Mechanical Engineering"),
+    "Electrical & Computer Eng. at University of Minnesota": (
+        "UMN", "University of Minnesota — Department of Electrical and Computer Engineering",
+    ),
+    "KTH": ("KTH", "KTH Royal Institute of Technology — Department of Decision and Control Systems"),
+    "KU Leuven": ("KU Leuven", "KU Leuven — Department of Electrical Engineering (ESAT-STADIUS)"),
+    "AI4I": ("AI4I Institute", "AI4I Institute — RIAS Lab, Turin, Italy"),
+    "ESTACA (École Supérieure des Techniques Aéronautiques et de Construction Automobile)": (
+        "ESTACA", "ESTACA — École Supérieure des Techniques Aéronautiques et de Construction Automobile, France",
+    ),
+    "Caltech": ("Caltech", "California Institute of Technology — Department of Computing and Mathematical Sciences"),
+    "University of Opole": ("UO", "University of Opole — Institute of Computer Science"),
+    "University of New Mexico (USA)": ("UNM", "University of New Mexico — Department of Mechanical Engineering"),
+    "Massachusetts Institute of Technology (USA)": ("MIT", "Massachusetts Institute of Technology — Department of Chemical Engineering"),
+    "Norwegian University of Science and Technology (NOR)": (
+        "NTNU", "Norwegian University of Science and Technology — Department of Engineering Cybernetics",
+    ),
+    "ETH Zurich (CH)": ("ETH Zurich", "ETH Zurich — Automatic Control Laboratory"),
+    "Max Planck Institute for Intelligent Systems (Germany)": (
+        "MPI-IS", "Max Planck Institute for Intelligent Systems — Learning and Dynamical Systems Group",
+    ),
+    "University of Michigan (USA)": ("U-M", "University of Michigan — Electrical Engineering and Computer Science Department"),
+    "University of Brescia (Italy)": ("UniBS", "University of Brescia — Dept. of Information Engineering"),
+    "Cornell University (USA)": ("Cornell", "Cornell University — Sibley School of Mechanical and Aerospace Engineering"),
+}
+
+# The only 4 research clusters the site is allowed to show. Everything from
+# the xlsx gets folded into one of these or dropped (never invented).
+TAG_CANON = {
+    "control and learning": "Control and Learning",
+    "modeling and system identification": "Modeling and System Identification",
+    "modelling and system identification": "Modeling and System Identification",
+    "optimization": "Optimization",
+    "and optimization": "Optimization",  # bad comma-split fragment in source
+    "systems and signal analysis": "Systems and Signal Analysis",
+}
+
+
+def resolve_affiliation(raw):
+    raw = clean(raw)
+    if not raw:
+        return "TBD", "TBD"
+    mapped = AFFILIATION_MAP.get(raw)
+    if mapped:
+        return mapped
+    print(f"warn: no affiliation mapping for {raw!r} — using raw string for both", file=sys.stderr)
+    return raw, raw
+
+
+def canonicalize_tags(raw_tags):
+    canon = []
+    for raw in raw_tags:
+        key = raw.strip().lower()
+        mapped = TAG_CANON.get(key)
+        if mapped:
+            if mapped not in canon:
+                canon.append(mapped)
+        else:
+            print(f"warn: dropping non-canonical tag {raw!r}", file=sys.stderr)
+    return canon
+
+
+# Raw xlsx role string -> normalized abbreviation shown on the site.
+ROLE_CANON = {
+    "ap": "Asst. Prof.",
+    "assistant professor": "Asst. Prof.",
+    "associate professor": "Associate Prof.",
+    "professor": "Professor",
+    "postdoc": "Postdoc",
+    "phd": "PhD",
+    "msc": "MSc",
+    "research group leader": "Research Group Leader",
+}
+
+
+def resolve_role(raw):
+    raw = clean(raw)
+    if not raw:
+        return "TBD"
+    mapped = ROLE_CANON.get(raw.strip().lower())
+    if mapped:
+        return mapped
+    print(f"warn: no role mapping for {raw!r} — using raw string", file=sys.stderr)
+    return raw
+
 
 def slugify(text):
     text = re.sub(r"[^\w\s-]", "", text or "").strip().lower()
@@ -95,8 +192,10 @@ def parse_sheet(ws, mode):
             continue  # date-only placeholder: blank/skipped week, not a real slot
 
         talk_date = record["date"].date() if hasattr(record["date"], "date") else record["date"]
-        tags = [t.strip() for t in (record.get("tags_raw") or "").split(",") if t.strip()]
+        raw_tags = [t.strip() for t in re.split(r"[,;]", record.get("tags_raw") or "") if t.strip()]
+        tags = canonicalize_tags(raw_tags)
         yt_url = clean(record.get("youtube_url"))
+        affiliation_short, affiliation_full = resolve_affiliation(record.get("affiliation"))
 
         base_id = f"{talk_date.isoformat()}-{slugify(record.get('speaker')) or 'tbd'}"
         talk_id = base_id
@@ -113,8 +212,9 @@ def parse_sheet(ws, mode):
             "mode": mode,
             "location": clean_or_tbd(record.get("location")),
             "speaker": clean_or_tbd(record.get("speaker")),
-            "affiliation": clean_or_tbd(record.get("affiliation")),
-            "role": clean_or_tbd(record.get("role")),
+            "affiliation_short": affiliation_short,
+            "affiliation_full": affiliation_full,
+            "role": resolve_role(record.get("role")),
             "title": clean_or_tbd(record.get("title")),
             "abstract": clean_or_tbd(record.get("abstract")),
             "bio": clean_or_tbd(record.get("bio")),
