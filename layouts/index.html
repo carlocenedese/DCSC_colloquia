@@ -151,7 +151,7 @@
   </div>
 </div>
 
-<script>window.SITE_BASE = "{{ "/" | relURL }}";</script>
+<script>window.SITE_BASE = "{{ .Site.Home.RelPermalink }}";</script>
 <script id="talks-data" type="application/json">
 {{ (index .Site.Data.talks "all").talks | jsonify | safeJS }}
 </script>
