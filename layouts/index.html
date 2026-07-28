@@ -3,8 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{{ .Site.Title }}</title>
-<meta name="description" content="Past and upcoming DCSC lunch colloquia and online seminars — TU Delft Center for Systems and Control.">
+<title>{{ .Site.Title }} — TU Delft Center for Systems and Control</title>
+<meta name="description" content="{{ .Site.Params.description }}">
+<link rel="canonical" href="{{ .Site.BaseURL }}">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:title" content="{{ .Site.Title }} — TU Delft Center for Systems and Control">
+<meta property="og:description" content="{{ .Site.Params.description }}">
+<meta property="og:url" content="{{ .Site.BaseURL }}">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{ .Site.Title }} — TU Delft Center for Systems and Control">
+<meta name="twitter:description" content="{{ .Site.Params.description }}">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "DCSC Colloquia",
+  "url": "{{ .Site.BaseURL }}",
+  "description": {{ .Site.Params.description | jsonify }},
+  "parentOrganization": {
+    "@type": "CollegeOrUniversity",
+    "name": "Delft Center for Systems and Control (DCSC), TU Delft",
+    "url": "https://www.tudelft.nl/me/over/afdelingen/delft-center-for-systems-and-control"
+  },
+  "sameAs": ["{{ .Site.Params.youtubeChannel }}"]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">

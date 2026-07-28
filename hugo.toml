@@ -1,7 +1,10 @@
 baseURL = 'https://dcsc-colloquia.tudelft.nl/'
 languageCode = 'en-us'
 title = 'DCSC Colloquia'
+enableRobotsTXT = true
+disableKinds = ['taxonomy', 'term', 'RSS']
 
 [params]
   contactEmails = ["c.cenedese@tudelft.nl", "shengling.shi@tudelft.nl"]
   youtubeChannel = "https://www.youtube.com/@DCSCTUDelft/videos"
+  description = "Lunch-time talk series and online seminars from the Delft Center for Systems and Control (DCSC), TU Delft. Watch past talk recordings and see upcoming systems-and-control seminars."
