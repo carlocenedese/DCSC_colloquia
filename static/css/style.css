@@ -273,6 +273,7 @@ a { color: var(--tud-blue); }
   display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
+  max-height: 144px; /* flex:1 stretches this box past 4 lines on short cards; without a cap, overflow:hidden has nothing to clip and the clamp ellipsis shows with the "hidden" line still visible below it */
 }
 .talk-card-footer { display: flex; justify-content: flex-end; align-items: center; gap: 12.5px; flex-wrap: wrap; }
 .talk-card-footer .topic-chip-compact { width: 50px; height: 50px; }
