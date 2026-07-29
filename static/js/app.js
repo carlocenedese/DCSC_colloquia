@@ -26,6 +26,11 @@
   const overlay = document.getElementById("modal-overlay");
   const modalBody = document.getElementById("modal-body");
   const modalClose = document.getElementById("modal-close");
+  const formatButtons = document.getElementById("format-filter-buttons");
+  const dateButtons = document.getElementById("date-filter-buttons");
+  const filtersTopicRow = document.getElementById("filters-topic-row");
+  const topicDropdownBtn = document.getElementById("filters-topic-dropdown-btn");
+  const topicDropdownPanel = document.getElementById("filters-topic-dropdown-panel");
 
   const allTags = Array.from(new Set(talks.flatMap((t) => t.tags || []))).sort();
   for (const tag of allTags) {
@@ -36,11 +41,28 @@
   }
 
   // Canonical cluster name -> display label + icon, per the Figma "Topics" component.
+  // `description` is the research-area summary shown in the Topics accordion.
   const TOPIC_META = {
-    "Control and Learning": { label: "Control & Learning", icon: "control-and-learning" },
-    "Modeling and System Identification": { label: "Modeling & Sys. Id.", icon: "modeling-and-sysid" },
-    "Optimization": { label: "Optimization", icon: "optimization" },
-    "Systems and Signal Analysis": { label: "Systems & Signals", icon: "systems-and-signals" },
+    "Control and Learning": {
+      label: "Control & Learning",
+      icon: "control-and-learning",
+      description: "It combines optimization, estimation, model-based control with ML and operations research, under uncertainty/disturbances/constraints. Covers discrete-event and hybrid systems control, predictive control/scheduling (model-based + data-driven), multi-agent/distributed control of large-scale systems, game-theoretic multi-agent control, RL/supervised learning for control, and optimization-learning hybrids.",
+    },
+    "Modeling and System Identification": {
+      label: "Modeling & Sys. Id.",
+      icon: "modeling-and-sysid",
+      description: "Addresses what model complexity and actuator/sensor configuration each system component needs for reliable model-based diagnostics, parameter estimation, monitoring, and control, with uncertainty quantification and disturbance modeling as key aspects. Combines measurement data with multi-disciplinary models for robust decision-making. Covers efficient numerical methods, sensor fusion, finite-sample identification, kernel-based methods, Koopman operator theory, statistical learning theory, tensor-based nonlinear identification, event-based timing models, data-driven hybrid system modeling, and function space approaches.",
+    },
+    "Optimization": {
+      label: "Optimization",
+      icon: "optimization",
+      description: "Develops efficient solution methods and algorithms for complex, large-scale optimization problems in systems and control, exploiting problem structure for better computational efficiency, numerical properties, and memory use. Covers parallel/asynchronous/event-triggered computation, data-driven signal-acquisition optimization, distributionally robust ambiguity sets, sampled-data sampling strategies, infinite-dimensional optimization, stochastic optimization, matrix/tensor factorization, convex optimization, and multi-objective control optimization.",
+    },
+    "Systems and Signal Analysis": {
+      label: "Systems & Signals",
+      icon: "systems-and-signals",
+      description: "Focuses on analyzing systems and signals across linear, nonlinear, hybrid, and spatio-temporally-varying dynamics. Aims to extract information from signals to understand, diagnose, and interact with systems, model their dynamics, and improve performance. Emphasizes algorithms exploiting physical insight and structure, alongside integrated designs with embedded prognostics and diagnostics.",
+    },
   };
 
   // Watermarked stock placeholders (temporary, per Carlo — swap for licensed art later).
@@ -54,7 +76,19 @@
 
   const CARD_LIMIT = 20;
   let expanded = false;
+  let viewMode = "card"; // "card" | "list", toggled by #view-toggle below
   const showMoreBtn = document.getElementById("show-more-btn");
+
+  const viewToggle = document.getElementById("view-toggle");
+  if (viewToggle) {
+    viewToggle.querySelectorAll(".view-toggle-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        viewMode = btn.getAttribute("aria-label") === "List view" ? "list" : "card";
+        expanded = false;
+        render();
+      });
+    });
+  }
 
   function syncTagSelect() {
     let multiOpt = tagFilter.querySelector(`option[value="${MULTI_OPTION_VALUE}"]`);
@@ -84,32 +118,144 @@
                 <img class="topic-chip-icon" src="${iconSrc}" alt="">
               </button>`;
     }
-    const sizeClass = variant === "small" ? "topic-chip-small" : "topic-chip-default";
-    return `<button type="button" class="topic-chip ${sizeClass}" data-topic="${escapeHtml(canonical)}" aria-pressed="${pressed}">
+    return `<button type="button" class="topic-chip topic-chip-default" data-topic="${escapeHtml(canonical)}" aria-pressed="${pressed}">
               <img class="topic-chip-icon" src="${iconSrc}" alt="">
               <span class="topic-chip-label">${escapeHtml(meta.label)}</span>
             </button>`;
   }
 
+  function topicPillHtml(canonical) {
+    const meta = TOPIC_META[canonical];
+    if (!meta) return "";
+    const iconSrc = asset(`/images/topics/${meta.icon}.png`);
+    const pressed = selectedTags.has(canonical);
+    return `<button type="button" class="topic-pill" data-topic="${escapeHtml(canonical)}" aria-pressed="${pressed}">
+              <img class="topic-pill-icon" src="${iconSrc}" alt="">
+              <span class="topic-pill-label">${escapeHtml(meta.label)}</span>
+            </button>`;
+  }
+
   function onTopicChipClick(e) {
-    const btn = e.target.closest(".topic-chip");
+    const btn = e.target.closest(".topic-chip, .topic-pill");
     if (!btn) return;
     const topic = btn.dataset.topic;
-    if (btn.closest(".modal-tags") || btn.closest(".sidebar-chips")) closeModal();
+    if (btn.closest(".modal-tags")) closeModal();
     if (selectedTags.has(topic)) selectedTags.delete(topic);
     else selectedTags.add(topic);
     syncTagSelect();
     expanded = false;
     render();
-    renderTopicsLegend();
+    renderFiltersTopicRow();
+    renderTopicDropdownPanel();
   }
 
-  function renderTopicsLegend() {
-    const legend = document.getElementById("topics-legend");
-    if (!legend) return;
-    legend.innerHTML = Object.keys(TOPIC_META).map((c) => topicChipHtml(c, "default")).join("");
+  // Informational only — describes DCSC's research areas, isn't a talk filter.
+  // Rendered once at init (see bottom); never re-rendered on filter changes,
+  // since that would collapse whichever row the user has open.
+  function accordionRowHtml(canonical, isOpen) {
+    const meta = TOPIC_META[canonical];
+    if (!meta) return "";
+    const iconSrc = asset(`/images/topics/${meta.icon}.png`);
+    return `<div class="accordion-row" data-open="${isOpen}">
+              <button type="button" class="accordion-header" aria-expanded="${isOpen}">
+                <span class="accordion-header-main">
+                  <img class="accordion-icon" src="${iconSrc}" alt="">
+                  <span class="accordion-label">${escapeHtml(canonical)}</span>
+                </span>
+                <span class="accordion-toggle" aria-hidden="true"></span>
+              </button>
+              <div class="accordion-content-wrap">
+                <div class="accordion-content-inner">
+                  <p class="accordion-content-text">${escapeHtml(meta.description)}</p>
+                </div>
+              </div>
+            </div>`;
   }
+
+  function renderTopicsAccordion() {
+    const accordion = document.getElementById("topics-accordion");
+    if (!accordion) return;
+    accordion.innerHTML = Object.keys(TOPIC_META)
+      .map((canonical, i) => accordionRowHtml(canonical, i === 0))
+      .join("");
+    accordion.querySelectorAll(".accordion-header").forEach((header) => {
+      header.addEventListener("click", () => {
+        const row = header.closest(".accordion-row");
+        const isOpen = row.getAttribute("data-open") === "true";
+        accordion.querySelectorAll(".accordion-row").forEach((r) => {
+          r.setAttribute("data-open", "false");
+          r.querySelector(".accordion-header").setAttribute("aria-expanded", "false");
+        });
+        if (!isOpen) {
+          row.setAttribute("data-open", "true");
+          header.setAttribute("aria-expanded", "true");
+        }
+      });
+    });
+  }
+
+  function renderFiltersTopicRow() {
+    if (!filtersTopicRow) return;
+    filtersTopicRow.innerHTML = Object.keys(TOPIC_META).map(topicPillHtml).join("");
+  }
+
+  function renderTopicDropdownPanel() {
+    if (!topicDropdownPanel) return;
+    topicDropdownPanel.innerHTML = Object.keys(TOPIC_META)
+      .map((canonical) => {
+        const meta = TOPIC_META[canonical];
+        const checked = selectedTags.has(canonical) ? "checked" : "";
+        return `<label><input type="checkbox" data-topic="${escapeHtml(canonical)}" ${checked}> ${escapeHtml(meta.label)}</label>`;
+      })
+      .join("");
+  }
+
   document.addEventListener("click", onTopicChipClick);
+
+  if (topicDropdownPanel) {
+    topicDropdownPanel.addEventListener("change", (e) => {
+      const checkbox = e.target.closest('input[type="checkbox"]');
+      if (!checkbox) return;
+      const topic = checkbox.dataset.topic;
+      if (checkbox.checked) selectedTags.add(topic);
+      else selectedTags.delete(topic);
+      syncTagSelect();
+      expanded = false;
+      render();
+      renderFiltersTopicRow();
+    });
+  }
+
+  if (topicDropdownBtn) {
+    topicDropdownBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const isOpen = topicDropdownPanel.classList.contains("open");
+      topicDropdownPanel.classList.toggle("open", !isOpen);
+      topicDropdownBtn.setAttribute("aria-expanded", String(!isOpen));
+    });
+    document.addEventListener("click", () => {
+      topicDropdownPanel.classList.remove("open");
+      topicDropdownBtn.setAttribute("aria-expanded", "false");
+    });
+  }
+
+  function wireSegmentedButtons(container, hiddenSelect) {
+    if (!container) return;
+    container.querySelectorAll(".format-filter-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        hiddenSelect.value = btn.dataset.value;
+        hiddenSelect.dispatchEvent(new Event("input"));
+      });
+    });
+  }
+  function syncSegmentedButtons(container, value) {
+    if (!container) return;
+    container.querySelectorAll(".format-filter-btn").forEach((btn) => {
+      btn.setAttribute("aria-pressed", btn.dataset.value === value ? "true" : "false");
+    });
+  }
+  wireSegmentedButtons(formatButtons, modeFilter);
+  wireSegmentedButtons(dateButtons, statusFilter);
 
   tagFilter.addEventListener("input", () => {
     if (tagFilter.value === "all") selectedTags.clear();
@@ -117,7 +263,8 @@
       selectedTags.clear();
       selectedTags.add(tagFilter.value);
     }
-    renderTopicsLegend();
+    renderFiltersTopicRow();
+    renderTopicDropdownPanel();
   });
 
   function escapeHtml(str) {
@@ -223,6 +370,12 @@
                 </div>
               </div>`;
     }
+    if (variant === "row") {
+      return `<div class="name-role name-role-row">
+                <span class="name-line">${escapeHtml(talk.speaker)}</span>
+                <span class="info-line">${escapeHtml(talk.role)} · ${escapeHtml(talk.affiliation_short)}</span>
+              </div>`;
+    }
     const [first, last] = splitName(talk.speaker);
     return `<div class="name-role name-role-default">
               <span class="name-line">${escapeHtml(first)}</span>
@@ -235,42 +388,89 @@
     return talk.title === "TBD" ? "Details coming soon" : talk.title;
   }
 
+  function buildCardEl(talk, i) {
+    const card = document.createElement("div");
+    card.className = "talk-card" + (talk.status === "upcoming" ? " card-upcoming" : "");
+    // Cards revealed by "Show more" fade/slide in; the first CARD_LIMIT
+    // (already visible before the click) render as usual, no animation.
+    if (expanded && i >= CARD_LIMIT) card.classList.add("card-enter");
+    card.dataset.id = talk.id;
+    const footerIcons = (talk.tags || []).map((t) => topicChipHtml(t, "compact")).join("");
+    const statusHint = talk.status === "upcoming" ? " (upcoming)" : "";
+    // The clickable "open" trigger is a real <button> wrapping only header+title —
+    // footer topic-chip buttons stay as a sibling, never nested inside another
+    // interactive control (WCAG 4.1.2: no focusable descendants of role=button).
+    card.innerHTML = `
+      <button type="button" class="talk-card-open" aria-label="${escapeHtml(displayTitle(talk))} — ${escapeHtml(talk.speaker)}${statusHint}">
+        <div class="talk-card-header">
+          ${avatarHtml(talk, "default")}
+          ${nameRoleHtml(talk, "default")}
+          ${dateChipHtml(talk, "default")}
+        </div>
+        <div class="talk-card-title">${escapeHtml(displayTitle(talk))}</div>
+      </button>
+      <div class="talk-card-footer">${footerIcons}</div>
+    `;
+    card.querySelector(".talk-card-open").addEventListener("click", () => openModal(talk));
+    return card;
+  }
+
+  function buildRowEl(talk, i) {
+    const row = document.createElement("div");
+    row.className = "talk-row" + (talk.status === "upcoming" ? " card-upcoming" : "");
+    if (expanded && i >= CARD_LIMIT) row.classList.add("card-enter");
+    row.dataset.id = talk.id;
+    const footerIcons = (talk.tags || []).map((t) => topicChipHtml(t, "compact")).join("");
+    const statusHint = talk.status === "upcoming" ? " (upcoming)" : "";
+    row.innerHTML = `
+      <button type="button" class="talk-row-open" aria-label="${escapeHtml(displayTitle(talk))} — ${escapeHtml(talk.speaker)}${statusHint}">
+        ${avatarHtml(talk, "row")}
+        ${nameRoleHtml(talk, "row")}
+        ${dateChipHtml(talk, "default")}
+        <div class="talk-row-title">${escapeHtml(displayTitle(talk))}</div>
+      </button>
+      <div class="talk-row-footer">${footerIcons}</div>
+    `;
+    row.querySelector(".talk-row-open").addEventListener("click", () => openModal(talk));
+    return row;
+  }
+
   function render() {
     const visible = talks.filter(matchesFilters);
     const cardsToShow = expanded ? visible : visible.slice(0, CARD_LIMIT);
     grid.innerHTML = "";
+    grid.classList.toggle("view-list", viewMode === "list");
     cardsToShow.forEach((talk, i) => {
-      const card = document.createElement("div");
-      card.className = "talk-card" + (talk.status === "upcoming" ? " card-upcoming" : "");
-      // Cards revealed by "Show more" fade/slide in; the first CARD_LIMIT
-      // (already visible before the click) render as usual, no animation.
-      if (expanded && i >= CARD_LIMIT) card.classList.add("card-enter");
-      card.dataset.id = talk.id;
-      const footerIcons = (talk.tags || []).map((t) => topicChipHtml(t, "compact")).join("");
-      const statusHint = talk.status === "upcoming" ? " (upcoming)" : "";
-      // The clickable "open" trigger is a real <button> wrapping only header+title —
-      // footer topic-chip buttons stay as a sibling, never nested inside another
-      // interactive control (WCAG 4.1.2: no focusable descendants of role=button).
-      card.innerHTML = `
-        <button type="button" class="talk-card-open" aria-label="${escapeHtml(displayTitle(talk))} — ${escapeHtml(talk.speaker)}${statusHint}">
-          <div class="talk-card-header">
-            ${avatarHtml(talk, "default")}
-            ${nameRoleHtml(talk, "default")}
-            ${dateChipHtml(talk, "default")}
-          </div>
-          <div class="talk-card-title">${escapeHtml(displayTitle(talk))}</div>
-        </button>
-        <div class="talk-card-footer">${footerIcons}</div>
-      `;
-      card.querySelector(".talk-card-open").addEventListener("click", () => openModal(talk));
-      grid.appendChild(card);
+      grid.appendChild(viewMode === "list" ? buildRowEl(talk, i) : buildCardEl(talk, i));
     });
     emptyState.hidden = visible.length !== 0;
     showMoreBtn.hidden = expanded || visible.length <= CARD_LIMIT;
   }
 
+  function modalSlidesPillHtml(talk) {
+    if (!talk.slides_url) return "";
+    return `<a class="slides-pill" href="${asset(talk.slides_url)}" download>
+              <img class="slides-pill-icon" src="${asset("/images/topics/slides.png")}" alt="">
+              <span class="slides-pill-frame">
+                <span class="slides-pill-label">Slides</span>
+                <svg class="slides-pill-download" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M6 1v7M6 8 3 5M6 8l3-3M1.5 10h9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>`;
+  }
+
   function openModal(talk) {
-    const topicsHtml = (talk.tags || []).map((t) => topicChipHtml(t, "small")).join("");
+    const tags = talk.tags || [];
+    const topicsHtml = tags.map((t) => topicPillHtml(t)).join("");
+    const slidesHtml = modalSlidesPillHtml(talk);
+    const tagsRowHtml = topicsHtml || slidesHtml
+      ? `<div class="modal-tags">
+           ${topicsHtml}
+           ${topicsHtml && slidesHtml ? `<span class="modal-tags-divider">|</span>` : ""}
+           ${slidesHtml}
+         </div>`
+      : "";
 
     const videoHtml = talk.youtube_id
       ? `<div class="expanded-video"><iframe src="https://www.youtube-nocookie.com/embed/${talk.youtube_id}" title="Talk recording" allowfullscreen loading="lazy"></iframe></div>`
@@ -284,42 +484,27 @@
       links.push(`<a class="link-pill" href="${talk.links.homepage}" target="_blank" rel="noopener">&gt;website</a>`);
     }
 
-    const downloadHtml = talk.slides_url
-      ? `<div class="sidebar-label">Download</div>
-         <div class="sidebar-chips">
-           <a class="link-chip" href="${asset(talk.slides_url)}" download>
-             <img src="${asset("/images/topics/slides.png")}" alt="">
-             <span>Slides</span>
-           </a>
-         </div>`
-      : "";
-
     modalBody.innerHTML = `
       <div class="expanded">
-        <div class="expanded-main">
-          <div class="expanded-header">
+        <div class="expanded-header">
+          <div class="expanded-header-speaker">
             ${avatarHtml(talk, "big")}
             ${nameRoleHtml(talk, "long")}
           </div>
-          <div>
-            <h2 id="modal-title" class="expanded-title">${escapeHtml(displayTitle(talk))}</h2>
-            ${videoHtml}
-            <div class="expanded-section">
-              <h3>Abstract</h3>
-              <p>${talk.abstract === "TBD" ? "Abstract will be posted closer to the talk." : escapeHtml(talk.abstract)}</p>
-            </div>
-            <div class="expanded-section">
-              <h3>Bio</h3>
-              <p>${talk.bio === "TBD" ? "Speaker bio will be added soon." : escapeHtml(talk.bio)}</p>
-            </div>
-            ${links.length ? `<div class="expanded-links">${links.join("")}</div>` : ""}
-          </div>
-        </div>
-        <div class="expanded-sidebar">
           ${dateChipHtml(talk, "long")}
-          ${topicsHtml ? `<div class="sidebar-group"><div class="sidebar-label">Topics</div><div class="sidebar-chips">${topicsHtml}</div></div>` : ""}
-          ${downloadHtml ? `<div class="sidebar-group">${downloadHtml}</div>` : ""}
         </div>
+        <h2 id="modal-title" class="expanded-title">${escapeHtml(displayTitle(talk))}</h2>
+        ${videoHtml}
+        ${tagsRowHtml}
+        <div class="expanded-section">
+          <h3>Abstract</h3>
+          <p>${talk.abstract === "TBD" ? "Abstract will be posted closer to the talk." : escapeHtml(talk.abstract)}</p>
+        </div>
+        <div class="expanded-section">
+          <h3>Bio</h3>
+          <p>${talk.bio === "TBD" ? "Speaker bio will be added soon." : escapeHtml(talk.bio)}</p>
+        </div>
+        ${links.length ? `<div class="expanded-links">${links.join("")}</div>` : ""}
       </div>
     `;
     lastFocusedTrigger = document.activeElement;
@@ -347,6 +532,8 @@
   [searchInput, modeFilter, statusFilter, tagFilter].forEach((el) =>
     el.addEventListener("input", () => {
       expanded = false;
+      syncSegmentedButtons(formatButtons, modeFilter.value);
+      syncSegmentedButtons(dateButtons, statusFilter.value);
       render();
     })
   );
@@ -358,5 +545,45 @@
   });
 
   render();
-  renderTopicsLegend();
+  renderTopicsAccordion();
+  renderFiltersTopicRow();
+  renderTopicDropdownPanel();
+  syncSegmentedButtons(formatButtons, modeFilter.value);
+  syncSegmentedButtons(dateButtons, statusFilter.value);
 })();
+
+// ---- View toggle (design-v2 variation): sliding indicator behind the active
+// card/list button. Not wired into the page yet — no-op until .view-toggle
+// markup exists, since list view itself isn't built.
+function initViewToggle() {
+  document.querySelectorAll(".view-toggle").forEach((toggle) => {
+    const buttons = [...toggle.querySelectorAll(".view-toggle-btn")];
+    if (!buttons.length) return;
+
+    let indicator = toggle.querySelector(".view-toggle-indicator");
+    if (!indicator) {
+      indicator = document.createElement("span");
+      indicator.className = "view-toggle-indicator";
+      indicator.setAttribute("aria-hidden", "true");
+      toggle.insertBefore(indicator, toggle.firstChild);
+    }
+
+    function moveIndicatorTo(btn) {
+      const toggleRect = toggle.getBoundingClientRect();
+      const btnRect = btn.getBoundingClientRect();
+      indicator.style.width = `${btnRect.width}px`;
+      indicator.style.transform = `translateX(${btnRect.left - toggleRect.left}px)`;
+    }
+
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        buttons.forEach((b) => b.setAttribute("aria-pressed", b === btn ? "true" : "false"));
+        moveIndicatorTo(btn);
+      });
+    });
+
+    const active = buttons.find((b) => b.getAttribute("aria-pressed") === "true") || buttons[0];
+    moveIndicatorTo(active);
+  });
+}
+if (document.querySelector(".view-toggle")) initViewToggle();

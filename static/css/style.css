@@ -154,21 +154,106 @@ a { color: var(--tud-blue); }
   .icon-external-link { transition: none; }
 }
 
+/* ---- Filters bar: two lines — controls (view toggle/search/format/date) on
+   line 1, topic filter on line 2. Below 700px the segmented controls and
+   topic-pill row swap for dropdowns (selects work best for touch/mobile),
+   and both lines collapse into one wrapping row since there's nothing left
+   forcing a two-line split. ---- */
 .filters {
   display: flex;
-  gap: 0.6rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 14px;
   margin-bottom: 1.5rem;
 }
+.filters-line { display: flex; flex-direction: row; align-items: center; gap: 6px; flex-wrap: wrap; }
+.filters-line-controls { gap: 10px; }
 .filters input, .filters select {
-  padding: 0.5rem 0.75rem;
   border: 1px solid var(--border);
   border-radius: var(--radius-chip);
   background: var(--bg-soft);
   color: var(--ink);
   font-size: 1rem; /* <16px triggers iOS Safari's auto-zoom-on-focus */
 }
-#search { flex: 1 1 220px; min-width: 200px; }
+.filters-search {
+  flex: 1 1 220px;
+  min-width: 200px;
+  height: 32px;
+  padding: 0 12px;
+}
+.filters-mobile-select {
+  display: none; /* shown only below the 700px breakpoint, see media query */
+  height: 32px;
+  padding: 0 8px;
+}
+.filters-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  flex: none;
+  color: #6B7280;
+}
+.filters-icon-btn svg { width: 18px; height: 18px; }
+.filters-divider { width: 1px; height: 20px; background: #E6E7EB; flex: none; margin-right: 4px; }
+.filters-topic-row { display: flex; flex-direction: row; align-items: center; gap: 4px; flex-wrap: wrap; }
+
+.filters-topic-dropdown { display: none; position: relative; } /* shown only below 700px */
+.filters-topic-dropdown-btn {
+  height: 32px;
+  padding: 0 12px;
+  border: 1px solid #E6E7EB;
+  border-radius: 8px;
+  background: #fff;
+  font-family: inherit;
+  font-size: 1rem; /* <16px triggers iOS Safari's auto-zoom-on-focus */
+  color: #000;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.filters-topic-dropdown-btn svg { width: 12px; height: 12px; flex: none; transition: transform 0.15s ease; }
+.filters-topic-dropdown-btn[aria-expanded="true"] svg { transform: rotate(180deg); }
+.filters-topic-dropdown-panel {
+  position: absolute;
+  top: 38px;
+  left: 0;
+  background: #fff;
+  border: 1px solid #E6E7EB;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 6px;
+  display: none;
+  flex-direction: column;
+  gap: 2px;
+  z-index: 10;
+  min-width: 200px;
+}
+.filters-topic-dropdown-panel.open { display: flex; }
+.filters-topic-dropdown-panel label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  color: #000;
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 6px;
+}
+.filters-topic-dropdown-panel label:hover { background: #F9FAFB; }
+
+@media (max-width: 700px) {
+  .filters-desktop-only { display: none !important; }
+  .filters-mobile-select { display: inline-block; }
+  .filters-topic-dropdown { display: inline-block; }
+  /* Both .filters-line wrappers stop being real boxes so their remaining
+     (mobile) children pack onto as few lines as possible instead of being
+     forced onto two separate rows. */
+  .filters { flex-direction: row; flex-wrap: wrap; gap: 8px; }
+  .filters > .filters-line { display: contents; }
+}
 
 /* ---- Avatar (Figma: Default 64px on cards, Big 90px in expanded view) ---- */
 .avatar {
@@ -181,6 +266,7 @@ a { color: var(--tud-blue); }
 }
 .avatar-default { width: 64px; height: 64px; }
 .avatar-big { width: 90px; height: 90px; }
+.avatar-row { width: 48px; height: 48px; }
 
 /* ---- Date chip (Figma: Default = small day/month card, Long = big numeral) ---- */
 .date-chip {
@@ -278,6 +364,54 @@ a { color: var(--tud-blue); }
 .talk-card-footer { display: flex; justify-content: flex-end; align-items: center; gap: 12.5px; flex-wrap: wrap; }
 .talk-card-footer .topic-chip-compact { width: 50px; height: 50px; }
 .talk-card-footer .topic-chip-compact .topic-chip-icon { width: 50px; height: 50px; }
+
+/* ---- Talk row (list view) ---- */
+.talks-grid.view-list { display: flex; flex-direction: column; gap: 0.5rem; }
+.talk-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #fff;
+  border-radius: 12.62px;
+  corner-shape: squircle;
+  box-shadow: var(--card-shadow);
+  padding: 10px 20px;
+  overflow: hidden;
+  transition: box-shadow 0.15s ease;
+}
+.talk-row:hover, .talk-row:focus-within { box-shadow: 0px 2.1px 4.21px rgba(30,30,30,0.16), inset 0px 4px 4px rgba(48,93,255,0.16); }
+.talk-row-open {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+  min-width: 0;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  color: inherit;
+}
+.talk-row .name-role-row { width: 180px; flex: none; }
+.name-role-row .name-line { font-weight: 500; font-size: 16px; line-height: 20px; letter-spacing: 0.21px; color: #000; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.name-role-row .info-line {
+  display: block; font-family: 'Space Mono', monospace; font-size: 11px; line-height: 15px; letter-spacing: 0.21px; color: var(--info-blue);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.talk-row-title {
+  flex: 1;
+  min-width: 0;
+  font-weight: 700; font-size: 16px; line-height: 20px; letter-spacing: 0.21px; color: #000;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.talk-row-footer { display: flex; align-items: center; gap: 8px; flex: none; }
+.talk-row-footer .topic-chip-compact { width: 32px; height: 32px; }
+.talk-row-footer .topic-chip-compact .topic-chip-icon { width: 32px; height: 32px; }
+.talk-row.card-upcoming .talk-row-title { color: var(--ink-soft); font-weight: 500; }
+.talk-row.card-upcoming .name-role-row .name-line { color: var(--ink-soft); font-weight: 400; }
 
 /* Upcoming talks read as "not yet happened": desaturated, not just faded —
    text stays on --ink-soft (still ≥4.5:1 on white) rather than low-opacity grey. */
@@ -381,17 +515,6 @@ a { color: var(--tud-blue); }
   min-width: 0; flex: 1 1 auto; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
 }
 
-.topic-chip-small {
-  padding: 12.5px;
-  gap: 12.5px;
-  height: 75px;
-}
-.topic-chip-small .topic-chip-icon { width: 50px; height: 50px; border-radius: 6px; }
-.topic-chip-small .topic-chip-label {
-  font-weight: 700; font-size: 16px; letter-spacing: 0.21px;
-  min-width: 0; flex: 1 1 auto; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
-}
-
 .topic-chip-compact {
   width: 100px;
   height: 100px;
@@ -404,18 +527,208 @@ a { color: var(--tud-blue); }
 .topic-chip-compact:hover { box-shadow: 0 2px 6px rgba(0,0,0,0.25); }
 .topic-chip-compact .topic-chip-icon { width: 100px; height: 100px; border-radius: 12.5px; }
 
-.topics-legend {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin: 1.5rem 0 2.5rem;
+/* ---- Topics accordion (design-v2): replaces the old 2x2 info-card grid.
+   Single-open — expanding one row collapses the others. Height/opacity
+   animate on toggle; the +/- icon morphs by scaling its vertical bar to 0. ---- */
+.accordion { display: flex; flex-direction: column; width: 100%; margin: 1.5rem 0 2.5rem; }
+.accordion-row {
+  box-sizing: border-box;
+  display: flex; flex-direction: column; align-items: flex-start;
+  padding: 12.5px; width: 100%;
+  background: #fff; border-bottom: 1px solid #BBB6B6;
 }
-/* Fixed 2x2: each chip takes half the row, wrapping to a single column
-   once it can no longer fit comfortably next to another (~360px min). */
-.topics-legend .topic-chip-default {
-  flex: 1 1 calc(50% - 0.5rem);
-  min-width: 280px;
-  width: auto;
+.accordion-header {
+  display: flex; flex-direction: row; justify-content: space-between; align-items: center;
+  padding: 0; gap: 25px; width: 100%; height: 75px;
+  background: none; border: none; cursor: pointer; font-family: inherit; text-align: left;
+}
+.accordion-header-main { display: flex; flex-direction: row; align-items: center; gap: 25px; }
+.accordion-icon { width: 75px; height: 75px; flex: none; display: block; object-fit: cover; }
+.accordion-label {
+  font-weight: 700; font-size: 24px; line-height: 37px; letter-spacing: 0.210304px; color: #000;
+}
+.accordion-toggle {
+  position: relative; flex: none; width: 25px; height: 25px;
+  border-radius: 50%; border: 1.5px solid #7F7C7C;
+}
+.accordion-toggle::before, .accordion-toggle::after {
+  content: ""; position: absolute; top: 50%; left: 50%; background: #7F7C7C;
+}
+.accordion-toggle::before { width: 11px; height: 1.5px; transform: translate(-50%, -50%); }
+.accordion-toggle::after {
+  width: 1.5px; height: 11px; transform: translate(-50%, -50%) scaleY(1);
+  transition: transform 0.25s ease;
+}
+.accordion-row[data-open="true"] .accordion-toggle::after { transform: translate(-50%, -50%) scaleY(0); }
+
+.accordion-content-wrap {
+  display: grid; grid-template-rows: 0fr; width: 100%;
+  transition: grid-template-rows 0.3s ease;
+}
+.accordion-row[data-open="true"] .accordion-content-wrap { grid-template-rows: 1fr; }
+.accordion-content-inner { overflow: hidden; min-height: 0; }
+.accordion-content-text {
+  padding: 0 0 0 106px;
+  font-size: 14px; line-height: 25px; letter-spacing: 0.210304px; color: #7F7C7C;
+  opacity: 0; transition: opacity 0.2s ease;
+}
+.accordion-row[data-open="true"] .accordion-content-text { opacity: 1; transition-delay: 0.1s; }
+
+@media (max-width: 640px) {
+  .accordion-content-text { padding-left: 0; }
+}
+
+/* ---- Topic pill selector (design-v2 variation): compact rounded-full chip.
+   Hover/selected colors match .format-filter-btn for consistency across the
+   two filter components. ---- */
+.topic-pill {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 9.5px;
+  gap: 2.5px;
+  width: fit-content;
+  height: 32px;
+  background: #fff;
+  box-shadow: 0px 0px 1.05px rgba(0, 0, 0, 0.08), 0px 2.1px 4.21px rgba(30, 30, 30, 0.16);
+  border-radius: 192.5px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  color: #000;
+  text-align: left;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.topic-pill:not([aria-pressed="true"]):hover { background: rgba(0, 0, 0, 0.05); }
+.topic-pill[aria-pressed="true"] { background: rgba(48, 93, 255, 0.08); color: var(--info-blue); }
+.topic-pill-icon { width: 30px; height: 30px; flex: none; display: block; object-fit: cover; }
+.topic-pill-label {
+  width: max-content;
+  height: 32px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 32px;
+  letter-spacing: 0.210304px;
+  white-space: nowrap;
+}
+
+/* ---- Slides pill (design-v2 variation): same rounded-full chip as the topic
+   pill, plus a small download-arrow glyph next to the label ---- */
+.slides-pill {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 9.5px;
+  gap: 2.5px;
+  width: fit-content;
+  height: 32px;
+  background: #fff;
+  box-shadow: 0px 0px 1.05px rgba(0, 0, 0, 0.08), 0px 2.1px 4.21px rgba(30, 30, 30, 0.16);
+  border-radius: 192.5px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  color: #000;
+  text-align: left;
+  text-decoration: none;
+}
+.slides-pill-icon { width: 30px; height: 30px; flex: none; display: block; object-fit: cover; }
+.slides-pill-frame { display: inline-flex; flex-direction: row; align-items: center; gap: 7px; height: 32px; }
+.slides-pill-label {
+  width: max-content;
+  height: 32px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 32px;
+  letter-spacing: 0.210304px;
+  white-space: nowrap;
+}
+.slides-pill-download { width: 12px; height: 12px; flex: none; stroke: #F17D32; }
+
+/* ---- View toggle (design-v2 variation): card/list segmented switch.
+   Component only — list view itself isn't built yet.
+   A white indicator slides behind whichever button is active (same sliding-thumb
+   animation as https://21st.dev/r/anubra266/switch-1), driven by initViewToggle() in app.js. ---- */
+.view-toggle {
+  position: relative;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  height: 32px; /* match .topic-pill's height */
+  padding: 3px;
+  width: fit-content;
+  gap: 2px;
+  background: rgba(0, 0, 0, 0.05); /* same gray as .topic-pill/.format-filter-btn hover */
+  border: none;
+  border-radius: 9999px;
+}
+.view-toggle-indicator {
+  position: absolute;
+  top: 3px;
+  left: 0; /* JS-set translateX already measures from the container's left edge
+              (getBoundingClientRect delta), which includes the 3px padding —
+              a static left offset here would double-count it and shift the
+              pill away from the button it's supposed to sit under */
+  height: 26px; /* must match .view-toggle-btn's height exactly, or the icon
+                   (centered in the button) drifts off-center against the pill */
+  background: #fff;
+  border-radius: 9999px;
+  box-shadow: 0px 1px 2px rgba(30, 30, 30, 0.12);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), width 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}
+.view-toggle-btn {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  color: #B4B7BD; /* inactive: lighter gray */
+}
+.view-toggle-btn[aria-pressed="true"] { color: #6B7280; /* active: current gray */ }
+.view-toggle-icon { position: relative; z-index: 2; width: 14px; height: 14px; flex: none; stroke: currentColor; }
+
+/* ---- Format filter (design-v2 variation): text-only segmented control
+   (All / In Person / Online), same shape language as the reference React
+   component but no drop shadow (per spec) and no dark-mode variant (site
+   is light-only). Active-state color/tint isn't in the reference — using
+   the site's existing accent (--info-blue) since it's already the color
+   used for section headers. ---- */
+.format-filter {
+  display: inline-flex;
+  height: 32px; /* match .topic-pill */
+  border: 1px solid #E6E7EB;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+}
+.format-filter-btn {
+  height: 32px;
+  padding: 0 9.5px; /* match .topic-pill's horizontal padding */
+  background: transparent;
+  border: none;
+  border-right: 1px solid #E6E7EB;
+  font-family: inherit;
+  font-size: 12px; /* match .topic-pill-label */
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0.210304px;
+  color: #000;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.format-filter-btn:last-child { border-right: none; }
+.format-filter-btn:hover { background: rgba(0, 0, 0, 0.05); }
+.format-filter-btn[aria-pressed="true"] {
+  background: rgba(48, 93, 255, 0.08);
+  color: var(--info-blue);
 }
 
 .about {
@@ -497,16 +810,16 @@ a { color: var(--tud-blue); }
 }
 .modal-close:hover { color: var(--ink); }
 
-/* ---- Expanded talk view: main column + Date/Topics/Download sidebar ---- */
-.expanded { display: flex; gap: 10px; align-items: flex-start; }
-.expanded-main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 50px; }
-.expanded-sidebar { width: 268px; flex: none; display: flex; flex-direction: column; align-items: center; gap: 50px; }
+/* ---- Expanded talk view (design-v2): single column, date chip inline in the
+   header (no more sidebar), topics + slides merged into one pill row. ---- */
+.expanded { display: flex; flex-direction: column; gap: 25px; }
 
 .expanded-header { display: flex; align-items: center; gap: 12.5px; }
+.expanded-header-speaker { display: flex; align-items: center; gap: 12.5px; flex: 1; min-width: 0; }
 
 #modal-body .expanded-title {
   font-weight: 700; font-size: 32px; line-height: 36px; letter-spacing: 0.21px; color: #000;
-  margin: 0 0 25px;
+  margin: 0;
 }
 .expanded-section { margin-bottom: 6px; }
 .expanded-section h3 {
@@ -515,8 +828,11 @@ a { color: var(--tud-blue); }
 }
 .expanded-section p { font-size: 14px; line-height: 26px; letter-spacing: 0.21px; color: #000; margin: 0 0 20px; }
 
-.expanded-video { position: relative; width: 100%; padding-top: 56.25%; margin-bottom: 20px; border-radius: 8px; overflow: hidden; }
+.expanded-video { position: relative; width: 100%; padding-top: 56.25%; border-radius: 8px; overflow: hidden; }
 .expanded-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+.modal-tags { display: flex; align-items: center; gap: 13px; flex-wrap: wrap; }
+.modal-tags-divider { font-family: 'Space Mono', monospace; font-size: 24px; line-height: 32px; color: #BBB6B6; }
 
 .expanded-links { display: flex; gap: 12.5px; flex-wrap: wrap; }
 .link-pill {
@@ -530,24 +846,6 @@ a { color: var(--tud-blue); }
 }
 .link-pill:hover { background: var(--bg-soft); }
 
-.sidebar-group { display: flex; flex-direction: column; align-items: center; gap: 13px; width: 100%; }
-.sidebar-label {
-  font-family: 'Space Mono', monospace; font-weight: 400; font-size: 14px; line-height: 23px;
-  letter-spacing: 0.21px; color: #000; text-transform: uppercase; text-align: center;
-}
-.sidebar-chips { display: flex; flex-direction: column; gap: 13px; width: 100%; }
-.sidebar-chips .topic-chip-small,
-.sidebar-chips .link-chip { width: 100%; }
-
-.link-chip {
-  display: flex; align-items: center; gap: 12.5px;
-  background: #fff; box-shadow: var(--card-shadow); border-radius: 12.5px; corner-shape: squircle;
-  padding: 12.5px; height: 75px; text-decoration: none;
-}
-.link-chip img { width: 50px; height: 50px; flex: none; }
-.link-chip span { font-weight: 700; font-size: 16px; letter-spacing: 0.21px; color: #000; }
-
 @media (max-width: 760px) {
-  .expanded { flex-direction: column; }
-  .expanded-sidebar { width: 100%; }
+  .expanded-header { flex-direction: column; align-items: flex-start; }
 }

@@ -97,25 +97,64 @@
         </svg>
       </a>
     </p>
-    <div class="topics-legend" id="topics-legend"></div>
+    <div class="accordion" id="topics-accordion"></div>
   </section>
 
   <h2>Talks</h2>
   <section class="filters" aria-label="Filter talks">
-    <input id="search" type="search" placeholder="Search speaker or title…" aria-label="Search">
-    <select id="filter-mode" aria-label="Filter by mode">
-      <option value="all">All formats</option>
-      <option value="in-person">In-person</option>
-      <option value="online">Online</option>
-    </select>
-    <select id="filter-status" aria-label="Filter by status">
-      <option value="all">All talks</option>
-      <option value="upcoming">Upcoming</option>
-      <option value="past">Past</option>
-    </select>
-    <select id="filter-tag" aria-label="Filter by research cluster">
-      <option value="all">All research clusters</option>
-    </select>
+    <div class="filters-line filters-line-controls">
+      <div class="view-toggle" id="view-toggle">
+        <button type="button" class="view-toggle-btn" aria-pressed="true" aria-label="Card view">
+          <svg class="view-toggle-icon" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false">
+            <rect x="1" y="1" width="4.5" height="4.5" rx="1" stroke="currentColor" stroke-width="1.2"/>
+            <rect x="6.5" y="1" width="4.5" height="4.5" rx="1" stroke="currentColor" stroke-width="1.2"/>
+            <rect x="1" y="6.5" width="4.5" height="4.5" rx="1" stroke="currentColor" stroke-width="1.2"/>
+            <rect x="6.5" y="6.5" width="4.5" height="4.5" rx="1" stroke="currentColor" stroke-width="1.2"/>
+          </svg>
+        </button>
+        <button type="button" class="view-toggle-btn" aria-pressed="false" aria-label="List view">
+          <svg class="view-toggle-icon" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false">
+            <path d="M1.5 2.5h9M1.5 6h9M1.5 9.5h9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+      <input id="search" class="filters-search" type="search" placeholder="Search speaker or title…" aria-label="Search">
+      <div class="format-filter filters-desktop-only" id="format-filter-buttons">
+        <button type="button" class="format-filter-btn" data-value="all" aria-pressed="true">All</button>
+        <button type="button" class="format-filter-btn" data-value="in-person" aria-pressed="false">In Person</button>
+        <button type="button" class="format-filter-btn" data-value="online" aria-pressed="false">Online</button>
+      </div>
+      <div class="format-filter filters-desktop-only" id="date-filter-buttons">
+        <button type="button" class="format-filter-btn" data-value="all" aria-pressed="true">All</button>
+        <button type="button" class="format-filter-btn" data-value="upcoming" aria-pressed="false">Next</button>
+        <button type="button" class="format-filter-btn" data-value="past" aria-pressed="false">Old</button>
+      </div>
+      <select id="filter-mode" class="filters-mobile-select" aria-label="Filter by mode">
+        <option value="all">All formats</option>
+        <option value="in-person">In Person</option>
+        <option value="online">Online</option>
+      </select>
+      <select id="filter-status" class="filters-mobile-select" aria-label="Filter by status">
+        <option value="all">All dates</option>
+        <option value="upcoming">Next</option>
+        <option value="past">Old</option>
+      </select>
+    </div>
+    <div class="filters-line">
+      <span class="filters-icon-btn filters-desktop-only" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M3 5h18M6 12h12M10 19h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <span class="filters-divider filters-desktop-only" aria-hidden="true"></span>
+      <div class="filters-topic-row filters-desktop-only" id="filters-topic-row"></div>
+      <div class="filters-topic-dropdown">
+        <button type="button" class="filters-topic-dropdown-btn" id="filters-topic-dropdown-btn" aria-expanded="false" aria-haspopup="true">
+          Topics
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="filters-topic-dropdown-panel" id="filters-topic-dropdown-panel"></div>
+      </div>
+    </div>
+    <select id="filter-tag" hidden aria-hidden="true" tabindex="-1"></select>
   </section>
 
   <section class="talks-grid" id="talks-grid" aria-label="Talks"></section>
