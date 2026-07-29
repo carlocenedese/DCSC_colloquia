@@ -21,7 +21,7 @@ talks:
     homepage: ''
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/alessio-la-bella.jpg
 - id: 2024-01-24-marzia-cescon
   date: '2024-01-24'
   time: null
@@ -44,7 +44,7 @@ talks:
     homepage: ''
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/marzia-cescon.jpg
 - id: 2024-03-06-mohammad-khosravi
   date: '2024-03-06'
   time: null
@@ -67,7 +67,7 @@ talks:
     homepage: ''
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/mohammad-khosravi.jpg
 - id: 2024-03-20-wolfram-martens
   date: '2024-03-20'
   time: null
@@ -116,7 +116,7 @@ talks:
     homepage: ''
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/rudi-coppola.jpg
 - id: 2024-05-01-hubald-verzijl
   date: '2024-05-01'
   time: null
@@ -182,7 +182,7 @@ talks:
     homepage: ''
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/dimitris-boskos.jpg
 - id: 2024-06-19-maarten-schoukens
   date: '2024-06-19'
   time: null
@@ -236,7 +236,7 @@ talks:
     homepage: ''
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/maarten-schoukens.jpg
 - id: 2024-09-02-meichen-guo
   date: '2024-09-02'
   time: null
@@ -292,7 +292,7 @@ talks:
     homepage: ''
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/edoardo-focante.jpg
 - id: 2024-11-20-max-sibeijn
   date: '2024-11-20'
   time: null

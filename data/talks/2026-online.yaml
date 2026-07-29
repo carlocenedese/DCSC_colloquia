@@ -50,7 +50,7 @@ talks:
     homepage: https://me.unm.edu/about/directory/faculty/leilei-cui.html
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/leilei-cui.png
 - id: 2026-04-08-sungho-shin
   date: '2026-04-08'
   time: 15:00 -- 16:00
@@ -218,7 +218,7 @@ talks:
     homepage: ''
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/michael-muehlebach.jpg
 - id: 2026-10-07-necmiye-ozay
   date: '2026-10-07'
   time: 15:00 -- 16:00
@@ -241,7 +241,7 @@ talks:
     homepage: ''
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/necmiye-ozay.jpg
 - id: 2026-10-21-marco-campi
   date: '2026-10-21'
   time: 15:00 -- 16:00
@@ -264,7 +264,7 @@ talks:
     homepage: ''
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/marco-campi.jpg
 - id: 2026-11-18-anastasia-bizyaeva
   date: '2026-11-18'
   time: 15:00 -- 16:00
@@ -287,4 +287,4 @@ talks:
     homepage: ''
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/anastasia-bizyaeva.png

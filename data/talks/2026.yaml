@@ -81,7 +81,7 @@ talks:
     homepage: https://www.tudelft.nl/en/staff/shengling.shi/
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/shengling-shi.webp
 - id: 2026-02-18-wendelin-böhmer
   date: '2026-02-18'
   time: 12.30-13.30
@@ -267,7 +267,7 @@ talks:
     homepage: https://sites.google.com/site/nitinmyers/home
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/nitin-myers.jpg
 - id: 2026-05-08-dominic-liao-mcpherson
   date: '2026-05-08'
   time: 15:00-16:00
@@ -486,9 +486,10 @@ talks:
   notes: Robust and Intelligent Systems (RIAS) Lab, AI4I Institute, Turin, Italy
   links:
     scholar: https://scholar.google.com/citations?user=DHdgzYwAAAAJ&hl=el
-    homepage: https://research.tue.nl/en/persons/giannis-delimpaltadakis
-    verified: false
-    note: No AI4I staff page found; homepage is his TU/e research-portal profile.
+    homepage: ''
+    verified: true
+    note: TU/e research-portal profile no longer exists (404); no AI4I staff page found, so no separate
+      homepage link (Scholar only).
   slides_url: ''
   avatar_url: /avatars/giannis-delimpaltadakis.jpeg
 - id: 2026-06-03-meng-jianwen
@@ -528,11 +529,12 @@ talks:
   status: past
   notes: null
   links:
-    scholar: https://scholar.google.com/citations?user=HIfAbFcAAAAJ
+    scholar: https://scholar.google.com/citations?user=ncWgr1gAAAAJ&hl=en
     homepage: https://www.estaca.fr/en/recherche-innovation/annuaire/profil/jianwen-meng/
-    verified: false
+    verified: true
+    note: Old scholar id (HIfAbFcAAAAJ) 404s — profile was recreated under a new id.
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/meng-jianwen.png
 - id: 2026-06-08-nicolas-lanzetti
   date: '2026-06-08'
   time: 15:00-16:00
@@ -577,7 +579,7 @@ talks:
     homepage: https://www.cms.caltech.edu/people/nicolas-lanzetti
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/nicolas-lanzetti.jpg
 - id: 2026-06-17-salim-msaad
   date: '2026-06-17'
   time: 12.30-13.30

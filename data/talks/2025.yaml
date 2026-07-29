@@ -36,7 +36,7 @@ talks:
     homepage: ''
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/gerwald-lichtenberg.webp
 - id: 2025-03-19-artur-schweidtmann
   date: '2025-03-19'
   time: 12.30-13.30
@@ -73,7 +73,7 @@ talks:
     homepage: ''
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/artur-schweidtmann.jpg
 - id: 2025-04-02-marta-zagorowska
   date: '2025-04-02'
   time: 12.30-13.30
@@ -103,7 +103,7 @@ talks:
     homepage: ''
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/marta-zagorowska.jpg
 - id: 2025-04-16-paul-louis-delacour
   date: '2025-04-16'
   time: 12.30-13.30
@@ -138,7 +138,7 @@ talks:
     homepage: ''
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/paul-louis-delacour.jpg
 - id: 2025-05-07-gabriel-de-albuquerque-gleizer
   date: '2025-05-07'
   time: 12.30-13.30
@@ -183,7 +183,7 @@ talks:
     homepage: ''
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/gabriel-de-albuquerque-gleizer.jpg
 - id: 2025-05-21-sreeshma-markkassery
   date: '2025-05-21'
   time: 12.30-13.30
@@ -218,7 +218,7 @@ talks:
     homepage: ''
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/sreeshma-markkassery.jpg
 - id: 2025-06-04-max-mendel
   date: '2025-06-04'
   time: 12.30-13.30
@@ -249,7 +249,7 @@ talks:
     homepage: ''
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/max-mendel.jpg
 - id: 2025-09-17-carlo-cenedese
   date: '2025-09-17'
   time: 12.30-13.30
@@ -285,7 +285,7 @@ talks:
     homepage: ''
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/carlo-cenedese.webp
 - id: 2025-10-01-gustaf-hendeby
   date: '2025-10-01'
   time: 12.30-13.30
@@ -331,7 +331,7 @@ talks:
     homepage: ''
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/gustaf-hendeby.jpg
 - id: 2025-10-15-mattia-bianchi
   date: '2025-10-15'
   time: 12:30-13:30
@@ -373,7 +373,7 @@ talks:
     homepage: ''
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/mattia-bianchi.jpg
 - id: 2025-11-05-anna-lukina
   date: '2025-11-05'
   time: 12.30-13.30
@@ -405,7 +405,7 @@ talks:
     homepage: ''
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/anna-lukina.jpg
 - id: 2025-11-19-emily-yu
   date: '2025-11-19'
   time: 12.30-13.30
@@ -446,4 +446,4 @@ talks:
     homepage: ''
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/emily-yu.png

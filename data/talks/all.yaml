@@ -21,7 +21,7 @@ talks:
     homepage: ''
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/alessio-la-bella.jpg
 - id: 2024-01-24-marzia-cescon
   date: '2024-01-24'
   time: null
@@ -44,7 +44,7 @@ talks:
     homepage: ''
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/marzia-cescon.jpg
 - id: 2024-03-06-mohammad-khosravi
   date: '2024-03-06'
   time: null
@@ -67,7 +67,7 @@ talks:
     homepage: ''
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/mohammad-khosravi.jpg
 - id: 2024-03-20-wolfram-martens
   date: '2024-03-20'
   time: null
@@ -116,7 +116,7 @@ talks:
     homepage: ''
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/rudi-coppola.jpg
 - id: 2024-05-01-hubald-verzijl
   date: '2024-05-01'
   time: null
@@ -182,7 +182,7 @@ talks:
     homepage: ''
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/dimitris-boskos.jpg
 - id: 2024-06-19-maarten-schoukens
   date: '2024-06-19'
   time: null
@@ -236,7 +236,7 @@ talks:
     homepage: ''
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/maarten-schoukens.jpg
 - id: 2024-09-02-meichen-guo
   date: '2024-09-02'
   time: null
@@ -292,7 +292,7 @@ talks:
     homepage: ''
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/edoardo-focante.jpg
 - id: 2024-11-20-max-sibeijn
   date: '2024-11-20'
   time: null
@@ -367,7 +367,7 @@ talks:
     homepage: ''
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/gerwald-lichtenberg.webp
 - id: 2025-03-19-artur-schweidtmann
   date: '2025-03-19'
   time: 12.30-13.30
@@ -404,7 +404,7 @@ talks:
     homepage: ''
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/artur-schweidtmann.jpg
 - id: 2025-04-02-marta-zagorowska
   date: '2025-04-02'
   time: 12.30-13.30
@@ -434,7 +434,7 @@ talks:
     homepage: ''
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/marta-zagorowska.jpg
 - id: 2025-04-16-paul-louis-delacour
   date: '2025-04-16'
   time: 12.30-13.30
@@ -469,7 +469,7 @@ talks:
     homepage: ''
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/paul-louis-delacour.jpg
 - id: 2025-05-07-gabriel-de-albuquerque-gleizer
   date: '2025-05-07'
   time: 12.30-13.30
@@ -514,7 +514,7 @@ talks:
     homepage: ''
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/gabriel-de-albuquerque-gleizer.jpg
 - id: 2025-05-21-sreeshma-markkassery
   date: '2025-05-21'
   time: 12.30-13.30
@@ -549,7 +549,7 @@ talks:
     homepage: ''
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/sreeshma-markkassery.jpg
 - id: 2025-06-04-max-mendel
   date: '2025-06-04'
   time: 12.30-13.30
@@ -580,7 +580,7 @@ talks:
     homepage: ''
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/max-mendel.jpg
 - id: 2025-09-17-carlo-cenedese
   date: '2025-09-17'
   time: 12.30-13.30
@@ -616,7 +616,7 @@ talks:
     homepage: ''
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/carlo-cenedese.webp
 - id: 2025-10-01-gustaf-hendeby
   date: '2025-10-01'
   time: 12.30-13.30
@@ -662,7 +662,7 @@ talks:
     homepage: ''
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/gustaf-hendeby.jpg
 - id: 2025-10-15-mattia-bianchi
   date: '2025-10-15'
   time: 12:30-13:30
@@ -704,7 +704,7 @@ talks:
     homepage: ''
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/mattia-bianchi.jpg
 - id: 2025-11-05-anna-lukina
   date: '2025-11-05'
   time: 12.30-13.30
@@ -736,7 +736,7 @@ talks:
     homepage: ''
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/anna-lukina.jpg
 - id: 2025-11-19-emily-yu
   date: '2025-11-19'
   time: 12.30-13.30
@@ -777,7 +777,7 @@ talks:
     homepage: ''
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/emily-yu.png
 - id: 2026-03-11-leilei-cui
   date: '2026-03-11'
   time: 15:00 -- 16:00
@@ -829,7 +829,7 @@ talks:
     homepage: https://me.unm.edu/about/directory/faculty/leilei-cui.html
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/leilei-cui.png
 - id: 2026-04-08-sungho-shin
   date: '2026-04-08'
   time: 15:00 -- 16:00
@@ -997,7 +997,7 @@ talks:
     homepage: ''
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/michael-muehlebach.jpg
 - id: 2026-10-07-necmiye-ozay
   date: '2026-10-07'
   time: 15:00 -- 16:00
@@ -1020,7 +1020,7 @@ talks:
     homepage: ''
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/necmiye-ozay.jpg
 - id: 2026-10-21-marco-campi
   date: '2026-10-21'
   time: 15:00 -- 16:00
@@ -1043,7 +1043,7 @@ talks:
     homepage: ''
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/marco-campi.jpg
 - id: 2026-11-18-anastasia-bizyaeva
   date: '2026-11-18'
   time: 15:00 -- 16:00
@@ -1066,7 +1066,7 @@ talks:
     homepage: ''
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/anastasia-bizyaeva.png
 - id: 2026-01-21-angelo-caregnato-neto
   date: '2026-01-21'
   time: 12.30-13.30
@@ -1149,7 +1149,7 @@ talks:
     homepage: https://www.tudelft.nl/en/staff/shengling.shi/
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/shengling-shi.webp
 - id: 2026-02-18-wendelin-böhmer
   date: '2026-02-18'
   time: 12.30-13.30
@@ -1335,7 +1335,7 @@ talks:
     homepage: https://sites.google.com/site/nitinmyers/home
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/nitin-myers.jpg
 - id: 2026-05-08-dominic-liao-mcpherson
   date: '2026-05-08'
   time: 15:00-16:00
@@ -1554,9 +1554,10 @@ talks:
   notes: Robust and Intelligent Systems (RIAS) Lab, AI4I Institute, Turin, Italy
   links:
     scholar: https://scholar.google.com/citations?user=DHdgzYwAAAAJ&hl=el
-    homepage: https://research.tue.nl/en/persons/giannis-delimpaltadakis
-    verified: false
-    note: No AI4I staff page found; homepage is his TU/e research-portal profile.
+    homepage: ''
+    verified: true
+    note: TU/e research-portal profile no longer exists (404); no AI4I staff page found, so no separate
+      homepage link (Scholar only).
   slides_url: ''
   avatar_url: /avatars/giannis-delimpaltadakis.jpeg
 - id: 2026-06-03-meng-jianwen
@@ -1596,11 +1597,12 @@ talks:
   status: past
   notes: null
   links:
-    scholar: https://scholar.google.com/citations?user=HIfAbFcAAAAJ
+    scholar: https://scholar.google.com/citations?user=ncWgr1gAAAAJ&hl=en
     homepage: https://www.estaca.fr/en/recherche-innovation/annuaire/profil/jianwen-meng/
-    verified: false
+    verified: true
+    note: Old scholar id (HIfAbFcAAAAJ) 404s — profile was recreated under a new id.
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/meng-jianwen.png
 - id: 2026-06-08-nicolas-lanzetti
   date: '2026-06-08'
   time: 15:00-16:00
@@ -1645,7 +1647,7 @@ talks:
     homepage: https://www.cms.caltech.edu/people/nicolas-lanzetti
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/nicolas-lanzetti.jpg
 - id: 2026-06-17-salim-msaad
   date: '2026-06-17'
   time: 12.30-13.30
