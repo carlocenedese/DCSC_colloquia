@@ -415,13 +415,20 @@ a { color: var(--tud-blue); }
 
 /* Below this width, avatar (48px) + name/role (180px) + date chip (~60px)
    already eat the row's full space, so the title (flex:1) gets squeezed to
-   near-nothing before it ever gets to wrap. Drop it to its own full-width
-   line instead, and let name/role shrink rather than stay pinned to 180px. */
+   near-nothing before it ever gets to wrap. Restructure into a strict 3-line
+   stack instead — [avatar+name+date] / [title] / [topic icons] — so every
+   row wraps the same way regardless of name length or tag count. Forcing
+   talk-row-open to 100% width is what makes talk-row-footer (its sibling)
+   reliably drop to its own line rather than floating up next to the date
+   chip whenever there's a little leftover horizontal space. */
 @media (max-width: 640px) {
-  .talk-row { flex-wrap: wrap; align-items: flex-start; row-gap: 8px; }
-  .talk-row-open { flex-wrap: wrap; row-gap: 8px; }
+  .talk-row { flex-wrap: wrap; align-items: flex-start; row-gap: 6px; padding: 14px 16px; }
+  .talk-row-open { flex: 1 1 100%; flex-wrap: wrap; row-gap: 6px; }
   .talk-row .name-role-row { width: auto; flex: 1 1 auto; min-width: 0; }
-  .talk-row-title { flex: 1 1 100%; white-space: normal; }
+  .talk-row-title { flex: 1 1 100%; white-space: normal; line-height: 1.4; }
+  .talk-row-footer { flex: 1 1 100%; justify-content: flex-start; }
+  .talk-row-footer .topic-chip-compact,
+  .talk-row-footer .topic-chip-compact .topic-chip-icon { width: 28px; height: 28px; }
 }
 
 /* Upcoming talks read as "not yet happened": desaturated, not just faded —
