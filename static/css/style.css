@@ -592,8 +592,19 @@ a { color: var(--tud-blue); }
 }
 .accordion-row[data-open="true"] .accordion-content-text { opacity: 1; transition-delay: 0.1s; }
 
+/* Header is a fixed 75px/24px-label box tuned for a single line. On mobile
+   "Modeling and System Identification" wraps to 3 lines, overflows that
+   fixed height, and collides with the description right below it. Let the
+   header grow with its content instead, shrink the label/icon to fit
+   narrow screens, and give the description its own top margin so it never
+   sits flush under a wrapped title. */
 @media (max-width: 640px) {
-  .accordion-content-text { padding-left: 0; }
+  .accordion-header { height: auto; min-height: 56px; align-items: flex-start; padding: 10px 0; gap: 16px; }
+  .accordion-header-main { gap: 16px; }
+  .accordion-icon { width: 56px; height: 56px; }
+  .accordion-label { font-size: 18px; line-height: 24px; }
+  .accordion-toggle { margin-top: 6px; }
+  .accordion-content-text { padding-left: 0; margin-top: 12px; }
 }
 
 /* ---- Topic pill selector (design-v2 variation): compact rounded-full chip.
