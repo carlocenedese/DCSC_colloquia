@@ -1,22 +1,30 @@
 :root {
   --tud-blue: #00a6d6;
-  --ink: #111827;
-  --ink-soft: #4b5563;
-  --border: #e5e7eb;
+  /* Neutral text/icon scale — exactly 3 steps. Every gray in this file maps
+     to one of these; don't reach for a raw hex when one of these will do. */
+  --ink: #111827;       /* primary text: headings, titles, body */
+  --ink-soft: #4b5563;  /* secondary text: roles, meta, muted icons */
+  --ink-faint: #bbb6b6; /* decorative-only: dividers, inactive icon tint */
+  --border: #e5e7eb;    /* hairline borders/dividers on inputs and chrome */
   --bg: #ffffff;
   --bg-soft: #f9fafb;
-  --radius: 20px;
-  --radius-btn: 16px;
-  --radius-chip: 12px;
+  /* Radius scale — 4 steps, reused by every rounded element on the site. */
+  --radius-sm: 8px;      /* small controls: dropdowns, format filter, nested icons */
+  --radius-chip: 12.5px; /* cards, chips, date pills */
+  --radius-btn: 16px;    /* buttons */
+  --radius: 20px;        /* modal */
+  --radius-pill: 9999px; /* fully round: avatars, toggles, pill-shaped chips */
   --info-blue: #305dff;
+  --info-blue-rgb: 48, 93, 255;
   --card-shadow: 0px 0px 1.05px rgba(0, 0, 0, 0.08), 0px 2.1px 4.21px rgba(30, 30, 30, 0.16);
-  --chip-shadow: 0px 0px 1.05152px rgba(40, 41, 61, 0.04), 0px 2.10304px 4.20608px rgba(96, 97, 112, 0.16);
   color-scheme: light;
 }
 
 /* Squircle: continuous-curvature corners (falls back to plain rounded
-   rects in browsers without corner-shape support — border-radius still applies). */
-.btn, .btn-secondary-outline, .modal-card, .filters input, .filters select, .talk-card, .date-chip {
+   rects in browsers without corner-shape support — border-radius still applies).
+   Single source of truth — don't also declare corner-shape inline per component. */
+.btn, .btn-secondary-outline, .modal-card, .filters input, .filters select,
+.talk-card, .talk-row, .date-chip, .topic-chip, .link-pill {
   corner-shape: squircle;
 }
 
@@ -62,7 +70,7 @@ a { color: var(--tud-blue); }
 .hero-cta { display: flex; gap: 50px; justify-content: center; flex-wrap: wrap; }
 .link-pill-hero {
   font-weight: 700;
-  border-radius: 9999px;
+  border-radius: var(--radius-pill);
   corner-shape: normal; /* full pill, not the squircle used elsewhere */
   gap: 8px;
 }
@@ -122,7 +130,7 @@ a { color: var(--tud-blue); }
   transition: transform 0.1s ease, opacity 0.15s ease;
 }
 .btn:hover { transform: translateY(-1px); }
-.btn-primary { background: #fff; color: var(--tud-blue); }
+.btn-primary { background: var(--bg); color: var(--tud-blue); }
 .btn-secondary { background: rgba(255,255,255,0.15); color: #fff; border: 1px solid rgba(255,255,255,0.5); }
 .btn-secondary-outline {
   background: none;
@@ -192,22 +200,22 @@ a { color: var(--tud-blue); }
   width: 32px;
   height: 32px;
   flex: none;
-  color: #6B7280;
+  color: var(--ink-soft);
 }
 .filters-icon-btn svg { width: 18px; height: 18px; }
-.filters-divider { width: 1px; height: 20px; background: #E6E7EB; flex: none; margin-right: 4px; }
+.filters-divider { width: 1px; height: 20px; background: var(--border); flex: none; margin-right: 4px; }
 .filters-topic-row { display: flex; flex-direction: row; align-items: center; gap: 4px; flex-wrap: wrap; }
 
 .filters-topic-dropdown { display: none; position: relative; } /* shown only below 700px */
 .filters-topic-dropdown-btn {
   height: 32px;
   padding: 0 12px;
-  border: 1px solid #E6E7EB;
-  border-radius: 8px;
-  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
   font-family: inherit;
   font-size: 1rem; /* <16px triggers iOS Safari's auto-zoom-on-focus */
-  color: #000;
+  color: var(--ink);
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -219,9 +227,9 @@ a { color: var(--tud-blue); }
   position: absolute;
   top: 38px;
   left: 0;
-  background: #fff;
-  border: 1px solid #E6E7EB;
-  border-radius: 8px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   padding: 6px;
   display: none;
@@ -237,12 +245,12 @@ a { color: var(--tud-blue); }
   gap: 8px;
   font-size: 1rem;
   font-family: inherit;
-  color: #000;
+  color: var(--ink);
   cursor: pointer;
   padding: 6px 8px;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
 }
-.filters-topic-dropdown-panel label:hover { background: #F9FAFB; }
+.filters-topic-dropdown-panel label:hover { background: var(--bg-soft); }
 
 @media (max-width: 700px) {
   .filters-desktop-only { display: none !important; }
@@ -259,7 +267,7 @@ a { color: var(--tud-blue); }
 .avatar {
   display: block;
   flex: none;
-  border-radius: 100px;
+  border-radius: var(--radius-pill);
   object-fit: cover;
   box-shadow: var(--card-shadow);
   background: var(--bg-soft);
@@ -273,9 +281,8 @@ a { color: var(--tud-blue); }
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #fff;
-  border-radius: 12.5px;
-  corner-shape: squircle;
+  background: var(--bg);
+  border-radius: var(--radius-chip);
   flex: none;
 }
 .date-chip-default {
@@ -284,10 +291,10 @@ a { color: var(--tud-blue); }
   padding: 7px 0;
   width: 60px;
   height: 64px;
-  box-shadow: var(--chip-shadow);
+  box-shadow: var(--card-shadow);
 }
-.date-chip-default .date-day { font-weight: 700; font-size: 25.24px; line-height: 29px; color: #121212; text-align: center; }
-.date-chip-default .date-month { font-weight: 400; font-size: 14.72px; line-height: 23px; letter-spacing: 0.21px; color: #121212; text-align: center; }
+.date-chip-default .date-day { font-weight: 700; font-size: 25.24px; line-height: 29px; color: var(--ink); text-align: center; }
+.date-chip-default .date-month { font-weight: 400; font-size: 14.72px; line-height: 23px; letter-spacing: 0.21px; color: var(--ink); text-align: center; }
 
 .date-chip-long {
   flex-direction: row;
@@ -296,21 +303,21 @@ a { color: var(--tud-blue); }
   width: auto;
   height: 90px;
 }
-.date-chip-long .date-day { font-weight: 700; font-size: 64px; line-height: 41px; color: #121212; text-align: center; }
+.date-chip-long .date-day { font-weight: 700; font-size: 64px; line-height: 41px; color: var(--ink); text-align: center; }
 .date-chip-long .date-my { display: flex; flex-direction: column; }
-.date-chip-long .date-month { font-weight: 400; font-size: 32px; line-height: 23px; letter-spacing: 0.21px; color: #121212; text-align: center; }
-.date-chip-long .date-year { font-weight: 700; font-size: 24px; line-height: 23px; letter-spacing: 0.21px; color: #000; text-align: center; }
+.date-chip-long .date-month { font-weight: 400; font-size: 32px; line-height: 23px; letter-spacing: 0.21px; color: var(--ink); text-align: center; }
+.date-chip-long .date-year { font-weight: 700; font-size: 24px; line-height: 23px; letter-spacing: 0.21px; color: var(--ink); text-align: center; }
 
 /* ---- Name and Role (Default = stacked 2-line name for cards, Long = single line for expanded) ---- */
 .name-role { display: flex; flex-direction: column; min-width: 0; }
-.name-role-default .name-line { font-weight: 500; font-size: 20px; line-height: 23px; letter-spacing: 0.21px; color: #000; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.name-role-default .name-line { font-weight: 500; font-size: 20px; line-height: 23px; letter-spacing: 0.21px; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .name-role-default .info-row {
   display: flex; flex-direction: column;
   font-family: 'Space Mono', monospace; font-size: 11px; line-height: 15px; letter-spacing: 0.21px; color: var(--info-blue);
 }
 .name-role-default .info-row span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
-.name-role-long .name-line { font-weight: 500; font-size: 24px; line-height: 23px; letter-spacing: 0.21px; color: #000; margin-bottom: 12.5px; }
+.name-role-long .name-line { font-weight: 500; font-size: 24px; line-height: 23px; letter-spacing: 0.21px; color: var(--ink); margin-bottom: 12.5px; }
 .name-role-long .info-col { display: flex; flex-direction: column; gap: 4px; font-family: 'Space Mono', monospace; font-size: 14px; line-height: 18px; letter-spacing: 0.21px; color: var(--info-blue); }
 
 /* ---- Talk card ---- */
@@ -324,9 +331,8 @@ a { color: var(--tud-blue); }
   display: flex;
   flex-direction: column;
   gap: 12.5px;
-  background: #fff;
-  border-radius: 12.62px;
-  corner-shape: squircle;
+  background: var(--bg);
+  border-radius: var(--radius-chip);
   box-shadow: var(--card-shadow);
   padding: 25px;
   height: 380px;
@@ -353,7 +359,7 @@ a { color: var(--tud-blue); }
 .talk-card-header { display: flex; align-items: center; gap: 12.5px; }
 .talk-card-header .name-role { flex: 1; min-width: 0; }
 .talk-card-title {
-  font-weight: 700; font-size: 24px; line-height: 36px; letter-spacing: 0.21px; color: #000;
+  font-weight: 700; font-size: 24px; line-height: 36px; letter-spacing: 0.21px; color: var(--ink);
   flex: 1;
   overflow: hidden;
   display: -webkit-box;
@@ -371,9 +377,8 @@ a { color: var(--tud-blue); }
   display: flex;
   align-items: center;
   gap: 16px;
-  background: #fff;
-  border-radius: 12.62px;
-  corner-shape: squircle;
+  background: var(--bg);
+  border-radius: var(--radius-chip);
   box-shadow: var(--card-shadow);
   padding: 10px 20px;
   overflow: hidden;
@@ -396,7 +401,7 @@ a { color: var(--tud-blue); }
   color: inherit;
 }
 .talk-row .name-role-row { width: 180px; flex: none; }
-.name-role-row .name-line { font-weight: 500; font-size: 16px; line-height: 20px; letter-spacing: 0.21px; color: #000; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.name-role-row .name-line { font-weight: 500; font-size: 16px; line-height: 20px; letter-spacing: 0.21px; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .name-role-row .info-line {
   display: block; font-family: 'Space Mono', monospace; font-size: 11px; line-height: 15px; letter-spacing: 0.21px; color: var(--info-blue);
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
@@ -404,7 +409,7 @@ a { color: var(--tud-blue); }
 .talk-row-title {
   flex: 1;
   min-width: 0;
-  font-weight: 700; font-size: 16px; line-height: 20px; letter-spacing: 0.21px; color: #000;
+  font-weight: 700; font-size: 16px; line-height: 20px; letter-spacing: 0.21px; color: var(--ink);
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 .talk-row-footer { display: flex; align-items: center; gap: 8px; flex: none; }
@@ -507,15 +512,14 @@ a { color: var(--tud-blue); }
 .topic-chip {
   display: inline-flex;
   align-items: center;
-  background: #fff;
+  background: var(--bg);
   border: none;
-  box-shadow: 0px 0px 1.05px rgba(0, 0, 0, 0.08), 0px 2.1px 4.21px rgba(30, 30, 30, 0.16);
-  border-radius: 12.5px;
-  corner-shape: squircle;
+  box-shadow: var(--card-shadow);
+  border-radius: var(--radius-chip);
   cursor: pointer;
   text-align: left;
   font-family: inherit;
-  color: #000;
+  color: var(--ink);
 }
 .topic-chip:hover { box-shadow: 0px 0px 1.05px rgba(0,0,0,0.1), 0px 3px 8px rgba(30,30,30,0.2); }
 .topic-chip[aria-pressed="true"] { box-shadow: inset 0px 4px 4px rgba(48,93,255,0.16); }
@@ -527,7 +531,7 @@ a { color: var(--tud-blue); }
   gap: 25px;
   height: 100px;
 }
-.topic-chip-default .topic-chip-icon { width: 75px; height: 75px; border-radius: 8px; }
+.topic-chip-default .topic-chip-icon { width: 75px; height: 75px; border-radius: var(--radius-sm); }
 .topic-chip-default .topic-chip-label {
   font-weight: 700; font-size: 24px; letter-spacing: 0.21px;
   min-width: 0; flex: 1 1 auto; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
@@ -539,11 +543,11 @@ a { color: var(--tud-blue); }
   padding: 0;
   background: none;
   box-shadow: none;
-  border-radius: 12.5px;
+  border-radius: var(--radius-chip);
   overflow: hidden;
 }
 .topic-chip-compact:hover { box-shadow: 0 2px 6px rgba(0,0,0,0.25); }
-.topic-chip-compact .topic-chip-icon { width: 100px; height: 100px; border-radius: 12.5px; }
+.topic-chip-compact .topic-chip-icon { width: 100px; height: 100px; border-radius: var(--radius-chip); }
 
 /* ---- Topics accordion (design-v2): replaces the old 2x2 info-card grid.
    Single-open — expanding one row collapses the others. Height/opacity
@@ -553,7 +557,7 @@ a { color: var(--tud-blue); }
   box-sizing: border-box;
   display: flex; flex-direction: column; align-items: flex-start;
   padding: 12.5px; width: 100%;
-  background: #fff; border-bottom: 1px solid #BBB6B6;
+  background: var(--bg); border-bottom: 1px solid var(--ink-faint);
 }
 .accordion-header {
   display: flex; flex-direction: row; justify-content: space-between; align-items: center;
@@ -563,14 +567,14 @@ a { color: var(--tud-blue); }
 .accordion-header-main { display: flex; flex-direction: row; align-items: center; gap: 25px; }
 .accordion-icon { width: 75px; height: 75px; flex: none; display: block; object-fit: cover; }
 .accordion-label {
-  font-weight: 700; font-size: 24px; line-height: 37px; letter-spacing: 0.210304px; color: #000;
+  font-weight: 700; font-size: 24px; line-height: 37px; letter-spacing: 0.210304px; color: var(--ink);
 }
 .accordion-toggle {
   position: relative; flex: none; width: 25px; height: 25px;
-  border-radius: 50%; border: 1.5px solid #7F7C7C;
+  border-radius: var(--radius-pill); border: 1.5px solid var(--ink-soft);
 }
 .accordion-toggle::before, .accordion-toggle::after {
-  content: ""; position: absolute; top: 50%; left: 50%; background: #7F7C7C;
+  content: ""; position: absolute; top: 50%; left: 50%; background: var(--ink-soft);
 }
 .accordion-toggle::before { width: 11px; height: 1.5px; transform: translate(-50%, -50%); }
 .accordion-toggle::after {
@@ -587,7 +591,7 @@ a { color: var(--tud-blue); }
 .accordion-content-inner { overflow: hidden; min-height: 0; }
 .accordion-content-text {
   padding: 0 0 0 106px;
-  font-size: 14px; line-height: 25px; letter-spacing: 0.210304px; color: #7F7C7C;
+  font-size: 14px; line-height: 25px; letter-spacing: 0.210304px; color: var(--ink-soft);
   opacity: 0; transition: opacity 0.2s ease;
 }
 .accordion-row[data-open="true"] .accordion-content-text { opacity: 1; transition-delay: 0.1s; }
@@ -618,18 +622,18 @@ a { color: var(--tud-blue); }
   gap: 2.5px;
   width: fit-content;
   height: 32px;
-  background: #fff;
-  box-shadow: 0px 0px 1.05px rgba(0, 0, 0, 0.08), 0px 2.1px 4.21px rgba(30, 30, 30, 0.16);
-  border-radius: 192.5px;
+  background: var(--bg);
+  box-shadow: var(--card-shadow);
+  border-radius: var(--radius-pill);
   border: none;
   cursor: pointer;
   font-family: inherit;
-  color: #000;
+  color: var(--ink);
   text-align: left;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 .topic-pill:not([aria-pressed="true"]):hover { background: rgba(0, 0, 0, 0.05); }
-.topic-pill[aria-pressed="true"] { background: rgba(48, 93, 255, 0.08); color: var(--info-blue); }
+.topic-pill[aria-pressed="true"] { background: rgba(var(--info-blue-rgb), 0.08); color: var(--info-blue); }
 .topic-pill-icon { width: 30px; height: 30px; flex: none; display: block; object-fit: cover; }
 .topic-pill-label {
   width: max-content;
@@ -651,13 +655,13 @@ a { color: var(--tud-blue); }
   gap: 2.5px;
   width: fit-content;
   height: 32px;
-  background: #fff;
-  box-shadow: 0px 0px 1.05px rgba(0, 0, 0, 0.08), 0px 2.1px 4.21px rgba(30, 30, 30, 0.16);
-  border-radius: 192.5px;
+  background: var(--bg);
+  box-shadow: var(--card-shadow);
+  border-radius: var(--radius-pill);
   border: none;
   cursor: pointer;
   font-family: inherit;
-  color: #000;
+  color: var(--ink);
   text-align: left;
   text-decoration: none;
 }
@@ -689,7 +693,7 @@ a { color: var(--tud-blue); }
   gap: 2px;
   background: rgba(0, 0, 0, 0.05); /* same gray as .topic-pill/.format-filter-btn hover */
   border: none;
-  border-radius: 9999px;
+  border-radius: var(--radius-pill);
 }
 .view-toggle-indicator {
   position: absolute;
@@ -700,8 +704,8 @@ a { color: var(--tud-blue); }
               pill away from the button it's supposed to sit under */
   height: 26px; /* must match .view-toggle-btn's height exactly, or the icon
                    (centered in the button) drifts off-center against the pill */
-  background: #fff;
-  border-radius: 9999px;
+  background: var(--bg);
+  border-radius: var(--radius-pill);
   box-shadow: 0px 1px 2px rgba(30, 30, 30, 0.12);
   transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), width 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1;
@@ -717,11 +721,11 @@ a { color: var(--tud-blue); }
   padding: 0;
   background: none;
   border: none;
-  border-radius: 9999px;
+  border-radius: var(--radius-pill);
   cursor: pointer;
-  color: #B4B7BD; /* inactive: lighter gray */
+  color: var(--ink-faint); /* inactive: lighter gray */
 }
-.view-toggle-btn[aria-pressed="true"] { color: #6B7280; /* active: current gray */ }
+.view-toggle-btn[aria-pressed="true"] { color: var(--ink-soft); /* active: current gray */ }
 .view-toggle-icon { position: relative; z-index: 2; width: 14px; height: 14px; flex: none; stroke: currentColor; }
 
 /* ---- Format filter (design-v2 variation): text-only segmented control
@@ -733,30 +737,30 @@ a { color: var(--tud-blue); }
 .format-filter {
   display: inline-flex;
   height: 32px; /* match .topic-pill */
-  border: 1px solid #E6E7EB;
-  border-radius: 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
   overflow: hidden;
-  background: #fff;
+  background: var(--bg);
 }
 .format-filter-btn {
   height: 32px;
   padding: 0 9.5px; /* match .topic-pill's horizontal padding */
   background: transparent;
   border: none;
-  border-right: 1px solid #E6E7EB;
+  border-right: 1px solid var(--border);
   font-family: inherit;
   font-size: 12px; /* match .topic-pill-label */
   font-weight: 400;
   line-height: 32px;
   letter-spacing: 0.210304px;
-  color: #000;
+  color: var(--ink);
   cursor: pointer;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 .format-filter-btn:last-child { border-right: none; }
 .format-filter-btn:hover { background: rgba(0, 0, 0, 0.05); }
 .format-filter-btn[aria-pressed="true"] {
-  background: rgba(48, 93, 255, 0.08);
+  background: rgba(var(--info-blue-rgb), 0.08);
   color: var(--info-blue);
 }
 
@@ -789,7 +793,7 @@ a { color: var(--tud-blue); }
   vertical-align: middle;
 }
 .about-heart { object-fit: contain; margin: 0 0.15em; }
-.about-avatar { border-radius: 50%; object-fit: cover; flex: none; }
+.about-avatar { border-radius: var(--radius-pill); object-fit: cover; flex: none; }
 .about-sep { display: inline-block; vertical-align: middle; color: var(--ink-soft); }
 
 .section-divider { border: none; border-top: 1px solid var(--border); margin: 0; }
@@ -847,7 +851,7 @@ a { color: var(--tud-blue); }
 .expanded-header-speaker { display: flex; align-items: center; gap: 12.5px; flex: 1; min-width: 0; }
 
 #modal-body .expanded-title {
-  font-weight: 700; font-size: 32px; line-height: 36px; letter-spacing: 0.21px; color: #000;
+  font-weight: 700; font-size: 32px; line-height: 36px; letter-spacing: 0.21px; color: var(--ink);
   margin: 0;
 }
 .expanded-section { margin-bottom: 6px; }
@@ -855,20 +859,20 @@ a { color: var(--tud-blue); }
   font-family: 'Space Mono', monospace; font-weight: 400; font-size: 14px; line-height: 30px;
   letter-spacing: 0.21px; color: var(--info-blue); text-transform: uppercase; margin: 0;
 }
-.expanded-section p { font-size: 14px; line-height: 26px; letter-spacing: 0.21px; color: #000; margin: 0 0 20px; }
+.expanded-section p { font-size: 14px; line-height: 26px; letter-spacing: 0.21px; color: var(--ink); margin: 0 0 20px; }
 
-.expanded-video { position: relative; width: 100%; padding-top: 56.25%; border-radius: 8px; overflow: hidden; }
+.expanded-video { position: relative; width: 100%; padding-top: 56.25%; border-radius: var(--radius-sm); overflow: hidden; }
 .expanded-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 
-.modal-tags { display: flex; align-items: center; gap: 13px; flex-wrap: wrap; }
-.modal-tags-divider { font-family: 'Space Mono', monospace; font-size: 24px; line-height: 32px; color: #BBB6B6; }
+.modal-tags { display: flex; align-items: center; gap: 12.5px; flex-wrap: wrap; }
+.modal-tags-divider { font-family: 'Space Mono', monospace; font-size: 24px; line-height: 32px; color: var(--ink-faint); }
 
 .expanded-links { display: flex; gap: 12.5px; flex-wrap: wrap; }
 .link-pill {
   display: inline-flex; align-items: center; justify-content: center;
   padding: 4px 12.5px; min-height: 30px; /* grows if the label wraps on narrow screens */
-  background: #fff; border: 1px solid var(--info-blue);
-  border-radius: 100px; corner-shape: squircle;
+  background: var(--bg); border: 1px solid var(--info-blue);
+  border-radius: var(--radius-pill);
   box-shadow: var(--card-shadow);
   font-family: 'Space Mono', monospace; font-size: 14px; letter-spacing: 0.21px;
   color: var(--info-blue); text-decoration: none;

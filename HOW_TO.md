@@ -117,6 +117,14 @@ Same idea for `warn: no role mapping` → `ROLE_CANON`.
 ### The pipeline printed `warn: dropping non-canonical tag '…'`
 Only 4 research clusters are allowed on the site (Control and Learning / Modeling and System Identification / Optimization / Systems and Signal Analysis). Any other tag in the xlsx is dropped on purpose. If a variant spelling should map to one of the 4, add it to `TAG_CANON` in the script.
 
+### How do I make sure speaker links still work?
+Scholar profile IDs and university staff pages aren't permanent — profiles get recreated under new IDs, people change institutions, pages get restructured. There's no automated check for this; it needs a periodic manual pass.
+
+**🤖 With Claude Code:**
+> Check every scholar/homepage link in data/talks/*.yaml still resolves and points to the right person, and fix any that are broken.
+
+**✋ Manually:** open each link in `data/talks/<year>.yaml` → `links:` and confirm it 200s and still shows the right name. Fix per [How do I update a broken link?](#how-do-i-update-a-broken-link) above.
+
 ### A talk shows the wrong date/speaker or appears twice
 The talk `id` is built from date + speaker. If you change either in the xlsx, the id changes — any manually-added `links:` for the old id won't carry over (re-add them), and any slides file named after the old id must be renamed.
 
