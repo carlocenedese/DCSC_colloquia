@@ -589,10 +589,23 @@ talks:
   affiliation_short: TU Delft
   affiliation_full: TU Delft — Delft Center for Systems and Control (DCSC)
   role: PhD
-  title: TBD
-  abstract: TBD
-  bio: TBD
-  tags: []
+  title: A Policy-based Approach to designing terminal costs and constraints for MPC
+  abstract: Conventional designs for model predictive control typically rely on terminal costs and constraints
+    derived from a steady state to guarantee closed-loop stability and performance. However, this dependence
+    on a steady-state assumption limits the applicability of this control method to systems in which such
+    a fixed operating point is either not available or not desirable. We introduce a novel framework,
+    termed Policy-Guided MPC, to address this limitation. Our approach constructs terminal costs and constraints
+    using a known sub-optimal control policy. Specifically, the terminal region is defined around a center
+    determined by a roll-out of the policy, and a penalty on deviation from this center is used to define
+    the terminal cost. This method obviates the need for a steady state or reference trajectory. Closed-loop
+    performance, stability and robustness guarantees are established relative to the guiding policy.
+  bio: Salim Msaad received the BSc degree and MSc degree in control engineering from Politecnico di Milano
+    in 2020 and 2023 respectively. Since 2024 he has been pursuing a PhD at TU Delft within the Delft
+    Center for Systems and Control. His research interests include data driven control and economic model
+    predictive control for agricultural and energy systems.
+  tags:
+  - Control and Learning
+  - Optimization
   youtube_url: null
   youtube_id: null
   status: past
