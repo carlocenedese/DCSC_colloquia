@@ -429,7 +429,11 @@ a { color: var(--tud-blue); }
 @media (max-width: 640px) {
   .talk-row { flex-wrap: wrap; align-items: flex-start; row-gap: 6px; padding: 14px 16px; }
   .talk-row-open { flex: 1 1 100%; flex-wrap: wrap; row-gap: 6px; }
-  .talk-row .name-role-row { width: auto; flex: 1 1 auto; min-width: 0; }
+  /* flex-basis 0 (not auto) so line-wrapping math ignores the name/role's
+     unwrapped text width — otherwise a long name reserves its full
+     max-content width when the browser decides what fits on line 1, shoving
+     the date chip onto its own line before flex-shrink ever gets a say. */
+  .talk-row .name-role-row { width: auto; flex: 1 1 0%; min-width: 0; }
   .talk-row-title { flex: 1 1 100%; white-space: normal; line-height: 1.4; }
   .talk-row-footer { flex: 1 1 100%; justify-content: flex-start; }
   .talk-row-footer .topic-chip-compact,
