@@ -78,6 +78,9 @@ AFFILIATION_MAP = {
     "University of Michigan (USA)": ("U-M", "University of Michigan — Electrical Engineering and Computer Science Department"),
     "University of Brescia (Italy)": ("UniBS", "University of Brescia — Dept. of Information Engineering"),
     "Cornell University (USA)": ("Cornell", "Cornell University — Sibley School of Mechanical and Aerospace Engineering"),
+    "Cornell University, School of Civil and Environmental Engineering, Information and Decision Science Laboratory": (
+        "Cornell", "Cornell University — School of Civil and Environmental Engineering, Information and Decision Science Laboratory",
+    ),
     "TUD (Chemical engineering)": ("TU Delft", "TU Delft — Department of Chemical Engineering"),
     "TU Delft Computer Science": ("TU Delft", "TU Delft — Faculty of Electrical Engineering, Mathematics and Computer Science"),
     "TU Eindhoven": ("TU/e", "Eindhoven University of Technology"),

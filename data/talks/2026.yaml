@@ -411,7 +411,7 @@ talks:
   speaker: Koen Scheres
   affiliation_short: KU Leuven
   affiliation_full: KU Leuven — Department of Electrical Engineering (ESAT-STADIUS)
-  role: Asst. Prof.
+  role: Postdoc
   title: Neuromorphic Control and Decision Making
   abstract: 'Even though computers have long since surpassed the computational capabilities of the brain,
     relatively “simple tasks” for animals and humans, such as robust locomotion in uncertain environments,
@@ -433,8 +433,8 @@ talks:
   - Control and Learning
   - Modeling and System Identification
   - Systems and Signal Analysis
-  youtube_url: null
-  youtube_id: null
+  youtube_url: https://youtu.be/5-p-BWL3N0k
+  youtube_id: 5-p-BWL3N0k
   status: past
   notes: null
   links:
@@ -453,7 +453,7 @@ talks:
   speaker: Giannis Delimpaltadakis
   affiliation_short: AI4I Institute
   affiliation_full: AI4I Institute — RIAS Lab, Turin, Italy
-  role: TBD
+  role: Senior Research Scientist
   title: 'An information Theory of Finite Abstractions: fundamental scalability limits and what to do
     next'
   abstract: 'Finite abstractions are discrete approximations of dynamical systems, such that the set of
@@ -706,3 +706,57 @@ talks:
     note: Homepage is institute staff directory, not an individual page.
   slides_url: ''
   avatar_url: /avatars/gleb-polevoy.png
+- id: 2026-09-21-pengbo-zhu
+  date: '2026-09-21'
+  time: null
+  mode: in-person
+  location: TBD
+  speaker: Pengbo Zhu
+  affiliation_short: Cornell
+  affiliation_full: Cornell University — School of Civil and Environmental Engineering, Information and
+    Decision Science Laboratory
+  role: Postdoc
+  title: Scalable Cooperative Control and Planning for Future Mobility Systems
+  abstract: 'Emerging transportation systems are rapidly evolving toward highly connected and automated
+    mobility networks, where connected vehicles, shared mobility fleets, and unmanned aerial vehicles
+    (UAVs) interact continuously with transportation infrastructure and human users. Enabling efficient
+    cooperation among multi-agents remains a fundamental challenge due to the complex interactions, communication
+    constraints, and computational demands of large-scale transportation systems.
+
+
+    This talk presents scalable cooperative control and planning approaches for future mobility systems.  Coordination
+    strategies are developed for on-demand mobility services, including detour planning for ride-pooling
+    vehicles that improves vehicle utilization, sustainability, and passenger service quality. Decentralized
+    planning algorithms are further introduced for dual-task urban air mobility (UAM) systems, enabling
+    autonomous drone fleets to simultaneously perform parcel delivery and urban traffic monitoring. The
+    talk also discusses the co-design of connected and automated vehicle (CAV) routing and adaptive traffic
+    signal control, demonstrating how coordinated optimization of vehicles and smart infrastructure can
+    enhance network-wide traffic efficiency in mixed traffic environments. Across these applications,
+    scalable learning and control methodologies are developed with rigorous theoretical guarantees to
+    enable decentralized decision-making while maintaining low communication and computational overhead.
+    Together, these research efforts contribute to the development of efficient and sustainable mobility
+    systems for future smart cities.'
+  bio: Dr. Pengbo Zhu is a Postdoctoral Research Associate in the School of Civil and Environmental Engineering
+    at Cornell University, where she works with Prof. Andreas A. Malikopoulos. She received her Ph.D.
+    from the Swiss Federal Institute of Technology Lausanne (EPFL). Her research lies at the intersection
+    of control theory, optimization, and intelligent transportation systems. Her current research spans
+    mobility-on-demand systems, connected and automated vehicles, and urban air mobility systems, with
+    an emphasis on developing scalable, theoretically grounded methods for large-scale multi-agent systems.
+    She is the recipient of the Swiss National Science Foundation (SNSF) Postdoc.Mobility Fellowship.
+    Her work has been published in leading journals and conferences, including Transportation Research
+    Part C, Transportation Research Part E, IEEE Transactions on Intelligent Transportation Systems, and
+    the IEEE Conference on Decision and Control (CDC). In 2025, she received the Best Paper Award at the
+    hEART Conference (Symposium of the European Association for Research in Transportation).
+  tags:
+  - Control and Learning
+  - Optimization
+  youtube_url: null
+  youtube_id: null
+  status: upcoming
+  notes: 'Supervisor: Prof. Andreas A. Malikopoulos'
+  links:
+    scholar: TBD
+    homepage: ''
+    verified: false
+  slides_url: ''
+  avatar_url: /avatars/pengbo-zhu.jpg
