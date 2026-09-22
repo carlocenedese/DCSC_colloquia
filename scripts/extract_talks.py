@@ -81,6 +81,7 @@ AFFILIATION_MAP = {
     "Cornell University, School of Civil and Environmental Engineering, Information and Decision Science Laboratory": (
         "Cornell", "Cornell University — School of Civil and Environmental Engineering, Information and Decision Science Laboratory",
     ),
+    "Vienna University of Economics and Business": ("WU Vienna", "Vienna University of Economics and Business"),
     "TUD (Chemical engineering)": ("TU Delft", "TU Delft — Department of Chemical Engineering"),
     "TU Delft Computer Science": ("TU Delft", "TU Delft — Faculty of Electrical Engineering, Mathematics and Computer Science"),
     "TU Eindhoven": ("TU/e", "Eindhoven University of Technology"),
@@ -101,6 +102,7 @@ TAG_CANON = {
     "optimization": "Optimization",
     "and optimization": "Optimization",  # bad comma-split fragment in source
     "systems and signal analysis": "Systems and Signal Analysis",
+    "high-dimensional signal analysis": "Systems and Signal Analysis",
 }
 
 
@@ -136,6 +138,7 @@ ROLE_CANON = {
     "associate prof": "Associate Prof.",
     "associate professor": "Associate Prof.",
     "professor": "Professor",
+    "full professor": "Professor",
     "postdoc": "Postdoc",
     "phd": "PhD",
     "msc": "MSc",

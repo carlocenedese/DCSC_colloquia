@@ -202,16 +202,50 @@ talks:
   mode: online
   location: Online
   speaker: Michael Muehlebach
-  affiliation_short: MPI-IS
-  affiliation_full: Max Planck Institute for Intelligent Systems — Learning and Dynamical Systems Group
-  role: Research Group Leader
-  title: TBD
-  abstract: TBD
-  bio: TBD
-  tags: []
+  affiliation_short: WU Vienna
+  affiliation_full: Vienna University of Economics and Business
+  role: Professor
+  title: On the hardness of learning in dynamical systems
+  abstract: 'In my talk I will examine when learning to act in a dynamical system is no harder than supervised
+    learning, despite feedback, distribution shift, and long-horizon consequences. We will see that reinforcement
+    learning can achieve supervised-learning-type regret rates under three structural conditions: (i)
+    imitation learning / offline RL when distribution shift and simultaneity bias are controlled (highlighting
+    failure modes due to compounding error and practical design constraints), (ii) non-episodic online
+    RL when models are identifiable via persistence of excitation - yielding regret bounds for nonlinear
+    continuous-state-action systems through posterior sampling and certainty-equivalence principles, and
+    (iii) decision-dependent optimization when the induced distribution dynamics are contractive, enabling
+    stable online stochastic optimization with anticipation/steering in probability spaces. The ideas
+    are illustrated across a range of embodied and cyber-physical systems (humanoid robot dancing, passive
+    soaring flight, power-grid optimization, and magnetic manipulation), emphasizing a single message:
+    with the right structural assumptions, learning in dynamical systems can be as statistically efficient
+    as supervised learning.'
+  bio: 'Michael Muehlebach studied mechanical engineering at ETH Zurich and specialized in robotics, systems,
+    and control during his Master''s degree. He received the B.Sc. and the M.Sc. in 2010 and 2013, respectively,
+    before joining the Institute for Dynamic Systems and Control for his Ph.D. He graduated under the
+    supervision of Prof. R. D''Andrea in 2018 and joined the group of Prof. Michael I. Jordan at the University
+    of California, Berkeley as a postdoctoral researcher. Since 2021, he has led the "Learning and Dynamical
+    Systems" group at the Max Planck Institute for Intelligent Systems in Tuebingen, and since 2026, he
+    has been a full professor at WU Vienna.
+
+
+    He is interested in a variety of subjects, including machine learning, dynamical systems, and optimization.
+    His recent work straddles the boundary between machine learning and optimization, and includes systems
+    theoretic models of (Nesterov) acceleration, the analysis of training dynamics in neural networks,
+    regret guarantees for nonlinear control problems with unknown dynamics, as well as practical applications
+    of systems- and control-theoretic ideas.
+
+
+    He received the Outstanding D-MAVT Bachelor Award for his Bachelor''s degree and the Willi-Studer
+    prize for the best Master''s degree. His Ph.D. thesis was awarded with the ETH Medal and the HILTI
+    prize for innovative research. He was also awarded a Branco Weiss Fellowship, Emmy Noether Fellowship,
+    an Amazon research grant, and the IFAC Mechatronics Paper Prize. He is also member of the editorial
+    board of Foundation and Trends in Machine learning.'
+  tags:
+  - Control and Learning
+  - Optimization
   youtube_url: null
   youtube_id: null
-  status: upcoming
+  status: past
   notes: null
   links:
     scholar: TBD
@@ -251,9 +285,25 @@ talks:
   affiliation_short: UniBS
   affiliation_full: University of Brescia — Dept. of Information Engineering
   role: Professor
-  title: TBD
-  abstract: TBD
-  bio: TBD
+  title: 'Scenario Optimization: From Data to Reliable Decisions'
+  abstract: 'The use of data is becoming paramount in addressing modern design problems in systems and
+    control characterized by increasing complexity. In this talk, I will share my vision of key aspects
+    of data-driven design: (i) how wise is it to use data indirectly by first seeking to identify a model
+    of reality? (ii) how far can we go in providing reliability guarantees for data-driven design without
+    any a priori knowledge of the characteristics of uncertainty? In the second part of the talk, I will
+    introduce “Scenario Optimization”, a body of data-driven optimization methods that offer some answers
+    to the questions posed in the first part.'
+  bio: 'Marco C. Campi is Professor of Inductive Methods and Control at the University of Brescia, Italy.
+    He has held visiting and teaching appointments with Australian, USA, Japanese, Indian, Turkish and
+    various European universities, besides the NASA Langley Research Center. He has served the International
+    Federation of Automatic Control (IFAC) as Chair for two Technical Committees and has been in diverse
+    capacities on the Editorial Board of top-tier control and optimization journals. In 2008, he received
+    the IEEE CSS George S. Axelby Award for his pioneering work on the Scenario Approach, and he received
+    in 2025 the Roberto Tempo Award. He has delivered plenary and semi-plenary addresses at major conferences
+    including CDC, MTNS and SYSID, and has been on the distinguished lecturer roster of the IEEE Control
+    Systems Society for multiple terms. Marco C. Campi is a Fellow of IEEE and a Fellow of IFAC. His interests
+    include: data-driven decision-making, stochastic control, inductive methods, and the fundamentals
+    of probability theory.'
   tags: []
   youtube_url: null
   youtube_id: null
