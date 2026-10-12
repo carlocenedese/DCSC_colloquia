@@ -598,7 +598,7 @@ talks:
   status: past
   notes: null
   links:
-    scholar: TBD
+    scholar: https://scholar.google.com/citations?user=SdR0aNwAAAAJ
     homepage: ''
     verified: false
   slides_url: ''
@@ -742,7 +742,7 @@ talks:
   status: past
   notes: 'Supervisor: Prof. Andreas A. Malikopoulos'
   links:
-    scholar: TBD
+    scholar: https://scholar.google.com/citations?user=-QAlX-wAAAAJ
     homepage: ''
     verified: false
   slides_url: ''
@@ -755,7 +755,7 @@ talks:
   speaker: Paul-Louis Delacour
   affiliation_short: TU Delft
   affiliation_full: TU Delft — Delft Center for Systems and Control (DCSC)
-  role: TBD
+  role: PhD
   title: Random matrix theory and phase transition in a High-dimensional signal model
   abstract: 'What happens when a finite number of signals are embedded in a high-dimensional noisy matrix?
     Can spectral methods such as PCA still detect them?
@@ -775,40 +775,54 @@ talks:
   - Systems and Signal Analysis
   youtube_url: null
   youtube_id: null
-  status: upcoming
+  status: past
   notes: null
   links:
-    scholar: TBD
+    scholar: https://scholar.google.com/citations?user=SfcQm6wAAAAJ
     homepage: ''
     verified: false
   slides_url: ''
   avatar_url: /avatars/paul-louis-delacour.jpg
-- id: 2026-10-28-arghya-mallick
-  date: '2026-10-28'
-  time: null
+- id: 2026-10-14-mohamad-kazem-shirani-faradonbeh
+  date: '2026-10-14'
+  time: 12.30-13.30
   mode: in-person
-  location: TBD
-  speaker: Arghya Mallick
-  affiliation_short: TU Delft
-  affiliation_full: TU Delft — Delft Center for Systems and Control (DCSC)
-  role: PhD
-  title: TBD
-  abstract: TBD
-  bio: TBD
-  tags: []
+  location: ME-Hall L, 34.D-1-510
+  speaker: Mohamad Kazem Shirani Faradonbeh
+  affiliation_short: SMU
+  affiliation_full: Southern Methodist University
+  role: Asst. Prof.
+  title: Online Reinforcement Learning in Continuous Environments
+  abstract: A canonical model for decision-making in uncertain continuous environments is that of linear
+    dynamical systems that evolve as stochastic differential equations. Despite popularity, study of online
+    policies for learning from a single state trajectory to control the system remains immature to date.
+    We focus on this problem and present reinforcement learning policies for stabilizing unknown systems,
+    and for minimizing quadratic cost functions. First, fast and reliable learning-based stabilization
+    algorithms will be discussed. Then, we propose policies that efficiently balance the exploration (i.e.,
+    identification) and exploitation (i.e., control) by using randomization methods. Theoretical analyses
+    showing regret bounds that grow with the square-root of time and with the number of parameters will
+    be provided, together with real-system experiments. Further fundamental limitations of learning-based
+    control will be discussed as well.
+  bio: Mohamad Kazem Shirani Faradonbeh is an assistant professor of data science at Southern Methodist
+    University. He obtained his PhD in Statistics from the University of Michigan in 2017, and his BSc
+    in Electrical Engineering from Sharif University of Technology in 2012. He was a postdoctoral researcher
+    with the University of Florida and a fellow with the Simons Institute at the University of California
+    – Berkeley. Then he was a faculty member at the University of Georgia until 2023.
+  tags:
+  - Control and Learning
   youtube_url: null
   youtube_id: null
   status: upcoming
   notes: null
   links:
-    scholar: TBD
-    homepage: ''
+    scholar: https://scholar.google.com/citations?user=UvxP_J4AAAAJ
+    homepage: https://www.smu.edu/dedman/academics/departments/math/people/faculty/mohamadfaradonbeh
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/mohamad-kazem-shirani-faradonbeh.jpg
 - id: 2026-11-11-max-mendel
   date: '2026-11-11'
-  time: null
+  time: 12.30-13.30
   mode: in-person
   location: TBD
   speaker: Max Mendel
@@ -829,15 +843,15 @@ talks:
     verified: false
   slides_url: ''
   avatar_url: /avatars/max-mendel.jpg
-- id: 2026-11-12-ezio-barocci
+- id: 2026-11-12-ezio-bartocci
   date: '2026-11-12'
-  time: null
+  time: 12.30-13.30
   mode: in-person
   location: TBD
-  speaker: Ezio Barocci
-  affiliation_short: TBD
-  affiliation_full: TBD
-  role: TBD
+  speaker: Ezio Bartocci
+  affiliation_short: TU Wien
+  affiliation_full: TU Wien — Vienna University of Technology
+  role: Professor
   title: TBD
   abstract: TBD
   bio: TBD
@@ -847,20 +861,20 @@ talks:
   status: upcoming
   notes: null
   links:
-    scholar: TBD
-    homepage: ''
+    scholar: https://scholar.google.com/citations?user=EeK43rAAAAAJ
+    homepage: http://www.eziobartocci.com
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/ezio-bartocci.png
 - id: 2026-11-12-duarte-guerreiro-tomé-antunes
   date: '2026-11-12'
-  time: null
+  time: 12.30-13.30
   mode: in-person
   location: TBD
   speaker: Duarte Guerreiro Tomé Antunes
-  affiliation_short: TBD
-  affiliation_full: TBD
-  role: TBD
+  affiliation_short: TU/e
+  affiliation_full: Eindhoven University of Technology
+  role: Asst. Prof.
   title: TBD
   abstract: TBD
   bio: TBD
@@ -871,7 +885,30 @@ talks:
   notes: null
   links:
     scholar: TBD
-    homepage: ''
+    homepage: http://www.dct.tue.nl/New/Antunes/
     verified: false
   slides_url: ''
-  avatar_url: ''
+  avatar_url: /avatars/duarte-guerreiro-tomé-antunes.jpg
+- id: 2026-11-25-arghya-mallick
+  date: '2026-11-25'
+  time: 12.30-13.30
+  mode: in-person
+  location: TBD
+  speaker: Arghya Mallick
+  affiliation_short: TU Delft
+  affiliation_full: TU Delft — Delft Center for Systems and Control (DCSC)
+  role: PhD
+  title: TBD
+  abstract: TBD
+  bio: TBD
+  tags: []
+  youtube_url: null
+  youtube_id: null
+  status: upcoming
+  notes: null
+  links:
+    scholar: https://scholar.google.com/citations?user=QWXAsyYAAAAJ
+    homepage: https://amallick-tudelft.github.io/
+    verified: false
+  slides_url: ''
+  avatar_url: /avatars/arghya-mallick.jpg

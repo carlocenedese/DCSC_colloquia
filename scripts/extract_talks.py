@@ -82,6 +82,8 @@ AFFILIATION_MAP = {
         "Cornell", "Cornell University — School of Civil and Environmental Engineering, Information and Decision Science Laboratory",
     ),
     "Vienna University of Economics and Business": ("WU Vienna", "Vienna University of Economics and Business"),
+    "Southern Methodist University": ("SMU", "Southern Methodist University"),
+    "TU Wien": ("TU Wien", "TU Wien — Vienna University of Technology"),
     "TUD (Chemical engineering)": ("TU Delft", "TU Delft — Department of Chemical Engineering"),
     "TU Delft Computer Science": ("TU Delft", "TU Delft — Faculty of Electrical Engineering, Mathematics and Computer Science"),
     "TU Eindhoven": ("TU/e", "Eindhoven University of Technology"),

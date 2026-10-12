@@ -248,8 +248,8 @@ talks:
   status: past
   notes: null
   links:
-    scholar: TBD
-    homepage: ''
+    scholar: https://scholar.google.com/citations?user=uTfYBAsAAAAJ
+    homepage: https://sites.google.com/view/mmuehlebach
     verified: false
   slides_url: ''
   avatar_url: /avatars/michael-muehlebach.jpg
@@ -268,11 +268,11 @@ talks:
   tags: []
   youtube_url: null
   youtube_id: null
-  status: upcoming
+  status: past
   notes: null
   links:
-    scholar: TBD
-    homepage: ''
+    scholar: https://scholar.google.com/citations?user=qAow5LwAAAAJ
+    homepage: https://web.eecs.umich.edu/~necmiye/
     verified: false
   slides_url: ''
   avatar_url: /avatars/necmiye-ozay.jpg
@@ -310,8 +310,8 @@ talks:
   status: upcoming
   notes: null
   links:
-    scholar: TBD
-    homepage: ''
+    scholar: https://scholar.google.com/citations?user=Hr-GvgQAAAAJ
+    homepage: https://marco-campi.unibs.it/
     verified: false
   slides_url: ''
   avatar_url: /avatars/marco-campi.jpg
@@ -333,8 +333,8 @@ talks:
   status: upcoming
   notes: null
   links:
-    scholar: TBD
-    homepage: ''
+    scholar: https://scholar.google.com/citations?user=wbGA6BIAAAAJ
+    homepage: https://anastasiabzv.github.io/
     verified: false
   slides_url: ''
   avatar_url: /avatars/anastasia-bizyaeva.png
