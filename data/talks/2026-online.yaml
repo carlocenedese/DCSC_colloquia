@@ -44,6 +44,7 @@ talks:
   youtube_url: https://youtu.be/fGvbeDjKNkA?si=XtA9nvmpWdVMEguz
   youtube_id: fGvbeDjKNkA
   status: past
+  teams_url: null
   notes: null
   links:
     scholar: https://scholar.google.com/citations?user=RbczS_gAAAAJ
@@ -88,6 +89,7 @@ talks:
   youtube_url: https://youtu.be/tKRBvDjmT8M?si=Qn8d4Dot6VMHD_L6
   youtube_id: tKRBvDjmT8M
   status: past
+  teams_url: null
   notes: null
   links:
     scholar: https://scholar.google.com/citations?user=_KaTyEwAAAAJ
@@ -134,6 +136,7 @@ talks:
   youtube_url: https://youtu.be/8e3IfivcMQw?si=1VcTlY6ar7JwPhlV
   youtube_id: 8e3IfivcMQw
   status: past
+  teams_url: null
   notes: null
   links:
     scholar: https://scholar.google.com/citations?user=AHUrS0EAAAAJ
@@ -189,6 +192,7 @@ talks:
   youtube_url: https://youtu.be/UsorlCLsMHw?si=m7PPo6GBLMXZAWz-
   youtube_id: UsorlCLsMHw
   status: past
+  teams_url: null
   notes: null
   links:
     scholar: https://scholar.google.com/citations?user=AkVKyzkAAAAJ
@@ -246,6 +250,7 @@ talks:
   youtube_url: null
   youtube_id: null
   status: past
+  teams_url: null
   notes: null
   links:
     scholar: https://scholar.google.com/citations?user=uTfYBAsAAAAJ
@@ -262,13 +267,38 @@ talks:
   affiliation_short: U-M
   affiliation_full: University of Michigan — Electrical Engineering and Computer Science Department
   role: Professor
-  title: TBD
-  abstract: TBD
-  bio: TBD
-  tags: []
+  title: Some fundamental limitations of learning for dynamics and control
+  abstract: Data-driven and learning-based methods have attracted considerable attention in recent years
+    both for the analysis of dynamical systems and for control design. While there are many interesting
+    and exciting results in this direction, our understanding of fundamental limitations of learning for
+    control is lagging. This talk will focus on the question of when learning can be hard or impossible
+    in the context of dynamical systems and control. In the first part of the talk, I will discuss a new
+    observation on immersions and how it reveals some potential limitations in learning Koopman embeddings.
+    In the second part of the talk, I will show what makes it hard to learn to stabilize linear systems
+    from a sample-complexity perspective. While these results might seem negative, I will conclude the
+    talk with some thoughts on how they can inspire interesting future directions.
+  bio: 'Necmiye Ozay received her B.S. in Electrical and Electronics Engineering from Bogazici University
+    in 2004, her M.S. in Electrical Engineering from Pennsylvania State University in 2006, and her Ph.D.
+    in Electrical Engineering from Northeastern University in 2010. Between 2010 and 2013, she was a Control
+    and Dynamical Systems postdoctoral scholar at Caltech. In 2013, she joined the University of Michigan
+    faculty, where she is currently a Professor of Electrical Engineering and Computer Science and of
+    Robotics. She is also the Senior Associate Chair of the ECE Division. Ozay''s research interests include
+    dynamical systems, control, optimization and formal methods, with applications in cyber-physical systems,
+    system identification, verification and validation, safe autonomy and safe AI. She received a DARPA
+    Young Faculty Award, an NSF CAREER Award, a NASA Early Career Faculty Award, a DARPA Director’s Fellowship,
+    an ONR Young Investigator Award, and 2021 Antonio Ruberti Young Researcher Prize from the IEEE Control
+    Systems Society. She served as a program co-chair for the 22nd ACM Conference on Hybrid Systems: Computation
+    and Control (HSCC) in 2019, a program co-chair for the IFAC Conference on Analysis and Design of Hybrid
+    Systems (ADHS) in 2021, a program co-chair for International Conference on Cyber-Physical Systems
+    (ICCPS) in 2024, and the general chair for 2025 Annual Conference on Learning for Dynamics and Control
+    (L4DC). She is an IEEE Fellow and an associate editor of Automatica and Discrete Event Dynamic Systems.'
+  tags:
+  - Control and Learning
+  - Modeling and System Identification
   youtube_url: null
   youtube_id: null
   status: past
+  teams_url: null
   notes: null
   links:
     scholar: https://scholar.google.com/citations?user=qAow5LwAAAAJ
@@ -308,6 +338,7 @@ talks:
   youtube_url: null
   youtube_id: null
   status: upcoming
+  teams_url: https://teams.microsoft.com/meet/326840692078602?p=w9PdEISIhyIS96AJ5j
   notes: null
   links:
     scholar: https://scholar.google.com/citations?user=Hr-GvgQAAAAJ
@@ -331,6 +362,7 @@ talks:
   youtube_url: null
   youtube_id: null
   status: upcoming
+  teams_url: https://teams.microsoft.com/meet/37800260480148?p=Jnvaq1bZ5tsLWWg8km
   notes: null
   links:
     scholar: https://scholar.google.com/citations?user=wbGA6BIAAAAJ

@@ -147,6 +147,7 @@ a { color: var(--tud-blue); }
 .container { max-width: 1080px; margin: 0 auto; padding: 2.5rem 1.5rem; }
 .container h2 { color: var(--info-blue); font-size: 2.5rem; font-weight: 800; margin: 0 0 0.5rem; }
 .topics-section { margin-bottom: 2.5rem; }
+.talks-intro { color: var(--ink); margin: 0 0 1.25rem; }
 .topics-section p { color: var(--ink); margin: 0; }
 
 .topics-more-link {
@@ -367,6 +368,21 @@ a { color: var(--tud-blue); }
   -webkit-box-orient: vertical;
   max-height: 144px; /* flex:1 stretches this box past 4 lines on short cards; without a cap, overflow:hidden has nothing to clip and the clamp ellipsis shows with the "hidden" line still visible below it */
 }
+.join-online {
+  align-self: flex-start;
+  margin-top: 8px;
+  font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 0.21px;
+  color: var(--info-blue); text-decoration: none;
+}
+.talk-card.has-join .talk-card-open { flex: 0 1 auto; }
+.talk-card.has-join .talk-card-title { flex: 0 1 auto; }
+.talk-card.has-join .talk-card-footer { margin-top: auto; }
+.talk-row.has-join .talk-row-open { flex: 0 1 auto; }
+.talk-row.has-join .talk-row-title { flex: 0 1 auto; }
+.talk-row.has-join .talk-row-footer { margin-left: auto; }
+.talk-row .join-online { align-self: center; margin: 0; flex: none; white-space: nowrap; }
+.expanded .join-online { display: inline-block; margin: 0 0 16px; font-size: 14px; }
+.join-online:hover, .join-online:focus-visible { text-decoration: underline; }
 .talk-card-footer { display: flex; justify-content: flex-end; align-items: center; gap: 12.5px; flex-wrap: wrap; }
 .talk-card-footer .topic-chip-compact { width: 50px; height: 50px; }
 .talk-card-footer .topic-chip-compact .topic-chip-icon { width: 50px; height: 50px; }
@@ -428,13 +444,14 @@ a { color: var(--tud-blue); }
    chip whenever there's a little leftover horizontal space. */
 @media (max-width: 640px) {
   .talk-row { flex-wrap: wrap; align-items: flex-start; row-gap: 6px; padding: 14px 16px; }
-  .talk-row-open { flex: 1 1 100%; flex-wrap: wrap; row-gap: 6px; }
+  .talk-row-open, .talk-row.has-join .talk-row-open { flex: 1 1 100%; flex-wrap: wrap; row-gap: 6px; }
+  .talk-row .join-online { align-self: flex-start; }
   /* flex-basis 0 (not auto) so line-wrapping math ignores the name/role's
      unwrapped text width — otherwise a long name reserves its full
      max-content width when the browser decides what fits on line 1, shoving
      the date chip onto its own line before flex-shrink ever gets a say. */
   .talk-row .name-role-row { width: auto; flex: 1 1 0%; min-width: 0; }
-  .talk-row-title { flex: 1 1 100%; white-space: normal; line-height: 1.4; }
+  .talk-row-title, .talk-row.has-join .talk-row-title { flex: 1 1 100%; white-space: normal; line-height: 1.4; }
   .talk-row-footer { flex: 1 1 100%; justify-content: flex-start; }
   .talk-row-footer .topic-chip-compact,
   .talk-row-footer .topic-chip-compact .topic-chip-icon { width: 28px; height: 28px; }

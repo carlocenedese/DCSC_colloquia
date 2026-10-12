@@ -388,6 +388,18 @@
     return talk.title === "TBD" ? "Details coming soon" : talk.title;
   }
 
+  function joinOnlineHtml(talk) {
+    if (talk.status !== "upcoming" || !talk.teams_url) return "";
+    const start = (talk.time || "").match(/^\s*(\d{1,2})[:.](\d{2})/);
+    let when = "";
+    if (start) {
+      const zone = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Amsterdam", timeZoneName: "short" })
+        .formatToParts(new Date(talk.date + "T12:00:00Z")).find((p) => p.type === "timeZoneName");
+      when = ` (${start[1].padStart(2, "0")}:${start[2]} ${zone ? zone.value : "CET"})`;
+    }
+    return `<a class="join-online" href="${escapeHtml(talk.teams_url)}" target="_blank" rel="noopener">Join online${when}</a>`;
+  }
+
   function buildCardEl(talk, i) {
     const card = document.createElement("div");
     card.className = "talk-card" + (talk.status === "upcoming" ? " card-upcoming" : "");
@@ -395,6 +407,7 @@
     // (already visible before the click) render as usual, no animation.
     if (expanded && i >= CARD_LIMIT) card.classList.add("card-enter");
     card.dataset.id = talk.id;
+    if (joinOnlineHtml(talk)) card.classList.add("has-join");
     const footerIcons = (talk.tags || []).map((t) => topicChipHtml(t, "compact")).join("");
     const statusHint = talk.status === "upcoming" ? " (upcoming)" : "";
     // The clickable "open" trigger is a real <button> wrapping only header+title —
@@ -409,6 +422,7 @@
         </div>
         <div class="talk-card-title">${escapeHtml(displayTitle(talk))}</div>
       </button>
+      ${joinOnlineHtml(talk)}
       <div class="talk-card-footer">${footerIcons}</div>
     `;
     card.querySelector(".talk-card-open").addEventListener("click", () => openModal(talk));
@@ -420,6 +434,7 @@
     row.className = "talk-row" + (talk.status === "upcoming" ? " card-upcoming" : "");
     if (expanded && i >= CARD_LIMIT) row.classList.add("card-enter");
     row.dataset.id = talk.id;
+    if (joinOnlineHtml(talk)) row.classList.add("has-join");
     const footerIcons = (talk.tags || []).map((t) => topicChipHtml(t, "compact")).join("");
     const statusHint = talk.status === "upcoming" ? " (upcoming)" : "";
     row.innerHTML = `
@@ -429,6 +444,7 @@
         ${dateChipHtml(talk, "default")}
         <div class="talk-row-title">${escapeHtml(displayTitle(talk))}</div>
       </button>
+      ${joinOnlineHtml(talk)}
       <div class="talk-row-footer">${footerIcons}</div>
     `;
     row.querySelector(".talk-row-open").addEventListener("click", () => openModal(talk));
@@ -494,6 +510,7 @@
           ${dateChipHtml(talk, "long")}
         </div>
         <h2 id="modal-title" class="expanded-title">${escapeHtml(displayTitle(talk))}</h2>
+        ${joinOnlineHtml(talk)}
         ${videoHtml}
         ${tagsRowHtml}
         <div class="expanded-section">

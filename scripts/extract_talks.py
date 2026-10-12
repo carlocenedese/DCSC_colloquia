@@ -37,9 +37,10 @@ AVATAR_EXTENSIONS = [".jpg", ".jpeg", ".png", ".webp"]
 HEADER = [
     "date", "location", "time", "speaker", "gp", "role", "affiliation",
     "status_raw", "title", "abstract", "tags_raw", "bio", "pic", "video",
-    "notes", "youtube_url",
+    "notes", "youtube_url", "teams_raw",
 ]
 
+TEAMS_URL_RE = re.compile(r"https://teams\.microsoft\.com/\S+")
 YT_ID_RE = re.compile(r"(?:youtu\.be/|v=)([A-Za-z0-9_-]{6,})")
 
 # Raw xlsx affiliation string -> (short, full-with-department).
@@ -171,6 +172,12 @@ def youtube_id(url):
     return match.group(1) if match else None
 
 
+def teams_url(raw):
+    """Join link from the pasted Teams invite text (the ?p= token already carries the passcode)."""
+    match = TEAMS_URL_RE.search(raw or "")
+    return match.group(0) if match else None
+
+
 def clean(value):
     if isinstance(value, str):
         value = value.strip()
@@ -247,6 +254,7 @@ def parse_sheet(ws, mode):
             "youtube_url": yt_url,
             "youtube_id": youtube_id(yt_url),
             "status": "past" if talk_date <= date.today() else "upcoming",
+            "teams_url": teams_url(record.get("teams_raw")) if talk_date > date.today() else None,
             "notes": clean(record.get("notes")),
             "links": {"scholar": "TBD", "homepage": "", "verified": False},
             "slides_url": find_slides(talk_id),
