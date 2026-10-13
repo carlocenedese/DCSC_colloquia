@@ -1664,8 +1664,8 @@ talks:
     and information theory.
   tags:
   - Control and Learning
-  youtube_url: null
-  youtube_id: null
+  youtube_url: https://youtu.be/ieGqsjYiA9E
+  youtube_id: ieGqsjYiA9E
   status: past
   teams_url: null
   notes: Robust and Intelligent Systems (RIAS) Lab, AI4I Institute, Turin, Italy
@@ -1985,8 +1985,8 @@ talks:
     insights can guide the design of effective inference and generative-learning methods.
   tags:
   - Systems and Signal Analysis
-  youtube_url: null
-  youtube_id: null
+  youtube_url: https://youtu.be/PJTTbIX2lns
+  youtube_id: PJTTbIX2lns
   status: past
   teams_url: null
   notes: null
