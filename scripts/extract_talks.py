@@ -74,7 +74,7 @@ AFFILIATION_MAP = {
     ),
     "ETH Zurich (CH)": ("ETH Zurich", "ETH Zurich — Automatic Control Laboratory"),
     "Max Planck Institute for Intelligent Systems (Germany)": (
-        "MPI-IS", "Max Planck Institute for Intelligent Systems — Learning and Dynamical Systems Group",
+        "MPI-IS", "Max Planck Institute for Intelligent Systems — Tuebingen, Germany",
     ),
     "University of Michigan (USA)": ("U-M", "University of Michigan — Electrical Engineering and Computer Science Department"),
     "University of Brescia (Italy)": ("UniBS", "University of Brescia — Dept. of Information Engineering"),

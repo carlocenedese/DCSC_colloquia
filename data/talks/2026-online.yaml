@@ -206,8 +206,8 @@ talks:
   mode: online
   location: Online
   speaker: Michael Muehlebach
-  affiliation_short: WU Vienna
-  affiliation_full: Vienna University of Economics and Business
+  affiliation_short: MPI-IS
+  affiliation_full: Max Planck Institute for Intelligent Systems — Tuebingen, Germany
   role: Professor
   title: On the hardness of learning in dynamical systems
   abstract: 'In my talk I will examine when learning to act in a dynamical system is no harder than supervised
