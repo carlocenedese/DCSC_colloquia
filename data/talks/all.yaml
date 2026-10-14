@@ -1000,7 +1000,7 @@ talks:
     scholar: https://scholar.google.com/citations?user=AkVKyzkAAAAJ
     homepage: https://control.ee.ethz.ch/people/profile.lars-lindemann.html
     verified: false
-  slides_url: ''
+  slides_url: /slides/2026-06-03-lars-lindemann.pdf
   avatar_url: /avatars/lars-lindemann.png
 - id: 2026-09-09-michael-muehlebach
   date: '2026-09-09'
@@ -1106,7 +1106,7 @@ talks:
     scholar: https://scholar.google.com/citations?user=qAow5LwAAAAJ
     homepage: https://web.eecs.umich.edu/~necmiye/
     verified: false
-  slides_url: ''
+  slides_url: /slides/2026-10-07-necmiye-ozay.pdf
   avatar_url: /avatars/necmiye-ozay.jpg
 - id: 2026-10-21-marco-campi
   date: '2026-10-21'
@@ -1378,7 +1378,7 @@ talks:
     scholar: https://scholar.google.com/citations?user=J8pUBXwAAAAJ
     homepage: https://www.tudelft.nl/en/staff/a.alan/
     verified: false
-  slides_url: ''
+  slides_url: /slides/2026-03-18-anil-alan.pdf
   avatar_url: /avatars/anil-alan.jpg
 - id: 2026-04-22-diego-van-overberghe
   date: '2026-04-22'
@@ -1675,7 +1675,7 @@ talks:
     verified: true
     note: TU/e research-portal profile no longer exists (404); no AI4I staff page found, so no separate
       homepage link (Scholar only).
-  slides_url: ''
+  slides_url: /slides/2026-06-02-giannis-delimpaltadakis.pdf
   avatar_url: /avatars/giannis-delimpaltadakis.jpeg
 - id: 2026-06-03-meng-jianwen
   date: '2026-06-03'
@@ -2025,7 +2025,7 @@ talks:
   - Control and Learning
   youtube_url: null
   youtube_id: null
-  status: upcoming
+  status: past
   teams_url: null
   notes: null
   links:

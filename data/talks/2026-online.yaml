@@ -198,7 +198,7 @@ talks:
     scholar: https://scholar.google.com/citations?user=AkVKyzkAAAAJ
     homepage: https://control.ee.ethz.ch/people/profile.lars-lindemann.html
     verified: false
-  slides_url: ''
+  slides_url: /slides/2026-06-03-lars-lindemann.pdf
   avatar_url: /avatars/lars-lindemann.png
 - id: 2026-09-09-michael-muehlebach
   date: '2026-09-09'
@@ -304,7 +304,7 @@ talks:
     scholar: https://scholar.google.com/citations?user=qAow5LwAAAAJ
     homepage: https://web.eecs.umich.edu/~necmiye/
     verified: false
-  slides_url: ''
+  slides_url: /slides/2026-10-07-necmiye-ozay.pdf
   avatar_url: /avatars/necmiye-ozay.jpg
 - id: 2026-10-21-marco-campi
   date: '2026-10-21'

@@ -205,7 +205,7 @@ talks:
     scholar: https://scholar.google.com/citations?user=J8pUBXwAAAAJ
     homepage: https://www.tudelft.nl/en/staff/a.alan/
     verified: false
-  slides_url: ''
+  slides_url: /slides/2026-03-18-anil-alan.pdf
   avatar_url: /avatars/anil-alan.jpg
 - id: 2026-04-22-diego-van-overberghe
   date: '2026-04-22'
@@ -502,7 +502,7 @@ talks:
     verified: true
     note: TU/e research-portal profile no longer exists (404); no AI4I staff page found, so no separate
       homepage link (Scholar only).
-  slides_url: ''
+  slides_url: /slides/2026-06-02-giannis-delimpaltadakis.pdf
   avatar_url: /avatars/giannis-delimpaltadakis.jpeg
 - id: 2026-06-03-meng-jianwen
   date: '2026-06-03'
@@ -852,7 +852,7 @@ talks:
   - Control and Learning
   youtube_url: null
   youtube_id: null
-  status: upcoming
+  status: past
   teams_url: null
   notes: null
   links:
