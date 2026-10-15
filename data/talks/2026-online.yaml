@@ -95,7 +95,7 @@ talks:
     scholar: https://scholar.google.com/citations?user=_KaTyEwAAAAJ
     homepage: https://cheme.mit.edu/profile/sungho-shin/
     verified: false
-  slides_url: ''
+  slides_url: /slides/2026-04-08-sungho-shin.pdf
   avatar_url: /avatars/sungho-shin.png
 - id: 2026-05-06-dinesh-krishnamoorthy
   date: '2026-05-06'
@@ -142,7 +142,7 @@ talks:
     scholar: https://scholar.google.com/citations?user=AHUrS0EAAAAJ
     homepage: https://dinesh-krishnamoorthy.github.io/
     verified: false
-  slides_url: ''
+  slides_url: /slides/2026-05-06-dinesh-krishnamoorthy.pdf
   avatar_url: /avatars/dinesh-krishnamoorthy.jpg
 - id: 2026-06-03-lars-lindemann
   date: '2026-06-03'
@@ -256,7 +256,7 @@ talks:
     scholar: https://scholar.google.com/citations?user=uTfYBAsAAAAJ
     homepage: https://sites.google.com/view/mmuehlebach
     verified: false
-  slides_url: ''
+  slides_url: /slides/2026-09-09-michael-muehlebach.pdf
   avatar_url: /avatars/michael-muehlebach.jpg
 - id: 2026-10-07-necmiye-ozay
   date: '2026-10-07'
