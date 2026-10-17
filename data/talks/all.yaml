@@ -1765,7 +1765,7 @@ talks:
     scholar: https://scholar.google.com/citations?user=gWJV1rQAAAAJ
     homepage: https://www.cms.caltech.edu/people/nicolas-lanzetti
     verified: false
-  slides_url: ''
+  slides_url: /slides/2026-06-08-nicolas-lanzetti.pdf
   avatar_url: /avatars/nicolas-lanzetti.jpg
 - id: 2026-06-17-salim-msaad
   date: '2026-06-17'
